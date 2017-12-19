@@ -25,6 +25,15 @@ module.exports = {
     ['@nuxtjs/google-analytics', { id: 'UA-1495990-6' }],
     '@nuxtjs/pwa'
   ],
+
+  /*
+  ** PWA
+  */
+  manifest: {
+    name: 'Fan Weekend',
+    lang: 'en'
+  }
+
   /*
   ** Build configuration
   */
