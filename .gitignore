@@ -8,6 +8,7 @@ npm-debug.log
 .nuxt
 
 # Nuxt generate
+static/sw.js
 dist
 
 # VSCode
