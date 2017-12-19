@@ -32,7 +32,7 @@ module.exports = {
   manifest: {
     name: 'Fan Weekend',
     lang: 'en'
-  }
+  },
 
   /*
   ** Build configuration
