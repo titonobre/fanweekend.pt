@@ -9,22 +9,22 @@
           <li>Meals: breakfast, lunch, afternoon snacks and dinner;</li>
           <li>Access to activities, workshops and special offers.</li>
       </ul>
-      
+
       <p class="has-text-centered">
         <a class="button is-success" target="_blank" href="https://goo.gl/forms/2O4Z4dUYdrGEgKxi2">
           <span class="icon"><i class="fa fa-fw fa-pencil-square-o"></i></span>
           <span>Take me to the registration form</span>
         </a>
       </p>
-      
-      <blockquote>Please note: the registration slots are limited!</blockquote>
+
+      <blockquote><b>Please note</b> the registration slots are limited and will be open until the 28 of February, 2018!</blockquote>
 
       <div class="notification is-info">
         There will also be a special AFOL dinner on Saturday, 9 of June. The dinner is <b>&euro;25</b> per person, with all included.
       </div>
 
       <p>More detailed information is available on the registration form.</p>
-      
+
       <p>Don't forget to read the latest announcements on the forums.</p>
 
       <p class="has-text-centered">
