@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section>
     <coming-soon/>
   </section>
 </template>
@@ -15,11 +15,4 @@ export default {
 </script>
 
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
 </style>

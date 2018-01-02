@@ -1,14 +1,14 @@
 <template>
-  <div class="content">
+  <div class="cenas">
     <img class="image" src="./circlelogo.png">
-    <h1 class="title">
+    <div class="cs">
       Coming Soon!
-    </h1>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.content {
+.cenas {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,9 +20,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  background-attachment: fixed;
 }
 
-.title {
+.cs {
   font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
   display: block;
@@ -30,6 +31,7 @@
   font-size: 80px;
   color: #35495e;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 .image {
