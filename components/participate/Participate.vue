@@ -9,9 +9,14 @@
           <li>Meals: breakfast, lunch, afternoon snacks and dinner;</li>
           <li>Access to activities, workshops and special offers.</li>
       </ul>
-
-      <p class="has-text-centered"><a class="button is-success" target="_blank" href="https://goo.gl/forms/2O4Z4dUYdrGEgKxi2"><b>Take me to the registration form <i class="fa fa-pencil-square-o" aria-hidden="true"></i></b></a></p>
-
+      
+      <p class="has-text-centered">
+        <a class="button is-success" target="_blank" href="https://goo.gl/forms/2O4Z4dUYdrGEgKxi2">
+          <span class="icon"><i class="fa fa-fw fa-pencil-square-o"></i></span>
+          <span>Take me to the registration form</span>
+        </a>
+      </p>
+      
       <blockquote>Please note: the registration slots are limited!</blockquote>
 
       <div class="notification is-info">
@@ -22,8 +27,12 @@
       
       <p>Don't forget to read the latest announcements on the forums.</p>
 
-      <p class="has-text-centered"><a class="button is-success" target="_blank" href="https://fanweekend.pt/forums/"><b>Take me to the Forums</b> <i class="fa fa-comments" aria-hidden="true"></i></a></p>
-
+      <p class="has-text-centered">
+        <a class="button is-success" href="https://fanweekend.pt/forums/">
+          <span class="icon"><i class="fa fa-fw fa-comments"></i></span>
+          <span>Take me to the Forums</span>
+        </a>
+      </p>
     </div>
   </section>
 </template>
