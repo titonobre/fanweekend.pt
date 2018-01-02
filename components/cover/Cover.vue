@@ -26,7 +26,7 @@
 }
 
 .bottom {
-  padding: 2rem;
+  padding-bottom: 2rem;
 }
 
 .image {
