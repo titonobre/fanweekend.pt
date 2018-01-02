@@ -3,7 +3,7 @@
     <div class="container content">
       <h1>Be Part of It!</h1>
 
-      <p>There is a registration fee of <b>â‚¬100</b> per person that includes the following:</p>
+      <p>There is a registration fee of <b>€100</b> per person that includes the following:</p>
       <ul>
           <li>Accommodation in Boarding Houses (B&Bs);</li>
           <li>Meals: breakfast, lunch, afternoon snacks and dinner;</li>
@@ -15,10 +15,15 @@
       <blockquote>Please note: the registration slots are limited!</blockquote>
 
       <div class="notification is-info">
-        There will also be a special AFOL dinner on Saturday, 9 of June. The dinner is <b>â‚¬25</b> per person, with all included.
+        There will also be a special AFOL dinner on Saturday, 9 of June. The dinner is <b>€25</b> per person, with all included.
       </div>
 
       <p>More detailed information is available on the registration form.</p>
+      
+      <p>Don't forget to read the latest announcements on the forums.</p>
+
+      <p class="has-text-centered"><a class="button is-success" target="_blank" href="https://fanweekend.pt/forums/"><b>Take me to the Forums</b> <i class="fa fa-comments" aria-hidden="true"></i></a></p>
+
     </div>
   </section>
 </template>
