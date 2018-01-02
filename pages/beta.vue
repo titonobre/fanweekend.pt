@@ -1,28 +1,5 @@
 <template>
   <section>
-    <nav class="navbar is-fixed-top is-transparent">
-      <div class="navbar-brand">
-      </div>
-      <div class="navbar-menu">
-        <div class="navbar-start">
-        </div>
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="field is-grouped">
-              <p class="control">
-                <a class="button is-primary" href="https://fanweekend.pt/forums/">
-                  <span class="icon">
-                    <i class="fa fa-comments"></i>
-                  </span>
-                  <span>Forums</span>
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-
     <cover/>
 
     <intro/>
