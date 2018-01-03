@@ -24,6 +24,7 @@ module.exports = {
   modules: [
     ['@nuxtjs/google-analytics', { id: 'UA-1495990-6' }],
     '@nuxtjs/pwa',
+    '@nuxtjs/axios',
     '@nuxtjs/bulma',
     '@nuxtjs/font-awesome'
   ],
