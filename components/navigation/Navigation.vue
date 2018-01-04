@@ -21,6 +21,12 @@
       </div>
 
       <div class="navbar-end">
+        <nuxt-link to="/who-is-going" class="navbar-item">
+          <span class="icon">
+            <i class="fa fa-users"></i>
+          </span>
+          Who is Going?
+        </nuxt-link>
         <div class="navbar-item">
           <div class="field is-grouped">
             <p class="control">
