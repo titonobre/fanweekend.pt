@@ -1,5 +1,6 @@
 <template>
   <section>
+    <navigation/>
     <cover/>
 
     <intro/>
@@ -13,6 +14,7 @@
 </template>
 
 <script>
+import Navigation from '~/components/navigation/Navigation.vue'
 import Cover from '~/components/cover/Cover.vue'
 import Intro from '~/components/intro/Intro.vue'
 import When from '~/components/when/When.vue'
@@ -22,6 +24,7 @@ import Disclaimer from '~/components/disclaimer/Disclaimer.vue'
 
 export default {
   components: {
+    Navigation,
     Cover,
     Intro,
     When,

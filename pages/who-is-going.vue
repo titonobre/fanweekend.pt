@@ -1,40 +1,29 @@
 <template>
-  <section class="section">
-    <div class="container content has-text-centered">
+  <section>
+    <navigation/>
 
-      <p class="has-text-centered">
-        <img class="image is-inline" src="../components/coming-soon/circlelogo.png">
-      </p>
+    <section class="section">
+      <div class="container content has-text-centered">
 
-      <h1>Who is Going?</h1>
+        <h1>Who is Going?</h1>
 
-      <template v-for="(lugs, country) in groups">
-        <h2>{{ country }}</h2>
-        <template v-for="(people, lug) in lugs">
-          <div v-if="lug">{{ lug }}</div>
-          <p class="tags">
-            <span v-for="entry in people" class="tag is-rounded">{{ entry.name }}</span>
+        <template v-for="entry in entries">
+          <h2 class="participant-name">{{ entry.name }}</h2>
+          <p class="is-size-7 has-text-grey-light">
+            <template v-if="entry.lug">{{ entry.lug }},</template>
+            {{ entry.countryName }}
           </p>
         </template>
-      </template>
+      </div>
+    </section>
 
-      <p class="has-text-centered">
-        <nuxt-link to="/" class="button is-success">
-          <span>Go back home</span>
-          <span class="icon"><i class="fa fa-home"></i></span>
-        </nuxt-link>
-      </p>
-    </div>
+    <disclaimer/>
   </section>
 </template>
 
 <script>
-function groupBy (xs, key) {
-  return xs.reduce((rv, x) => {
-    (rv[x[key]] = rv[x[key]] || []).push(x)
-    return rv
-  }, {})
-};
+import Navigation from '~/components/navigation/Navigation.vue'
+import Disclaimer from '~/components/disclaimer/Disclaimer.vue'
 
 function parseFeed (feed) {
   const rows = []
@@ -55,7 +44,10 @@ function parseFeed (feed) {
 const url = 'https://spreadsheets.google.com/feeds/cells/104XL-C_5vjnUGf7Qq2jjlYONYNZgaN50DlGJZcM8hXk/4/public/values?alt=json'
 
 export default {
-  components: {},
+  components: {
+    Navigation,
+    Disclaimer
+  },
   data () {
     return { groups: {} }
   },
@@ -68,26 +60,22 @@ export default {
       name: row[0],
       countryName: row[1],
       countryCode: row[2],
-      lug: row[3] || ''
+      lug: row[3]
     }))
 
-    console.log(entries)
-
-    const gr = groupBy(entries, 'countryName')
-
-    const grs = Object.entries(gr)
-      .reduce((acc, entry) => {
-        acc[entry[0]] = groupBy(entry[1], 'lug')
-        return acc
-      }, {})
-
-    console.log(grs)
-    return { groups: grs }
+    return { entries }
+  },
+  fetch ({ app, params }) {
+    // app.$axios.$get(url).then(data => console.log(data))
   }
 }
 </script>
 
 <style scoped>
+.container {
+      padding-top: 3.25rem;
+}
+
 .image {
   max-width: 25vw;
   max-height: 25vh;
@@ -95,5 +83,9 @@ export default {
 
 .tags {
   justify-content: center;
+}
+
+.participant-name {
+  margin-bottom: 0;
 }
 </style>
