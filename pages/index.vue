@@ -1,6 +1,6 @@
 <template>
   <section>
-    <navigation/>
+    <navigation v-bind:hide-at-top="true"/>
     <cover/>
 
     <intro/>

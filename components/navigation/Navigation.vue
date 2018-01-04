@@ -1,5 +1,10 @@
 <template>
-  <nav class="navbar is-fixed-top is-transparent"  v-bind:class="{ 'is-rolled-up': navbarHidden }">
+  <nav class="navbar is-fixed-top is-transparent"
+    v-bind:class="{
+      'is-rolled-up': navbarHidden,
+      'is-at-top': hideAtTop && lastScrollPosition === 0,
+      'is-expanded': navbarMenuOpen
+    }">
     <div class="navbar-brand">
       <nuxt-link to="/" class="navbar-item">
         <img class="brand-image is-inline" src="../coming-soon/circlelogo.png">
@@ -47,10 +52,18 @@
 
 <script>
 export default {
+  props: {
+    hideAtTop: {
+      type: Boolean,
+      default: false
+    }
+  },
+
   data () {
     return {
       navbarHidden: false,
-      navbarMenuOpen: false
+      navbarMenuOpen: false,
+      lastScrollPosition: 0
     }
   },
 
@@ -70,6 +83,7 @@ export default {
       } else if (this.lastScrollPosition > scrollPosition && !(scrollPosition <= threshold)) {
         this.navbarHidden = false
       }
+
       this.lastScrollPosition = scrollPosition
     }
   },
@@ -95,11 +109,24 @@ export default {
 <style scoped>
 
 .navbar {
-  transition: all 0.25s
+  transition: all 0.2s
 }
 
 .navbar.is-rolled-up {
   top: -56px;
+}
+
+.navbar.is-at-top:not(.is-expanded) {
+  background-color: transparent;
+}
+
+.navbar.is-at-top:not(.is-expanded) .navbar-brand .navbar-item {
+  display: none;
+}
+
+
+.navbar .navbar-brand .navbar-item {
+  padding-right: 0;
 }
 
 .brand-image {
@@ -119,6 +146,7 @@ export default {
     transition: all 0.25s
 }
 
+.navbar.is-at-top .bd-special-shadow,
 .navbar.is-rolled-up .bd-special-shadow {
   opacity: 0;
 }
