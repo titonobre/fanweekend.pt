@@ -65,11 +65,10 @@ export default {
       const threshold = 56 // navbar height
 
       if (this.lastScrollPosition < scrollPosition && scrollPosition > threshold + threshold) {
-        console.log('scrollUp')
         this.navbarHidden = true
+        this.navbarMenuOpen = false
       } else if (this.lastScrollPosition > scrollPosition && !(scrollPosition <= threshold)) {
         this.navbarHidden = false
-        console.log('!scrollUp')
       }
       this.lastScrollPosition = scrollPosition
     }
