@@ -7,7 +7,6 @@
     }">
     <div class="navbar-brand">
       <nuxt-link to="/" class="navbar-item">
-        <img class="brand-image is-inline" src="../coming-soon/circlelogo.png">
         <span class="navbar-item">Paredes de Coura Fan Weekend</span>
       </nuxt-link>
       <div class="navbar-burger burger" v-bind:class="{ 'is-active': navbarMenuOpen }" @click="toggle">
@@ -25,7 +24,7 @@
         <div class="navbar-item">
           <div class="field is-grouped">
             <p class="control">
-              <a class="bd-tw-button button" target="_blank" href="https://www.facebook.com/groups/fanweekend.pt">
+              <a class="button is-link" target="_blank" href="https://www.facebook.com/groups/fanweekend.pt">
                 <span class="icon">
                   <i class="fa fa-facebook"></i>
                 </span>
