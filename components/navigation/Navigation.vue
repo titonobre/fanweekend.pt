@@ -7,7 +7,7 @@
     }">
     <div class="navbar-brand">
       <nuxt-link to="/" class="navbar-item">
-        <span class="navbar-item">Paredes de Coura Fan Weekend</span>
+        Paredes de Coura Fan Weekend
       </nuxt-link>
       <div class="navbar-burger burger" v-bind:class="{ 'is-active': navbarMenuOpen }" @click="toggle">
         <span></span>
@@ -121,11 +121,6 @@ export default {
 
 .navbar.is-at-top:not(.is-expanded) .navbar-brand .navbar-item {
   display: none;
-}
-
-
-.navbar .navbar-brand .navbar-item {
-  padding-right: 0;
 }
 
 .brand-image {
