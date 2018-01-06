@@ -1,0 +1,7 @@
+<FilesMatch "\.(ico|jpg|jpeg|png|gif|js|css)$">
+Header set Cache-Control "max-age=290304000, public"
+</FilesMatch>
+
+<FilesMatch "^(.+\.html|sw\.js)$">
+Header set Cache-Control "max-age=0, must-revalidate"
+</FilesMatch>
