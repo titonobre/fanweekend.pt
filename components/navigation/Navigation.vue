@@ -30,7 +30,7 @@
         <div class="navbar-item">
           <div class="field is-grouped">
             <p class="control">
-              <a class="button is-link" target="_blank" href="https://www.facebook.com/groups/fanweekend.pt">
+              <a class="button is-link" target="_blank" rel="noopener" href="https://www.facebook.com/groups/fanweekend.pt">
                 <span class="icon">
                   <i class="fa fa-facebook"></i>
                 </span>
@@ -40,7 +40,7 @@
               </a>
             </p>
             <p class="control">
-              <a class="button is-primary" target="_blank" href="https://fanweekend.pt/forums/">
+              <a class="button is-primary" target="_blank" rel="noopener" href="https://fanweekend.pt/forums/">
                 <span class="icon">
                   <i class="fa fa-comments"></i>
                 </span>

@@ -13,7 +13,7 @@
             <div class="tile is-child">
 
               <p class="has-text-centered">
-                <a class="button is-success" target="_blank" href="https://www.google.com/maps/dir/My+Location/Paredes+de+Coura">
+                <a class="button is-success" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/My+Location/Paredes+de+Coura">
                   <span class="icon">
                     <i class="fa fa-fw fa-map-signs"></i>
                   </span>
@@ -30,15 +30,15 @@
               <h4>GPS Coordinates</h4>
               <p>
                 41°54'42.90"N 8°33'46.18"W
-                <a target="_blank" href="https://goo.gl/maps/gZ8RhfG381J2"><i class="fa fa-map-o"></i> view on Google Maps</a>
+                <a target="_blank" rel="noopener" href="https://goo.gl/maps/gZ8RhfG381J2"><i class="fa fa-map-o"></i> view on Google Maps</a>
               </p>
 
               <h4>Directions</h4>
               <ul>
-                <li>Porto, Portugal (115km) (<a target="_blank" href="http://g.co/maps/b4kge">directions</a>)</li>
-                <li>Vigo, Spain (59-65km) (<a target="_blank" href="http://g.co/maps/2dvvm">directions</a>)</li>
-                <li>Santiago Compostela, Spain (145km) (<a target="_blank" href="https://goo.gl/maps/LUXu7nGmVML2">directions</a>)</li>
-                <li>Lisboa, Portugal (420km) (<a target="_blank" href="http://g.co/maps/njsqb">directions</a>)</li>
+                <li>Porto, Portugal (115km) (<a target="_blank" rel="noopener" href="http://g.co/maps/b4kge">directions</a>)</li>
+                <li>Vigo, Spain (59-65km) (<a target="_blank" rel="noopener" href="http://g.co/maps/2dvvm">directions</a>)</li>
+                <li>Santiago Compostela, Spain (145km) (<a target="_blank" rel="noopener" href="https://goo.gl/maps/LUXu7nGmVML2">directions</a>)</li>
+                <li>Lisboa, Portugal (420km) (<a target="_blank" rel="noopener" href="http://g.co/maps/njsqb">directions</a>)</li>
               </ul>
             </div>
           </div>
