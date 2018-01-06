@@ -35,4 +35,4 @@ build:
     - script:
         name: deploy
         code: |
-          lftp -e 'mirror --reverse dist/ /; exit' --user $DEPLOY_FTP_USER --password $DEPLOY_FTP_PASS $DEPLOY_FTP_SERVER
+          lftp -e 'mirror --reverse --use-pget-n=5 --parallel=5 dist/ /; exit' --user $DEPLOY_FTP_USER --password $DEPLOY_FTP_PASS $DEPLOY_FTP_SERVER
