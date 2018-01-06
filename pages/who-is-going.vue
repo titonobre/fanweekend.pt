@@ -6,6 +6,9 @@
       <div class="container content has-text-centered">
 
         <h1>Who is Going?</h1>
+        <p class="is-size-7 has-text-grey-light">
+          {{ entries.length }} people from {{ countryNames.length}} countries
+        </p>
 
         <template v-for="entry in entries">
           <h2 class="participant-name">{{ entry.name }}</h2>
@@ -49,7 +52,7 @@ export default {
     Disclaimer
   },
   data () {
-    return { groups: {} }
+    return { entries: [], countryNames: [] }
   },
   async asyncData ({ app, params }) {
     const data = await app.$axios.$get(url)
@@ -63,7 +66,14 @@ export default {
       lug: row[3]
     }))
 
-    return { entries }
+    const countries = entries.reduce((acc, entry) => {
+      acc[entry.countryCode] = entry.countryName
+      return acc
+    }, {})
+
+    const countryNames = Object.values(countries)
+
+    return { entries, countryNames }
   },
   fetch ({ app, params }) {
     // app.$axios.$get(url).then(data => console.log(data))
