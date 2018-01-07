@@ -28,7 +28,7 @@
     </section>
 
     <disclaimer>
-      Flag icons provided by <a target="_blank" rel="noopener" href="https://www.flaticon.com/packs/countrys-flags/6">Freepik</a>
+      Flag icons provided by <a target="_blank" rel="noopener" href="https://www.flaticon.com/packs/countrys-flags">Freepik</a>
     </disclaimer>
   </section>
 </template>
