@@ -4,6 +4,8 @@
       <div class="content has-text-centered">
         <p>
           Made with <span class="icon is-small has-text-danger heart"><i class="fa fa-heart" alt="love" aria-valuetext="love" title="love"></i></span> by <a target="_blank" rel="noopener" href="https://comunidade0937.com">Comunidade 0937</a>.
+          <br/>
+          <slot></slot>
         </p>
       </div>
     </div>
