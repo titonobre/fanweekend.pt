@@ -30,15 +30,16 @@
               <h4>GPS Coordinates</h4>
               <p>
                 41°54'42.90"N 8°33'46.18"W
+                <br/>
                 <a target="_blank" rel="noopener" href="https://goo.gl/maps/gZ8RhfG381J2"><i class="fa fa-map-o"></i> view on Google Maps</a>
               </p>
 
               <h4>Directions</h4>
               <ul>
-                <li>Porto, Portugal (115km) (<a target="_blank" rel="noopener" href="http://g.co/maps/b4kge">directions</a>)</li>
-                <li>Vigo, Spain (59-65km) (<a target="_blank" rel="noopener" href="http://g.co/maps/2dvvm">directions</a>)</li>
-                <li>Santiago Compostela, Spain (145km) (<a target="_blank" rel="noopener" href="https://goo.gl/maps/LUXu7nGmVML2">directions</a>)</li>
-                <li>Lisboa, Portugal (420km) (<a target="_blank" rel="noopener" href="http://g.co/maps/njsqb">directions</a>)</li>
+                <li><a target="_blank" rel="noopener" href="http://g.co/maps/b4kge">Porto, Portugal</a> (115km)</li>
+                <li><a target="_blank" rel="noopener" href="http://g.co/maps/2dvvm">Vigo, Spain</a> (59-65km)</li>
+                <li><a target="_blank" rel="noopener" href="https://goo.gl/maps/LUXu7nGmVML2">Santiago Compostela, Spain</a> (145km)</li>
+                <li><a target="_blank" rel="noopener" href="http://g.co/maps/njsqb">Lisboa, Portugal</a> (420km)</li>
               </ul>
             </div>
           </div>
