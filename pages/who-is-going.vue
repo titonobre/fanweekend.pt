@@ -12,7 +12,7 @@
 
         <div class="countries">
           <div class="country" v-for="({countryCode, countryName, count}) in countries">
-            <img class="flag" :src="flags[countryCode]"  v-bind:alt="countryCode" v-bind:title="countryName" />
+            <img class="flag" :src="flags[countryCode] || unknownFlag"  v-bind:alt="countryCode" v-bind:title="countryName" />
             <span class="is-size-7 has-text-grey-light">{{ count }}</span>
           </div>
         </div>
@@ -36,6 +36,8 @@
 <script>
 import Navigation from '~/components/navigation/Navigation.vue'
 import Disclaimer from '~/components/disclaimer/Disclaimer.vue'
+
+import unknownFlag from '~/assets/icons/question.svg'
 
 const flags = {
   ar: require('~/assets/flags/argentina.svg'),
@@ -89,6 +91,7 @@ export default {
     return {
       entries: [],
       counties: [],
+      unknownFlag,
       flags
     }
   },
