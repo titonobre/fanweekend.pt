@@ -37,6 +37,12 @@ module.exports = {
     lang: 'en'
   },
 
+  workbox: {
+    globIgnores: [
+      'forums/**'
+    ]
+  },
+
   /*
   ** Build configuration
   */
