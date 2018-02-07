@@ -38,8 +38,12 @@ module.exports = {
   },
 
   workbox: {
-    globIgnores: [
-      'forums/**'
+    runtimeCaching: [
+      {
+        // You can use a RegExp as the pattern:
+        urlPattern: /forums\/entry/,
+        handler: 'networkOnly'
+      }
     ]
   },
 
