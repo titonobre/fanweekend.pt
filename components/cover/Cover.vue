@@ -3,12 +3,6 @@
     <div></div>
     <img class="image" src="../coming-soon/circlelogo.png">
     <div class="bottom ">
-      <p class="has-text-centered">
-        <a class="button is-success" target="_blank" rel="noopener" href="https://goo.gl/forms/2O4Z4dUYdrGEgKxi2">
-          <span>Just take me to the registration form</span>
-          <span class="icon"><i class="fa fa-fw fa-pencil-square-o"></i></span>
-        </a>
-      </p>
       <p class="has-text-centered">Scroll down for more details...</p>
     </div>
   </div>
