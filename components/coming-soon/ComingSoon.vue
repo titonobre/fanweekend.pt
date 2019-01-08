@@ -1,6 +1,6 @@
 <template>
   <div class="cenas">
-    <img class="image" src="./circlelogo.png">
+    <img class="image" src="./logo.png">
     <div class="cs">
       Coming Soon!
     </div>
@@ -16,7 +16,7 @@
 
   min-width: 100vw;
   min-height: 100vh;
-  background: url(./bg_1d.png) #458db6;
+  background: url(./background.png) #458db6;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
