@@ -20,7 +20,7 @@ module.exports = {
   /**
    * Modules
    */
-  modules: [["@nuxtjs/google-analytics", { id: "UA-1495990-6" }], "@nuxtjs/pwa", "@nuxtjs/axios", "@nuxtjs/bulma", "@nuxtjs/font-awesome"],
+  modules: [["@nuxtjs/google-analytics", { id: "UA-1495990-4" }], "@nuxtjs/pwa", "@nuxtjs/axios", "@nuxtjs/bulma", "@nuxtjs/font-awesome"],
 
   /*
    ** PWA
@@ -38,6 +38,13 @@ module.exports = {
         handler: "networkOnly",
       },
     ],
+  },
+
+  /**
+   * Routing
+   */
+  router: {
+    base: "/eventos/2021/fanweekend/",
   },
 
   /*
