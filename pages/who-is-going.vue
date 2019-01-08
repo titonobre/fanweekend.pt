@@ -72,7 +72,7 @@ function parseFeed (feed) {
   feed.entry.forEach(function (entry) {
     const col = parseInt(entry.gs$cell.col)
     const row = parseInt(entry.gs$cell.row)
-    const content = entry.content.$t
+    const content = entry.gs$cell.$t
 
     const rowD = rows[row - 1] = rows[row - 1] || []
 
@@ -81,8 +81,6 @@ function parseFeed (feed) {
 
   return rows
 }
-
-const url = 'https://spreadsheets.google.com/feeds/cells/104XL-C_5vjnUGf7Qq2jjlYONYNZgaN50DlGJZcM8hXk/4/public/values?alt=json'
 
 export default {
   components: {
@@ -98,7 +96,7 @@ export default {
     }
   },
   async asyncData ({ app, params }) {
-    const data = await app.$axios.$get(url)
+    const data = await import('~/assets/data/who-is-going.json')
 
     const rows = parseFeed(data.feed)
 
