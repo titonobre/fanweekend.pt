@@ -23,7 +23,7 @@ module.exports = {
    * Modules
    */
   modules: [
-    ['@nuxtjs/google-analytics', { id: 'UA-1495990-6' }],
+    ['@nuxtjs/google-analytics', { id: 'UA-1495990-4' }],
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
     '@nuxtjs/bulma',
@@ -46,6 +46,13 @@ module.exports = {
         handler: 'networkOnly'
       }
     ]
+  },
+
+  /**
+   * Routing
+   */
+  router: {
+    base: '/eventos/2019/fanweekend/'
   },
 
   /*
