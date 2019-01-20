@@ -21,21 +21,31 @@
       </div>
 
       <div class="navbar-end">
-        <nuxt-link to="/who-is-going" class="navbar-item">
+        <!-- <nuxt-link to="/who-is-going" class="navbar-item">
           <span class="icon">
             <i class="fa fa-users"></i>
           </span>
           Who is Going?
-        </nuxt-link>
+        </nuxt-link> -->
         <div class="navbar-item">
           <div class="field is-grouped">
             <p class="control">
-              <a class="button is-link" target="_blank" rel="noopener" href="https://www.facebook.com/groups/fanweekend.pt">
+              <a class="button is-link is-facebook" target="_blank" rel="noopener" href="https://www.facebook.com/groups/fanweekend.pt/">
                 <span class="icon">
                   <i class="fa fa-facebook"></i>
                 </span>
                 <span>
                   Facebook
+                </span>
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-link is-instagram" target="_blank" rel="noopener" href="https://www.instagram.com/pdcfanweekend/">
+                <span class="icon">
+                  <i class="fa fa-instagram"></i>
+                </span>
+                <span>
+                  Instagram
                 </span>
               </a>
             </p>
@@ -149,6 +159,14 @@ export default {
 .navbar.is-at-top .bd-special-shadow,
 .navbar.is-rolled-up .bd-special-shadow {
   opacity: 0;
+}
+
+.button.is-facebook {
+  background-color: #3b5999;
+}
+
+.button.is-instagram {
+  background-color: #e1306c;
 }
 
 </style>

@@ -11,16 +11,16 @@
       </ul>
 
       <p class="has-text-centered">
-        <button disabled class="button is-success" target="_blank" rel="noopener" href="https://goo.gl/forms/2O4Z4dUYdrGEgKxi2">
+        <button disabled class="button is-success" target="_blank" rel="noopener" href="#">
           <span class="icon"><i class="fa fa-fw fa-pencil-square-o"></i></span>
-          <span>Take me to the registration form</span>
+          <span>Registration Form (coming soon)</span>
         </button>
       </p>
 
-      <blockquote><b>Please note</b> the registration slots are limited and will be open until the 28 of February, 2018!</blockquote>
+      <blockquote><b>Please note</b> the registration slots are limited!</blockquote>
 
       <div class="notification is-info">
-        There will also be a special AFOL dinner on Saturday, 9 of June. The dinner is <b>&euro;25</b> per person, with all included.
+        There will also be a special AFOL dinner on Saturday, 8 of June. The dinner is <b>&euro;25</b> per person, with all included.
       </div>
 
       <p>More detailed information is available on the registration form.</p>
