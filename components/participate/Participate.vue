@@ -11,10 +11,10 @@
       </ul>
 
       <p class="has-text-centered">
-        <a class="button is-success" target="_blank" rel="noopener" href="https://goo.gl/v9JjWA">
+        <button disabled class="button is-success" target="_blank" rel="noopener" href="https://goo.gl/v9JjWA">
           <span class="icon"><i class="fa fa-fw fa-pencil-square-o"></i></span>
           <span>Take me to the registration form</span>
-        </a>
+        </button>
       </p>
 
       <blockquote><b>Please note</b> the registration slots are limited!</blockquote>
