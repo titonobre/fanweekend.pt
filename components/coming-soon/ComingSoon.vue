@@ -1,8 +1,13 @@
 <template>
   <div class="cenas">
-    <img class="image" src="./logo.png">
     <div class="cs">
       Coming Soon!
+    </div>
+    <div>
+      Event: Friday, June 12 - Sunday, June 14, 2020
+    </div>
+    <div>
+      Setup: Thursday, June 11, 2020
     </div>
   </div>
 </template>
