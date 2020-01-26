@@ -2,7 +2,7 @@
   <section class="section">
     <div class="container content">
       <h1>When</h1>
-      <p>The event takes place from 7 to 9 of June, 2019. Setup will be on 6 of June, 2019. Be sure to put it into your calendar - and then put a big X next to it!</p>
+      <p>The event takes place from 12 to 14 of June, 2020. Setup will be on 11 of June, 2020. Be sure to put it into your calendar - and then put a big X next to it!</p>
 
       <div class="calendar-container">
         <div class="calendar">
@@ -23,30 +23,25 @@
             <div class="calendar-date">Sun</div>
           </div>
           <div class="calendar-body">
-            <div class="calendar-date" disabled="disabled"><div class="date-item">27</div></div>
-            <div class="calendar-date" disabled="disabled"><div class="date-item">28</div></div>
-            <div class="calendar-date" disabled="disabled"><div class="date-item">29</div></div>
-            <div class="calendar-date" disabled="disabled"><div class="date-item">30</div></div>
-            <div class="calendar-date" disabled="disabled"><div class="date-item">31</div></div>
             <div class="calendar-date"><div class="date-item">1</div></div>
             <div class="calendar-date"><div class="date-item">2</div></div>
             <div class="calendar-date"><div class="date-item">3</div></div>
             <div class="calendar-date"><div class="date-item">4</div></div>
             <div class="calendar-date"><div class="date-item">5</div></div>
-            <div class="calendar-date"><div class="date-item is-today">6</div></div>
-            <div class="calendar-date calendar-range range-start"><div class="date-item is-active">7</div></div>
-            <div class="calendar-date calendar-range"><div class="date-item">8</div></div>
-            <div class="calendar-date calendar-range range-end"><div class="date-item is-active">9</div></div>
+            <div class="calendar-date"><div class="date-item">6</div></div>
+            <div class="calendar-date"><div class="date-item">7</div></div>
+            <div class="calendar-date"><div class="date-item">8</div></div>
+            <div class="calendar-date"><div class="date-item">9</div></div>
             <div class="calendar-date"><div class="date-item">10</div></div>
-            <div class="calendar-date"><div class="date-item">11</div></div>
-            <div class="calendar-date"><div class="date-item">12</div></div>
-            <div class="calendar-date"><div class="date-item">13</div></div>
-            <div class="calendar-date"><div class="date-item">14</div></div>
+            <div class="calendar-date"><div class="date-item is-today">11</div></div>
+            <div class="calendar-date calendar-range range-start"><div class="date-item is-active">12</div></div>
+            <div class="calendar-date calendar-range"><div class="date-item">13</div></div>
+            <div class="calendar-date calendar-range range-end"><div class="date-item is-active">14</div></div>
             <div class="calendar-date"><div class="date-item">15</div></div>
             <div class="calendar-date"><div class="date-item">16</div></div>
             <div class="calendar-date"><div class="date-item">17</div></div>
             <div class="calendar-date"><div class="date-item">18</div></div>
-            <div class="calendar-date"><div class="date-item">19</div></div>
+            <div class="calendar-date"><div class="date-item">18</div></div>
             <div class="calendar-date"><div class="date-item">20</div></div>
             <div class="calendar-date"><div class="date-item">21</div></div>
             <div class="calendar-date"><div class="date-item">22</div></div>
@@ -58,6 +53,11 @@
             <div class="calendar-date"><div class="date-item">28</div></div>
             <div class="calendar-date"><div class="date-item">29</div></div>
             <div class="calendar-date"><div class="date-item">30</div></div>
+            <div class="calendar-date" disabled="disabled"><div class="date-item">1</div></div>
+            <div class="calendar-date" disabled="disabled"><div class="date-item">2</div></div>
+            <div class="calendar-date" disabled="disabled"><div class="date-item">3</div></div>
+            <div class="calendar-date" disabled="disabled"><div class="date-item">4</div></div>
+            <div class="calendar-date" disabled="disabled"><div class="date-item">5</div></div>
           </div>
         </div>
       </div>
