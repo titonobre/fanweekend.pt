@@ -16,24 +16,24 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@nuxtjs/axios": "4.5.2",
-    "@nuxtjs/bulma": "1.1.0",
-    "@nuxtjs/font-awesome": "1.0.3",
-    "@nuxtjs/google-analytics": "2.0.2",
-    "@nuxtjs/pwa": "2.0.5",
-    "nuxt": "1.2.1"
+    "@nuxtjs/axios": "5.9.5",
+    "@nuxtjs/bulma": "1.2.6",
+    "@nuxtjs/font-awesome": "1.0.4",
+    "@nuxtjs/google-analytics": "2.2.3",
+    "@nuxtjs/pwa": "2.6.0",
+    "nuxt": "2.11.0"
   },
   "devDependencies": {
-    "babel-eslint": "8.2.1",
-    "eslint": "4.18.2",
-    "eslint-config-standard": "10.2.1",
-    "eslint-loader": "1.9.0",
-    "eslint-plugin-html": "4.0.2",
-    "eslint-plugin-import": "2.8.0",
-    "eslint-plugin-node": "5.2.1",
-    "eslint-plugin-promise": "3.6.0",
-    "eslint-plugin-standard": "3.0.1",
-    "husky": "0.14.3",
-    "vue-template-compiler": "2.5.13"
+    "babel-eslint": "10.0.3",
+    "eslint": "6.8.0",
+    "eslint-config-standard": "14.1.0",
+    "eslint-loader": "3.0.3",
+    "eslint-plugin-html": "6.0.0",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-node": "11.0.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.0.1",
+    "husky": "4.2.3",
+    "vue-template-compiler": "2.6.11"
   }
 }
