@@ -1,5 +1,7 @@
 # fanweekend.pt
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/comunidade0937/fanweekend.pt.svg)](https://greenkeeper.io/)
+
 > Nuxt.js project
 
 ## Build Setup
