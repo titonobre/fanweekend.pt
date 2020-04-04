@@ -3,6 +3,13 @@
     <div></div>
     <img class="image" src="./logo.png">
     <div class="bottom ">
+      <article class="message is-danger">
+        <div class="message-body">
+          The Paredes de Coura Fan Weekend has been postponed due to the worldwide crisis regarding COVID-19. For more details please check the
+          <a target="_blank" rel="noopener" href="https://fanweekend.pt/forums/">forums</a>.
+        </div>
+      </article>
+
       <p class="has-text-centered">Scroll down for more details...</p>
     </div>
   </div>
@@ -14,6 +21,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  padding: 0 2rem;
 
   min-width: 100vw;
   min-height: 100vh;
