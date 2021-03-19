@@ -13,9 +13,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "precommit": "npm run lint"
   },
   "dependencies": {
     "@nuxtjs/axios": "5.11.0",
@@ -23,8 +21,7 @@
     "@nuxtjs/font-awesome": "1.0.4",
     "@nuxtjs/google-analytics": "2.3.0",
     "@nuxtjs/pwa": "2.6.0",
-    "nuxt": "2.12.2",
-    "snyk": "^1.359.1"
+    "nuxt": "2.12.2"
   },
   "devDependencies": {
     "babel-eslint": "10.1.0",
