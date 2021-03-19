@@ -3,12 +3,6 @@
     <div class="cs">
       Coming Soon!
     </div>
-    <div>
-      Event: Friday, June 12 - Sunday, June 14, 2020
-    </div>
-    <div>
-      Setup: Thursday, June 11, 2020
-    </div>
   </div>
 </template>
 
@@ -21,7 +15,7 @@
 
   min-width: 100vw;
   min-height: 100vh;
-  background: url(./background.png) #458db6;
+  background: url(../cover/background.png) #458db6;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
