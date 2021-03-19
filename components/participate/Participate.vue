@@ -25,14 +25,14 @@
       <p>More detailed information is available on the registration form.</p>
 
       <p class="has-text-centered">
-        <a class="button is-success" target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSdYirW_A-EJGMvWnuKJ3NOROnuxYjbVwvYFqNjbH3I9ElAHdg/viewform">
+        <button class="button is-disabled" disabled>
           <span class="icon"><i class="fa fa-fw fa-pencil-square-o"></i></span>
           <span>Take me to the registration form</span>
-        </a>
+        </button>
       </p>
 
       <blockquote>
-        <b>Please note</b> the registration slots are limited!
+        <b>Please note</b> the registration is now closed!
       </blockquote>
 
       <p>Don't forget to read the latest announcements in the event lobby.</p>
