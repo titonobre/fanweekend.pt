@@ -32,6 +32,15 @@
       <blockquote>
         <b>Please note</b> the registration slots are limited!
       </blockquote>
+
+      <p>Don't forget to read the latest announcements in the lobby.</p>
+
+      <p class="has-text-centered">
+        <nuxt-link to="/lobby" class="button is-success">
+          <span class="icon"><i class="fa fa-fw fa-comments"></i></span>
+          <span>Take me to the Lobby</span>
+        </nuxt-link>
+      </p>
     </div>
   </section>
 </template>

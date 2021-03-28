@@ -1,10 +1,24 @@
 <template>
   <section class="section">
     <div class="container content has-text-centered">
-      <h1>Welcome back to the Paredes de Coura Fan Weekend!</h1>
-      <p>We are very excited to announce that the fifth edition of the Paredes de Coura Fan Weekend is coming soon.</p>
-      <p>We will once again turn the cozy little village of Paredes de Coura in the center stage of the AFOL community. Hosted by the Comunidade 0937 we hope to gather LEGO® fans from all around the world and make this an unforgettable experience with passionate AFOLs, fantastic models and creations and insightful workshops!</p>
-      <p>If you've been there last year, you know what you can expect. If you haven't, you don't know what you've been missing. We have a few surprises up our sleeves for this year.</p>
+      <h1>And we are back!</h1>
+      <p>
+        We are very excited to announce that the fifth edition of the Paredes de
+        Coura Fan Weekend is coming soon, this time for real!
+      </p>
+
+      <p>
+        Since we cannot get together at Paredes de Coura, we will meet at your
+        place. Don't worry, we leave the shoes at the door.
+      </p>
+
+      <p>
+        Has you may have guessed already, this time the event will be online. If
+        you've been to one of the previous events, you know what we are capable
+        of. However, this online thing is a whole new game with great
+        challenges. We are still trying to figure some things out but we are
+        commited to make the best online AFOL event.
+      </p>
     </div>
   </section>
 </template>

@@ -1,15 +1,10 @@
 <template>
-  <div class="cover-page">
-    <div></div>
-    <img class="image" src="./logo.svg">
-    <div class="bottom ">
-      <p class="has-text-centered">Scroll down for more details...</p>
-    </div>
+  <div class="separator-page">
   </div>
 </template>
 
 <style scoped>
-.cover-page {
+.separator-page {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -18,16 +13,12 @@
   padding: 0 2rem;
 
   min-width: 100vw;
-  min-height: 100vh;
-  background: url(./background.svg) #458db6;
+  min-height: 40vh;
+  background: url(../cover/background.svg) #458db6;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
-}
-
-.bottom {
-  padding-bottom: 2rem;
 }
 
 .image {
