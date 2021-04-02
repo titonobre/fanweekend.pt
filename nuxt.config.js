@@ -8,7 +8,7 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'google-site-verification', content: 'NeioT77qHDgGHXPSVvYSKSU1Awjt4rn50MZPCYUG414' },
-      { hid: 'description', name: 'description', content: 'Paredes de Coura Fan Weekend 2018' }
+      { hid: 'description', name: 'description', content: 'Paredes de Coura Fan Weekend 2021' }
     ],
     link: [
       { rel: 'icon', type: 'image/gif', href: '/favicon.gif' }

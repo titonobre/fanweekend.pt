@@ -1,5 +1,5 @@
 <template>
-  <div class="cenas">
+  <div class="soon-page">
     <div class="cs">
       Coming Soon!
     </div>
@@ -7,7 +7,7 @@
 </template>
 
 <style scoped>
-.cenas {
+.soon-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
