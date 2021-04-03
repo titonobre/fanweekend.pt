@@ -3,12 +3,24 @@
     <div class="container content">
       <h1>Be Part of It!</h1>
 
-      <p>There is a registration fee of <b>&euro;110</b> per person that includes the following:</p>
+      <p>
+        You are free to watch the event streaming. But if you want to be part of
+        it, you can.
+      </p>
+
+      <p>
+        There is a participant kit, for the unitary price of <b>&euro;50</b>.
+        This includes:
+      </p>
       <ul>
-          <li>Accommodation in Boarding Houses (B&Bs);</li>
-          <li>Meals: breakfast, lunch, afternoon snacks and dinner;</li>
-          <li>Access to activities, workshops and special offers.</li>
+        <li>Event Merchandising</li>
+        <li>Exclusive Mini Set</li>
+        <li>Raffle Ticket</li>
+        <li>Access and parts to some activities</li>
+        <li>Shipping costs for wherever you are!</li>
       </ul>
+
+      <p>More detailed information is available on the registration form.</p>
 
       <p class="has-text-centered">
         <button class="button is-success is-d" target="_blank" disabled>
@@ -17,22 +29,9 @@
         </button>
       </p>
 
-      <blockquote><b>Please note</b> the registration slots are limited!</blockquote>
-
-      <div class="notification is-info">
-        There will also be a special AFOL dinner on Friday, 12 of June. The dinner is <b>&euro;25</b> per person, with all included.
-      </div>
-
-      <p>More detailed information is available on the registration form.</p>
-
-      <p>Don't forget to read the latest announcements on the forums.</p>
-
-      <p class="has-text-centered">
-        <a class="button is-success" href="https://fanweekend.pt/forums/">
-          <span class="icon"><i class="fa fa-fw fa-comments"></i></span>
-          <span>Take me to the Forums</span>
-        </a>
-      </p>
+      <blockquote>
+        <b>Please note</b> the registration slots are limited!
+      </blockquote>
     </div>
   </section>
 </template>
