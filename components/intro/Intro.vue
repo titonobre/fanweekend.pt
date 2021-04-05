@@ -13,7 +13,7 @@
       </p>
 
       <p>
-        Has you may have guessed already, this time the event will be online. If
+        As you may have guessed already, this time the event will be online. If
         you've been to one of the previous events, you know what we are capable
         of. However, this online thing is a whole new game with great
         challenges. We are still trying to figure some things out but we are
