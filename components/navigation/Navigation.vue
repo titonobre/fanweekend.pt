@@ -49,14 +49,6 @@
                 </span>
               </a>
             </p>
-            <p class="control">
-              <a class="button is-primary" target="_blank" rel="noopener" href="https://fanweekend.pt/forums/">
-                <span class="icon">
-                  <i class="fa fa-comments"></i>
-                </span>
-                <span>Forums</span>
-              </a>
-            </p>
           </div>
         </div>
       </div>
