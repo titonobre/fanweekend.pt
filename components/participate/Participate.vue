@@ -16,8 +16,10 @@
         <li>Event Merchandising</li>
         <li>Exclusive Mini Set</li>
         <li>Raffle Ticket</li>
-        <li>Access and parts to some activities</li>
+        <li>Access to some exclusive activities (LEGO bricks included)</li>
         <li>Shipping costs for wherever you are!</li>
+        <li>Access to the event conference call so you can interact with the hosts and other participants</li>
+        <li>Access to an after-hours online lounge (unfortunatly, this time you will have to provide both the food and drinks)</li>
       </ul>
 
       <p>More detailed information is available on the registration form.</p>
@@ -33,7 +35,7 @@
         <b>Please note</b> the registration slots are limited!
       </blockquote>
 
-      <p>Don't forget to read the latest announcements in the lobby.</p>
+      <p>Don't forget to read the latest announcements in the event lobby.</p>
 
       <p class="has-text-centered">
         <nuxt-link to="/lobby" class="button is-success">
