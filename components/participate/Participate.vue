@@ -25,10 +25,10 @@
       <p>More detailed information is available on the registration form.</p>
 
       <p class="has-text-centered">
-        <button class="button is-success is-d" target="_blank" disabled>
+        <a class="button is-success" target="_blank" rel="noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSdYirW_A-EJGMvWnuKJ3NOROnuxYjbVwvYFqNjbH3I9ElAHdg/viewform">
           <span class="icon"><i class="fa fa-fw fa-pencil-square-o"></i></span>
           <span>Take me to the registration form</span>
-        </button>
+        </a>
       </p>
 
       <blockquote>
