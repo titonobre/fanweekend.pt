@@ -51,6 +51,21 @@
             </p>
             <p class="control">
               <a
+                class="button is-link is-contact"
+                target="_blank"
+                rel="noopener"
+                href="mailto:info@fanweekend.pt"
+              >
+                <span class="icon">
+                  <i class="fa fa-envelope"></i>
+                </span>
+                <span>
+                  Contact
+                </span>
+              </a>
+            </p>
+            <p class="control">
+              <a
                 class="button is-link is-facebook"
                 target="_blank"
                 rel="noopener"
@@ -186,6 +201,10 @@ export default {
 .navbar.is-at-top .bd-special-shadow,
 .navbar.is-rolled-up .bd-special-shadow {
   opacity: 0;
+}
+
+.button.is-contact {
+  background-color: #ffcc00;
 }
 
 .button.is-discord {
