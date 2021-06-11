@@ -5,11 +5,14 @@
       <p>The event takes place on June 19 and 20, 2021.</p>
 
       <h1>Timetable</h1>
-      <blockquote>
-        <b>Please note</b> the times below are displayed according to the
-        timezone <b>{{ timeZone }}</b> configured on the device you are reading
-        this!
-      </blockquote>
+
+      <article class="message">
+        <div class="message-body">
+          <b>Please note</b> the times below are displayed according to the
+          timezone <b>{{ timeZone }}</b> configured on the device you are
+          reading this!
+        </div>
+      </article>
 
       <div class="timeline">
         <template class="timeline-item" v-for="(day, index) of activitiesByDay">

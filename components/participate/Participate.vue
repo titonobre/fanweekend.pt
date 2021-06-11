@@ -31,9 +31,11 @@
         </button>
       </p>
 
-      <blockquote>
-        <b>Please note</b> the registration is now closed!
-      </blockquote>
+      <article class="message">
+        <div class="message-body">
+          <b>Please note</b> the registration is now closed!
+        </div>
+      </article>
 
       <p>Don't forget to read the latest announcements in the event lobby.</p>
 
