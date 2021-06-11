@@ -31,9 +31,7 @@
             <div class="timeline-content">
               <p class="heading">
                 {{ activity.startTimeFormatted }}
-                ({{ activity.startTimeDistance }}) ({{
-                  activity.startTimeRelative
-                }})
+                ({{ activity.startTimeDistance }})
               </p>
               <p>{{ activity.name }}</p>
               <p class="is-size-7" v-if="activity.hosts">
@@ -60,12 +58,10 @@
 <script>
 import { utcToZonedTime } from "date-fns-tz";
 
-import enUS from "date-fns/locale/en-US";
 import isSameDay from "date-fns/isSameDay";
 import parseISO from "date-fns/parseISO";
 import format from "date-fns/format";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
-import formatRelative from "date-fns/formatRelative";
 
 import timetable from "~/data/timetable.json";
 
@@ -79,24 +75,6 @@ const ACTIVITY_STYLES = {
   panel: { icon: "comments-o", color: "success" },
   talk: { icon: "comments-o", color: "success" },
   break: { icon: "cutlery", color: "light" }
-};
-
-// https://date-fns.org/docs/I18n-Contribution-Guide#formatrelative
-// https://github.com/date-fns/date-fns/blob/master/src/locale/en-US/_lib/formatRelative/index.js
-// https://github.com/date-fns/date-fns/issues/1218
-// https://stackoverflow.com/questions/47244216/how-to-customize-date-fnss-formatrelative
-const formatRelativeLocale = {
-  lastWeek: "'Last' eeee",
-  yesterday: "'Yesterday'",
-  today: "'Today'",
-  tomorrow: "'Tomorrow'",
-  nextWeek: "'Next' eeee",
-  other: "dd/MM/yyyy"
-};
-
-const customLocale = {
-  ...enUS,
-  formatRelative: token => formatRelativeLocale[token]
 };
 
 export default {
@@ -114,17 +92,12 @@ export default {
         const startTimeDistance = formatDistanceToNow(parsedStartTime, {
           addSuffix: true
         });
-        const startTimeRelative = formatRelative(parsedStartTime, new Date(), {
-          locale: customLocale,
-          weekStartsOn: 1
-        });
 
         return {
           ...activity,
           style,
           startTimeFormatted,
-          startTimeDistance,
-          startTimeRelative
+          startTimeDistance
         };
       })
       .reduce((acc, activity) => {
@@ -140,17 +113,15 @@ export default {
 
         const tzLastStartTime = utcToZonedTime(
           parseISO(lastActivity.startTime),
-          timeZone
+          eventTimeZone
         );
 
         const tzCurrStartTime = utcToZonedTime(
           parseISO(activity.startTime),
-          timeZone
+          eventTimeZone
         );
 
-        const sameDay = isSameDay(tzLastStartTime, tzCurrStartTime);
-
-        if (sameDay) {
+        if (isSameDay(tzLastStartTime, tzCurrStartTime)) {
           return [...firstGroups, [...lastGroup, activity]];
         }
 
