@@ -28,7 +28,11 @@
             </div>
 
             <div class="timeline-content">
-              <p class="heading">{{ activity.startTimeFormatted }}</p>
+              <p class="heading">
+                {{ activity.startTimeFormatted }} ({{
+                  activity.startTimeDistance
+                }})
+              </p>
               <p>{{ activity.name }}</p>
               <p class="is-size-7" v-if="activity.hosts">
                 <i
@@ -57,6 +61,7 @@ import { utcToZonedTime } from "date-fns-tz";
 import isSameDay from "date-fns/isSameDay";
 import parseISO from "date-fns/parseISO";
 import format from "date-fns/format";
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 import timetable from "~/data/timetable.json";
 
@@ -81,12 +86,14 @@ export default {
       .map(activity => {
         const style = ACTIVITY_STYLES[activity.type] || ACTIVITY_STYLES.default;
 
-        const startTimeFormatted = format(
-          parseISO(activity.startTime),
-          "HH:mm"
-        );
+        const parsedStartTime = parseISO(activity.startTime);
 
-        return { ...activity, style, startTimeFormatted };
+        const startTimeFormatted = format(parsedStartTime, "HH:mm");
+        const startTimeDistance = formatDistanceToNow(parsedStartTime, {
+          addSuffix: true
+        });
+
+        return { ...activity, style, startTimeFormatted, startTimeDistance };
       })
       .reduce((acc, activity) => {
         const lastGroup = acc.slice(-1)?.[0];
