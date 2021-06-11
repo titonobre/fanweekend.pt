@@ -80,56 +80,68 @@ const ACTIVITY_STYLES = {
   break: { icon: "cutlery", color: "light" }
 };
 
+function getActivitiesByDay() {
+  return timetable
+    .map(activity => {
+      const style = ACTIVITY_STYLES[activity.type] || ACTIVITY_STYLES.default;
+
+      const parsedStartTime = parseISO(activity.startTime);
+
+      const startTimeFormatted = format(parsedStartTime, "HH:mm");
+      const startTimeDistance = formatDistanceToNow(parsedStartTime, {
+        addSuffix: true
+      });
+
+      return {
+        ...activity,
+        style,
+        startTimeFormatted,
+        startTimeDistance
+      };
+    })
+    .reduce((acc, activity) => {
+      const lastGroup = acc.slice(-1)?.[0];
+
+      if (!lastGroup) {
+        return [[activity]];
+      }
+
+      const firstGroups = acc.slice(0, -1);
+
+      const lastActivity = lastGroup.slice(-1)?.[0];
+
+      const tzLastStartTime = utcToZonedTime(
+        parseISO(lastActivity.startTime),
+        eventTimeZone
+      );
+
+      const tzCurrStartTime = utcToZonedTime(
+        parseISO(activity.startTime),
+        eventTimeZone
+      );
+
+      if (isSameDay(tzLastStartTime, tzCurrStartTime)) {
+        return [...firstGroups, [...lastGroup, activity]];
+      }
+
+      return [...firstGroups, lastGroup, [activity]];
+    }, []);
+}
+
 export default {
+  mounted() {
+    setTimeout(
+      () => {
+        this.activitiesByDay = getActivitiesByDay();
+      },
+      1000 * 60 * 5 // five minutes
+    );
+  },
   data() {
     const timeZone =
       Intl.DateTimeFormat().resolvedOptions().timeZone || "Unknown";
 
-    const activitiesByDay = timetable
-      .map(activity => {
-        const style = ACTIVITY_STYLES[activity.type] || ACTIVITY_STYLES.default;
-
-        const parsedStartTime = parseISO(activity.startTime);
-
-        const startTimeFormatted = format(parsedStartTime, "HH:mm");
-        const startTimeDistance = formatDistanceToNow(parsedStartTime, {
-          addSuffix: true
-        });
-
-        return {
-          ...activity,
-          style,
-          startTimeFormatted,
-          startTimeDistance
-        };
-      })
-      .reduce((acc, activity) => {
-        const lastGroup = acc.slice(-1)?.[0];
-
-        if (!lastGroup) {
-          return [[activity]];
-        }
-
-        const firstGroups = acc.slice(0, -1);
-
-        const lastActivity = lastGroup.slice(-1)?.[0];
-
-        const tzLastStartTime = utcToZonedTime(
-          parseISO(lastActivity.startTime),
-          eventTimeZone
-        );
-
-        const tzCurrStartTime = utcToZonedTime(
-          parseISO(activity.startTime),
-          eventTimeZone
-        );
-
-        if (isSameDay(tzLastStartTime, tzCurrStartTime)) {
-          return [...firstGroups, [...lastGroup, activity]];
-        }
-
-        return [...firstGroups, lastGroup, [activity]];
-      }, []);
+    const activitiesByDay = getActivitiesByDay();
 
     return { timeZone, activitiesByDay };
   }
