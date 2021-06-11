@@ -4,6 +4,12 @@
       <h1>When</h1>
       <p>The event takes place on 19 and 20 of June, 2021.</p>
 
+      <blockquote>
+        <b>Please note</b> the times bellow are displayed according to the
+        timezone <b>{{ timeZone }}</b> configured on the device you are reading
+        this!
+      </blockquote>
+
       <div class="timeline">
         <template class="timeline-item" v-for="(day, index) of activitiesByDay">
           <header class="timeline-header" v-bind:key="index">
@@ -68,6 +74,9 @@ const ACTIVITY_STYLES = {
 
 export default {
   data() {
+    const timeZone =
+      Intl.DateTimeFormat().resolvedOptions().timeZone || "Unknown";
+
     const activitiesByDay = timetable
       .map(activity => {
         const style = ACTIVITY_STYLES[activity.type] || ACTIVITY_STYLES.default;
@@ -109,9 +118,7 @@ export default {
         return [...firstGroups, lastGroup, [activity]];
       }, []);
 
-    return {
-      activitiesByDay
-    };
+    return { timeZone, activitiesByDay };
   }
 };
 </script>
