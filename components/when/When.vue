@@ -2,10 +2,11 @@
   <section class="section">
     <div class="container content">
       <h1>When</h1>
-      <p>The event takes place on 19 and 20 of June, 2021.</p>
+      <p>The event takes place on June 19 and 20, 2021.</p>
 
+      <h1>Timetable</h1>
       <blockquote>
-        <b>Please note</b> the times bellow are displayed according to the
+        <b>Please note</b> the times below are displayed according to the
         timezone <b>{{ timeZone }}</b> configured on the device you are reading
         this!
       </blockquote>
@@ -29,8 +30,9 @@
 
             <div class="timeline-content">
               <p class="heading">
-                {{ activity.startTimeFormatted }} ({{
-                  activity.startTimeDistance
+                {{ activity.startTimeFormatted }}
+                ({{ activity.startTimeDistance }}) ({{
+                  activity.startTimeRelative
                 }})
               </p>
               <p>{{ activity.name }}</p>
@@ -58,10 +60,12 @@
 <script>
 import { utcToZonedTime } from "date-fns-tz";
 
+import enUS from "date-fns/locale/en-US";
 import isSameDay from "date-fns/isSameDay";
 import parseISO from "date-fns/parseISO";
 import format from "date-fns/format";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import formatRelative from "date-fns/formatRelative";
 
 import timetable from "~/data/timetable.json";
 
@@ -75,6 +79,24 @@ const ACTIVITY_STYLES = {
   panel: { icon: "comments-o", color: "success" },
   talk: { icon: "comments-o", color: "success" },
   break: { icon: "cutlery", color: "light" }
+};
+
+// https://date-fns.org/docs/I18n-Contribution-Guide#formatrelative
+// https://github.com/date-fns/date-fns/blob/master/src/locale/en-US/_lib/formatRelative/index.js
+// https://github.com/date-fns/date-fns/issues/1218
+// https://stackoverflow.com/questions/47244216/how-to-customize-date-fnss-formatrelative
+const formatRelativeLocale = {
+  lastWeek: "'Last' eeee",
+  yesterday: "'Yesterday'",
+  today: "'Today'",
+  tomorrow: "'Tomorrow'",
+  nextWeek: "'Next' eeee",
+  other: "dd/MM/yyyy"
+};
+
+const customLocale = {
+  ...enUS,
+  formatRelative: token => formatRelativeLocale[token]
 };
 
 export default {
@@ -92,8 +114,18 @@ export default {
         const startTimeDistance = formatDistanceToNow(parsedStartTime, {
           addSuffix: true
         });
+        const startTimeRelative = formatRelative(parsedStartTime, new Date(), {
+          locale: customLocale,
+          weekStartsOn: 1
+        });
 
-        return { ...activity, style, startTimeFormatted, startTimeDistance };
+        return {
+          ...activity,
+          style,
+          startTimeFormatted,
+          startTimeDistance,
+          startTimeRelative
+        };
       })
       .reduce((acc, activity) => {
         const lastGroup = acc.slice(-1)?.[0];
@@ -108,12 +140,12 @@ export default {
 
         const tzLastStartTime = utcToZonedTime(
           parseISO(lastActivity.startTime),
-          eventTimeZone
+          timeZone
         );
 
         const tzCurrStartTime = utcToZonedTime(
           parseISO(activity.startTime),
-          eventTimeZone
+          timeZone
         );
 
         const sameDay = isSameDay(tzLastStartTime, tzCurrStartTime);
