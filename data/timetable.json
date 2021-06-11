@@ -45,7 +45,7 @@
     "type": "talk",
     "startTime": "2021-06-19T13:00:00.000Z",
     "name": "Panel: BrickLink AFOL Design Program & LEGO Ideas",
-    "hosts": ["Tanja Friberg", "Hasan Jensen ", "Marvin Park"]
+    "hosts": ["Tanja Friberg", "Hasan Jensen", "Marvin Park"]
   },
   {
     "id": "48bda7f6",
@@ -92,8 +92,15 @@
     "id": "3a5b97e0",
     "type": "presentation",
     "startTime": "2021-06-20T10:00:00.000Z",
-    "name": "Presentation",
+    "name": "Presentation: A MOC analysis",
     "hosts": ["Jonas Kramm"]
+  },
+  {
+    "id": "2af84d22",
+    "type": "presentation",
+    "startTime": "2021-06-20T11:00:00.000Z",
+    "name": "Presentation",
+    "hosts": ["Tiago Reis Catarino"]
   },
   {
     "id": "1b950264",
@@ -128,53 +135,5 @@
     "startTime": "2021-06-20T16:00:00.000Z",
     "name": "Closing Message",
     "hosts": ["Miguel Reizinho"]
-  },
-  {
-    "id": "222136f0",
-    "type": "info",
-    "startTime": "2021-06-11T16:00:00.000Z",
-    "name": "Debug ISO 2021-06-11T16:00:00.000Z"
-  },
-  {
-    "id": "222136f1",
-    "type": "info",
-    "startTime": "2021-06-12T08:00:00.000Z",
-    "name": "Debug ISO 2021-06-12T08:00:00.000Z"
-  },
-  {
-    "id": "222136f2",
-    "type": "info",
-    "startTime": "2021-06-12T09:00:00.000Z",
-    "name": "Debug ISO 2021-06-12T09:00:00.000Z"
-  },
-  {
-    "id": "222136f3",
-    "type": "info",
-    "startTime": "2021-06-12T10:00:00.000Z",
-    "name": "Debug ISO 2021-06-12T10:00:00.000Z"
-  },
-  {
-    "id": "222136f4",
-    "type": "info",
-    "startTime": "2021-06-12T11:00:00.000Z",
-    "name": "Debug ISO 2021-06-12T11:00:00.000Z"
-  },
-  {
-    "id": "222136f5",
-    "type": "info",
-    "startTime": "2021-06-12T12:00:00.000Z",
-    "name": "Debug ISO 2021-06-12T12:00:00.000Z"
-  },
-  {
-    "id": "222136f6",
-    "type": "info",
-    "startTime": "2021-06-15T12:00:00.000Z",
-    "name": "Debug ISO 2021-06-15T12:00:00.000Z"
-  },
-  {
-    "id": "222136f7",
-    "type": "info",
-    "startTime": "2021-06-16T12:00:00.000Z",
-    "name": "Debug ISO 2021-06-16T12:00:00.000Z"
   }
 ]
