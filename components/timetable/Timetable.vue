@@ -31,9 +31,16 @@
             <div class="timeline-content">
               <p class="heading">
                 {{ activity.startTimeFormatted }}
-                ({{ activity.startTimeDistance }})
+                <span v-if="activity.isFuture"
+                  >({{ activity.startTimeDistance }})</span
+                >
+                <span class="tag is-danger is-custom" v-if="activity.isLiveNow"
+                  >Live</span
+                >
               </p>
-              <p>{{ activity.name }}</p>
+              <p>
+                {{ activity.name }}
+              </p>
               <p class="is-size-7" v-if="activity.hosts">
                 <i
                   class="fa"
@@ -59,6 +66,8 @@
 import { utcToZonedTime } from "date-fns-tz";
 
 import isSameDay from "date-fns/isSameDay";
+import isBefore from "date-fns/isBefore";
+import isAfter from "date-fns/isAfter";
 import parseISO from "date-fns/parseISO";
 import format from "date-fns/format";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
@@ -83,17 +92,27 @@ function getActivitiesByDay() {
       const style = ACTIVITY_STYLES[activity.type] || ACTIVITY_STYLES.default;
 
       const parsedStartTime = parseISO(activity.startTime);
+      const parsedEndTime = parseISO(activity.endTime);
 
       const startTimeFormatted = format(parsedStartTime, "HH:mm");
       const startTimeDistance = formatDistanceToNow(parsedStartTime, {
         addSuffix: true
       });
 
+      const now = new Date();
+
+      const isFuture = isAfter(parsedStartTime, now);
+
+      const isLiveNow =
+        isAfter(now, parsedStartTime) && isBefore(now, parsedEndTime);
+
       return {
         ...activity,
         style,
         startTimeFormatted,
-        startTimeDistance
+        startTimeDistance,
+        isFuture,
+        isLiveNow
       };
     })
     .reduce((acc, activity) => {
@@ -131,7 +150,7 @@ export default {
       () => {
         this.activitiesByDay = getActivitiesByDay();
       },
-      1000 * 60 * 5 // five minutes
+      1000 * 60 // every minute
     );
   },
   data() {
@@ -147,4 +166,9 @@ export default {
 
 <style>
 @import url(bulma-timeline/dist/css/bulma-timeline.min.css);
+
+.tag:not(body).is-custom {
+  font-size: 11px;
+  height: initial;
+}
 </style>
