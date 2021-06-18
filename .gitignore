@@ -15,3 +15,4 @@ dist
 .history
 
 /.vscode
+.DS_Store
