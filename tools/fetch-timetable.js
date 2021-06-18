@@ -29,17 +29,19 @@ function parseFeed(feed) {
 
     const activities = parsedFeed
       .slice(3)
-      .filter(row => !!row[1])
+      .filter(row => !!row[1] || !!row[2])
       .map(row => {
         const date = row[0];
         const startTime = row[1];
-        const name = row[2]?.split("\n").join(" + ");
-        const hosts = row[3]?.split("\n");
-        const type = row[6];
+        const endTime = row[2];
+        const name = row[3]?.split("\n").join(" + ");
+        const hosts = row[4]?.split("\n");
+        const type = row[7];
         return {
           type,
           date,
           startTime,
+          endTime,
           name,
           hosts
         };
@@ -56,6 +58,15 @@ function parseFeed(feed) {
           };
 
           return [...acc, newActivity];
+        } else if (row.endTime) {
+          const firstActivities = acc.slice(0, -1);
+
+          const extendedLastActivity = {
+            ...lastActivity,
+            endTime: row.endTime
+          };
+
+          return [...firstActivities, extendedLastActivity];
         }
 
         return acc;
@@ -67,11 +78,13 @@ function parseFeed(feed) {
           "HH:mm",
           parsedDate
         );
+        const parsedEndTime = parseDate(activity.endTime, "HH:mm", parsedDate);
 
         return {
           ...activity,
           date: parsedDate,
-          startTime: parsedStartTime?.toISOString()
+          startTime: parsedStartTime?.toISOString(),
+          endTime: parsedEndTime?.toISOString()
         };
       })
       .map(activity => {
@@ -87,7 +100,7 @@ function parseFeed(feed) {
 
     await fsp.writeFile(
       "data/timetable.json",
-      JSON.stringify(activities, undefined, 4),
+      JSON.stringify(activities, undefined, 2),
       "utf8"
     );
   } catch (error) {

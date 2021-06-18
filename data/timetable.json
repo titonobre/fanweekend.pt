@@ -3,6 +3,7 @@
     "id": "790136f1",
     "type": "info",
     "startTime": "2021-06-19T08:00:00.000Z",
+    "endTime": "2021-06-19T08:30:00.000Z",
     "name": "Welcome Message",
     "hosts": ["Jan Beyer", "Miguel Reizinho"]
   },
@@ -10,6 +11,7 @@
     "id": "55dd8a4e",
     "type": "info",
     "startTime": "2021-06-19T08:30:00.000Z",
+    "endTime": "2021-06-19T09:00:00.000Z",
     "name": "Iron Forge - Announcement",
     "hosts": ["Markus Rollbühler"]
   },
@@ -17,6 +19,7 @@
     "id": "fe9a4760",
     "type": "presentation",
     "startTime": "2021-06-19T09:00:00.000Z",
+    "endTime": "2021-06-19T10:00:00.000Z",
     "name": "Presentation - Brickvention",
     "hosts": ["Michael Peebles"]
   },
@@ -24,6 +27,7 @@
     "id": "29f7127a",
     "type": "presentation",
     "startTime": "2021-06-19T10:00:00.000Z",
+    "endTime": "2021-06-19T11:00:00.000Z",
     "name": "Presentation - Minifigs",
     "hosts": ["Tore Alexandersen"]
   },
@@ -31,6 +35,7 @@
     "id": "31a8b7d9",
     "type": "presentation",
     "startTime": "2021-06-19T11:00:00.000Z",
+    "endTime": "2021-06-19T12:00:00.000Z",
     "name": "Presentation - Fairy Bricks",
     "hosts": ["Kevin Gascoigne"]
   },
@@ -38,12 +43,14 @@
     "id": "395a5d38",
     "type": "break",
     "startTime": "2021-06-19T12:00:00.000Z",
+    "endTime": "2021-06-19T13:00:00.000Z",
     "name": "Lunch Break"
   },
   {
     "id": "410c0297",
     "type": "talk",
     "startTime": "2021-06-19T13:00:00.000Z",
+    "endTime": "2021-06-19T14:00:00.000Z",
     "name": "Panel: BrickLink AFOL Design Program & LEGO Ideas",
     "hosts": ["Tanja Friberg", "Hasan Jensen", "Marvin Park"]
   },
@@ -51,6 +58,7 @@
     "id": "48bda7f6",
     "type": "talk",
     "startTime": "2021-06-19T14:00:00.000Z",
+    "endTime": "2021-06-19T15:00:00.000Z",
     "name": "Panel: From 0937 to LEGO Designers",
     "hosts": [
       "Marcos Bessa",
@@ -64,6 +72,7 @@
     "id": "506f4d55",
     "type": "talk",
     "startTime": "2021-06-19T15:00:00.000Z",
+    "endTime": "2021-06-19T16:00:00.000Z",
     "name": "Talk: The Shaping of Spaceships",
     "hosts": ["Nick Trotta"]
   },
@@ -71,6 +80,7 @@
     "id": "5820f2b4",
     "type": "game",
     "startTime": "2021-06-19T16:00:00.000Z",
+    "endTime": "2021-06-19T16:30:00.000Z",
     "name": "LEGO Batman Puzzle Challenge",
     "hosts": ["Rod Gillies"]
   },
@@ -78,6 +88,7 @@
     "id": "31dc5887",
     "type": "presentation",
     "startTime": "2021-06-20T08:00:00.000Z",
+    "endTime": "2021-06-20T09:00:00.000Z",
     "name": "Presentation - Classic themes are dead... or are they?",
     "hosts": ["Richard Jones"]
   },
@@ -85,6 +96,7 @@
     "id": "398dfde6",
     "type": "presentation",
     "startTime": "2021-06-20T09:00:00.000Z",
+    "endTime": "2021-06-20T10:00:00.000Z",
     "name": "Presentation - From Neo Classic Space to Neo Fabuland",
     "hosts": ["Dale Harris"]
   },
@@ -92,6 +104,7 @@
     "id": "3a5b97e0",
     "type": "presentation",
     "startTime": "2021-06-20T10:00:00.000Z",
+    "endTime": "2021-06-20T11:00:00.000Z",
     "name": "Presentation: A MOC analysis",
     "hosts": ["Jonas Kramm"]
   },
@@ -99,6 +112,7 @@
     "id": "2af84d22",
     "type": "presentation",
     "startTime": "2021-06-20T11:00:00.000Z",
+    "endTime": "2021-06-20T12:00:00.000Z",
     "name": "Presentation",
     "hosts": ["Tiago Reis Catarino"]
   },
@@ -106,12 +120,14 @@
     "id": "1b950264",
     "type": "break",
     "startTime": "2021-06-20T12:00:00.000Z",
+    "endTime": "2021-06-20T13:00:00.000Z",
     "name": "Lunch Break"
   },
   {
     "id": "0c31b7a6",
     "type": "presentation",
     "startTime": "2021-06-20T13:00:00.000Z",
+    "endTime": "2021-06-20T14:00:00.000Z",
     "name": "Presentation - Bricknerd",
     "hosts": ["Dave Schefcik"]
   },
@@ -119,6 +135,7 @@
     "id": "0198c98c",
     "type": "game",
     "startTime": "2021-06-20T14:00:00.000Z",
+    "endTime": "2021-06-20T15:30:00.000Z",
     "name": "Raffle + Quiz",
     "hosts": ["Kevin Gascoigne", "Miguel Reizinho", "Are M. Heiseldal"]
   },
@@ -126,6 +143,7 @@
     "id": "33b27b70",
     "type": "game",
     "startTime": "2021-06-20T15:30:00.000Z",
+    "endTime": "2021-06-20T16:00:00.000Z",
     "name": "Iron forge - Competition Winners",
     "hosts": ["Markus Rollbühler", "Simon Liu"]
   },
@@ -133,6 +151,7 @@
     "id": "10fc144a",
     "type": "info",
     "startTime": "2021-06-20T16:00:00.000Z",
+    "endTime": "2021-06-20T16:30:00.000Z",
     "name": "Closing Message",
     "hosts": ["Miguel Reizinho"]
   }
