@@ -30,7 +30,7 @@ export default {
     When,
     Timetable,
     Participate,
-    Disclaimer
-  }
+    Disclaimer,
+  },
 };
 </script>

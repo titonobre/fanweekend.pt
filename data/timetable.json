@@ -60,13 +60,7 @@
     "startTime": "2021-06-19T14:00:00.000Z",
     "endTime": "2021-06-19T15:00:00.000Z",
     "name": "Panel: From 0937 to LEGO Designers",
-    "hosts": [
-      "Marcos Bessa",
-      "António Ricardo Silva",
-      "César Soares",
-      "Pablo Gonzalez",
-      "Tiago Reis Catarino"
-    ]
+    "hosts": ["Marcos Bessa", "António Ricardo Silva", "César Soares", "Pablo Gonzalez", "Tiago Reis Catarino"]
   },
   {
     "id": "506f4d55",

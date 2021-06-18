@@ -5,8 +5,7 @@
 
       <article class="message">
         <div class="message-body">
-          <b>Please note</b> the times below are displayed according to the
-          timezone <b>{{ timeZone }}</b> configured on the device you are
+          <b>Please note</b> the times below are displayed according to the timezone <b>{{ timeZone }}</b> configured on the device you are
           reading this!
         </div>
       </article>
@@ -16,38 +15,22 @@
           <header class="timeline-header" v-bind:key="index">
             <span class="tag is-medium is-primary">Day {{ index + 1 }}</span>
           </header>
-          <div
-            class="timeline-item"
-            v-for="activity of day"
-            v-bind:key="activity.id"
-          >
-            <div
-              class="timeline-marker is-icon"
-              v-bind:class="['is-' + activity.style.color]"
-            >
+          <div class="timeline-item" v-for="activity of day" v-bind:key="activity.id">
+            <div class="timeline-marker is-icon" v-bind:class="['is-' + activity.style.color]">
               <i class="fa" v-bind:class="['fa-' + activity.style.icon]"></i>
             </div>
 
             <div class="timeline-content">
               <p class="heading">
                 {{ activity.startTimeFormatted }}
-                <span v-if="activity.isFuture"
-                  >({{ activity.startTimeDistance }})</span
-                >
-                <span class="tag is-danger is-custom" v-if="activity.isLiveNow"
-                  >Live</span
-                >
+                <span v-if="activity.isFuture">({{ activity.startTimeDistance }})</span>
+                <span class="tag is-danger is-custom" v-if="activity.isLiveNow">Live</span>
               </p>
               <p>
                 {{ activity.name }}
               </p>
               <p class="is-size-7" v-if="activity.hosts">
-                <i
-                  class="fa"
-                  v-bind:class="[
-                    activity.hosts.length > 1 ? 'fa-users' : 'fa-user'
-                  ]"
-                ></i>
+                <i class="fa" v-bind:class="[activity.hosts.length > 1 ? 'fa-users' : 'fa-user']"></i>
                 {{ activity.hosts.join(", ") }}
               </p>
             </div>
@@ -83,12 +66,12 @@ const ACTIVITY_STYLES = {
   presentation: { icon: "picture-o", color: "danger" },
   panel: { icon: "comments-o", color: "success" },
   talk: { icon: "comments-o", color: "success" },
-  break: { icon: "cutlery", color: "light" }
+  break: { icon: "cutlery", color: "light" },
 };
 
 function getActivitiesByDay() {
   return timetable
-    .map(activity => {
+    .map((activity) => {
       const style = ACTIVITY_STYLES[activity.type] || ACTIVITY_STYLES.default;
 
       const parsedStartTime = parseISO(activity.startTime);
@@ -96,15 +79,14 @@ function getActivitiesByDay() {
 
       const startTimeFormatted = format(parsedStartTime, "HH:mm");
       const startTimeDistance = formatDistanceToNow(parsedStartTime, {
-        addSuffix: true
+        addSuffix: true,
       });
 
       const now = new Date();
 
       const isFuture = isAfter(parsedStartTime, now);
 
-      const isLiveNow =
-        isAfter(now, parsedStartTime) && isBefore(now, parsedEndTime);
+      const isLiveNow = isAfter(now, parsedStartTime) && isBefore(now, parsedEndTime);
 
       return {
         ...activity,
@@ -112,7 +94,7 @@ function getActivitiesByDay() {
         startTimeFormatted,
         startTimeDistance,
         isFuture,
-        isLiveNow
+        isLiveNow,
       };
     })
     .reduce((acc, activity) => {
@@ -126,15 +108,9 @@ function getActivitiesByDay() {
 
       const lastActivity = lastGroup.slice(-1)?.[0];
 
-      const tzLastStartTime = utcToZonedTime(
-        parseISO(lastActivity.startTime),
-        eventTimeZone
-      );
+      const tzLastStartTime = utcToZonedTime(parseISO(lastActivity.startTime), eventTimeZone);
 
-      const tzCurrStartTime = utcToZonedTime(
-        parseISO(activity.startTime),
-        eventTimeZone
-      );
+      const tzCurrStartTime = utcToZonedTime(parseISO(activity.startTime), eventTimeZone);
 
       if (isSameDay(tzLastStartTime, tzCurrStartTime)) {
         return [...firstGroups, [...lastGroup, activity]];
@@ -154,13 +130,12 @@ export default {
     );
   },
   data() {
-    const timeZone =
-      Intl.DateTimeFormat().resolvedOptions().timeZone || "Unknown";
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || "Unknown";
 
     const activitiesByDay = getActivitiesByDay();
 
     return { timeZone, activitiesByDay };
-  }
+  },
 };
 </script>
 

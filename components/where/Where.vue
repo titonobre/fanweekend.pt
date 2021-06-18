@@ -2,18 +2,23 @@
   <section class="section">
     <div class="container">
       <div class="content">
-        <h1>
-          Where
-        </h1>
+        <h1>Where</h1>
 
-        <p>The event takes place in the town of Paredes de Coura, located in Northern Portugal in the district of Viana do Castelo, 100 km away from Porto in Portugal and 50 km from Vigo in Spain.</p>
+        <p>
+          The event takes place in the town of Paredes de Coura, located in Northern Portugal in the district of Viana do Castelo, 100 km
+          away from Porto in Portugal and 50 km from Vigo in Spain.
+        </p>
 
         <div class="tile is-ancestor">
           <div class="tile is-parent">
             <div class="tile is-child">
-
               <p class="has-text-centered">
-                <a class="button is-success" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/My+Location/Paredes+de+Coura">
+                <a
+                  class="button is-success"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://www.google.com/maps/dir/My+Location/Paredes+de+Coura"
+                >
                   <span class="icon">
                     <i class="fa fa-fw fa-map-signs"></i>
                   </span>
@@ -30,8 +35,10 @@
               <h4>GPS Coordinates</h4>
               <p>
                 41°54'42.90"N 8°33'46.18"W
-                <br/>
-                <a target="_blank" rel="noopener" href="https://goo.gl/maps/gZ8RhfG381J2"><i class="fa fa-map-o"></i> view on Google Maps</a>
+                <br />
+                <a target="_blank" rel="noopener" href="https://goo.gl/maps/gZ8RhfG381J2"
+                  ><i class="fa fa-map-o"></i> view on Google Maps</a
+                >
               </p>
 
               <h4>Directions</h4>
@@ -79,5 +86,4 @@
     overflow: visible;
   }
 }
-
 </style>

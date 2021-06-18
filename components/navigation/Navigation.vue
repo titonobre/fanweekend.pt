@@ -4,18 +4,12 @@
     v-bind:class="{
       'is-rolled-up': navbarHidden,
       'is-at-top': hideAtTop && lastScrollPosition === 0,
-      'is-expanded': navbarMenuOpen
+      'is-expanded': navbarMenuOpen,
     }"
   >
     <div class="navbar-brand">
-      <nuxt-link to="/" class="navbar-item">
-        Paredes de Coura Fan Weekend
-      </nuxt-link>
-      <div
-        class="navbar-burger burger"
-        v-bind:class="{ 'is-active': navbarMenuOpen }"
-        @click="toggle"
-      >
+      <nuxt-link to="/" class="navbar-item"> Paredes de Coura Fan Weekend </nuxt-link>
+      <div class="navbar-burger burger" v-bind:class="{ 'is-active': navbarMenuOpen }" @click="toggle">
         <span></span>
         <span></span>
         <span></span>
@@ -35,63 +29,35 @@
         <div class="navbar-item">
           <div class="field is-grouped">
             <p class="control">
-              <a
-                class="button is-link is-discord"
-                target="_blank"
-                rel="noopener"
-                href="https://discord.gg/CTtYfD2S6Y"
-              >
+              <a class="button is-link is-discord" target="_blank" rel="noopener" href="https://discord.gg/CTtYfD2S6Y">
                 <span class="icon">
                   <img class="image" src="./discord.svg" />
                 </span>
-                <span>
-                  Discord
-                </span>
+                <span> Discord </span>
               </a>
             </p>
             <p class="control">
-              <a
-                class="button is-link is-contact"
-                target="_blank"
-                rel="noopener"
-                href="mailto:info@fanweekend.pt"
-              >
+              <a class="button is-link is-contact" target="_blank" rel="noopener" href="mailto:info@fanweekend.pt">
                 <span class="icon">
                   <i class="fa fa-envelope"></i>
                 </span>
-                <span>
-                  Contact
-                </span>
+                <span> Contact </span>
               </a>
             </p>
             <p class="control">
-              <a
-                class="button is-link is-facebook"
-                target="_blank"
-                rel="noopener"
-                href="https://www.facebook.com/groups/fanweekend.pt/"
-              >
+              <a class="button is-link is-facebook" target="_blank" rel="noopener" href="https://www.facebook.com/groups/fanweekend.pt/">
                 <span class="icon">
                   <i class="fa fa-facebook"></i>
                 </span>
-                <span>
-                  Facebook
-                </span>
+                <span> Facebook </span>
               </a>
             </p>
             <p class="control">
-              <a
-                class="button is-link is-instagram"
-                target="_blank"
-                rel="noopener"
-                href="https://www.instagram.com/pdcfanweekend/"
-              >
+              <a class="button is-link is-instagram" target="_blank" rel="noopener" href="https://www.instagram.com/pdcfanweekend/">
                 <span class="icon">
                   <i class="fa fa-instagram"></i>
                 </span>
-                <span>
-                  Instagram
-                </span>
+                <span> Instagram </span>
               </a>
             </p>
           </div>
@@ -107,15 +73,15 @@ export default {
   props: {
     hideAtTop: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
   data() {
     return {
       navbarHidden: false,
       navbarMenuOpen: false,
-      lastScrollPosition: 0
+      lastScrollPosition: 0,
     };
   },
 
@@ -124,29 +90,23 @@ export default {
       this.navbarMenuOpen = !this.navbarMenuOpen;
     },
 
-    handleScroll: function(event) {
+    handleScroll: function (event) {
       const scrollPosition = window.pageYOffset | document.body.scrollTop;
 
       const threshold = 56; // navbar height
 
-      if (
-        this.lastScrollPosition < scrollPosition &&
-        scrollPosition > threshold + threshold
-      ) {
+      if (this.lastScrollPosition < scrollPosition && scrollPosition > threshold + threshold) {
         this.navbarHidden = true;
         this.navbarMenuOpen = false;
-      } else if (
-        this.lastScrollPosition > scrollPosition &&
-        !(scrollPosition <= threshold)
-      ) {
+      } else if (this.lastScrollPosition > scrollPosition && !(scrollPosition <= threshold)) {
         this.navbarHidden = false;
       }
 
       this.lastScrollPosition = scrollPosition;
-    }
+    },
   },
 
-  created: function() {
+  created: function () {
     if (process.browser) {
       window.addEventListener("scroll", this.handleScroll);
     }
@@ -156,11 +116,11 @@ export default {
     // this.popupItem = this.$el
   },
 
-  destroyed: function() {
+  destroyed: function () {
     if (process.browser) {
       window.removeEventListener("scroll", this.handleScroll);
     }
-  }
+  },
 };
 </script>
 

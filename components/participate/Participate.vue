@@ -3,29 +3,17 @@
     <div class="container content">
       <h1>Be Part of It!</h1>
 
-      <p>
-        You are free to watch the event streaming. But if you want to be part of
-        it, you can.
-      </p>
+      <p>You are free to watch the event streaming. But if you want to be part of it, you can.</p>
 
-      <p>
-        There is a participant kit, for the unitary price of <b>&euro;50</b>.
-        This includes:
-      </p>
+      <p>There is a participant kit, for the unitary price of <b>&euro;50</b>. This includes:</p>
       <ul>
         <li>Event Merchandising</li>
         <li>Exclusive Mini Set</li>
         <li>Raffle Ticket</li>
         <li>Access to some exclusive activities (LEGO bricks included)</li>
         <li>Shipping costs for wherever you are!</li>
-        <li>
-          Access to the event conference call so you can interact with the hosts
-          and other participants
-        </li>
-        <li>
-          Access to an after-hours online lounge (unfortunatly, this time you
-          will have to provide both the food and drinks)
-        </li>
+        <li>Access to the event conference call so you can interact with the hosts and other participants</li>
+        <li>Access to an after-hours online lounge (unfortunatly, this time you will have to provide both the food and drinks)</li>
       </ul>
 
       <p>More detailed information is available on the registration form.</p>
@@ -38,9 +26,7 @@
       </p>
 
       <article class="message">
-        <div class="message-body">
-          <b>Please note</b> the registration is now closed!
-        </div>
+        <div class="message-body"><b>Please note</b> the registration is now closed!</div>
       </article>
 
       <p>Don't forget to read the latest announcements in the event lobby.</p>

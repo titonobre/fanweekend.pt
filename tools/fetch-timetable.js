@@ -6,12 +6,11 @@ var isValidDate = require("date-fns/isValid");
 
 const fsp = fs.promises;
 
-const url =
-  "https://spreadsheets.google.com/feeds/cells/1KDZyLkmx8tVOKat-nfP7lPGyF8wIU1U8k63qqHkZXVg/2/public/values?alt=json";
+const url = "https://spreadsheets.google.com/feeds/cells/1KDZyLkmx8tVOKat-nfP7lPGyF8wIU1U8k63qqHkZXVg/2/public/values?alt=json";
 
 function parseFeed(feed) {
   const rows = [];
-  feed.entry.forEach(function(entry) {
+  feed.entry.forEach(function (entry) {
     const col = parseInt(entry.gs$cell.col);
     const row = parseInt(entry.gs$cell.row);
     const content = entry.gs$cell.$t;
@@ -29,8 +28,8 @@ function parseFeed(feed) {
 
     const activities = parsedFeed
       .slice(3)
-      .filter(row => !!row[1] || !!row[2])
-      .map(row => {
+      .filter((row) => !!row[1] || !!row[2])
+      .map((row) => {
         const date = row[0];
         const startTime = row[1];
         const endTime = row[2];
@@ -43,7 +42,7 @@ function parseFeed(feed) {
           startTime,
           endTime,
           name,
-          hosts
+          hosts,
         };
       })
       .reduce((acc, row) => {
@@ -54,7 +53,7 @@ function parseFeed(feed) {
         if (isNewActivity) {
           const newActivity = {
             ...row,
-            date: row.date || lastActivity.date
+            date: row.date || lastActivity.date,
           };
 
           return [...acc, newActivity];
@@ -63,7 +62,7 @@ function parseFeed(feed) {
 
           const extendedLastActivity = {
             ...lastActivity,
-            endTime: row.endTime
+            endTime: row.endTime,
           };
 
           return [...firstActivities, extendedLastActivity];
@@ -71,38 +70,30 @@ function parseFeed(feed) {
 
         return acc;
       }, [])
-      .map(activity => {
+      .map((activity) => {
         const parsedDate = parseDate(activity.date, "EEEE, MMM d", new Date());
-        const parsedStartTime = parseDate(
-          activity.startTime,
-          "HH:mm",
-          parsedDate
-        );
+        const parsedStartTime = parseDate(activity.startTime, "HH:mm", parsedDate);
         const parsedEndTime = parseDate(activity.endTime, "HH:mm", parsedDate);
 
         return {
           ...activity,
           date: parsedDate,
           startTime: parsedStartTime?.toISOString(),
-          endTime: parsedEndTime?.toISOString()
+          endTime: parsedEndTime?.toISOString(),
         };
       })
-      .map(activity => {
+      .map((activity) => {
         const { date, ...rest } = activity;
 
         const id = hashSum(activity.startTime);
 
         return {
           id,
-          ...rest
+          ...rest,
         };
       });
 
-    await fsp.writeFile(
-      "data/timetable.json",
-      JSON.stringify(activities, undefined, 2),
-      "utf8"
-    );
+    await fsp.writeFile("data/timetable.json", JSON.stringify(activities, undefined, 2), "utf8");
   } catch (error) {
     console.error(error);
   }

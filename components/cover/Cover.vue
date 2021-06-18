@@ -1,8 +1,8 @@
 <template>
   <div class="cover-page">
     <div></div>
-    <img class="image" src="./logo.svg">
-    <div class="bottom ">
+    <img class="image" src="./logo.svg" />
+    <div class="bottom">
       <p class="has-text-centered">Scroll down for more details...</p>
     </div>
   </div>
