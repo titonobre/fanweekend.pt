@@ -24,7 +24,8 @@
               <p class="heading">
                 {{ activity.startTimeFormatted }}
                 <span v-if="activity.isFuture">({{ activity.startTimeDistance }})</span>
-                <span class="tag is-danger is-custom" v-if="activity.isLiveNow">Live</span>
+                <span class="tag is-danger is-custom" v-if="activity.isLiveNow && !activity.isBreak">Live</span>
+                <span class="tag is-warning is-custom" v-if="activity.isLiveNow && activity.isBreak">Break</span>
               </p>
               <p>
                 {{ activity.name }}
@@ -86,6 +87,8 @@ function getActivitiesByDay() {
 
       const isFuture = isAfter(parsedStartTime, now);
 
+      const isBreak = activity.type === "break";
+
       const isLiveNow = isAfter(now, parsedStartTime) && isBefore(now, parsedEndTime);
 
       return {
@@ -94,6 +97,7 @@ function getActivitiesByDay() {
         startTimeFormatted,
         startTimeDistance,
         isFuture,
+        isBreak,
         isLiveNow,
       };
     })
