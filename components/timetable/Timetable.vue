@@ -122,7 +122,7 @@ function getActivitiesByDay() {
 
 export default {
   mounted() {
-    setTimeout(
+    setInterval(
       () => {
         this.activitiesByDay = getActivitiesByDay();
       },
