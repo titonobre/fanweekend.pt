@@ -126,19 +126,25 @@ function getActivitiesByDay() {
 
 export default {
   mounted() {
-    setInterval(
-      () => {
-        this.activitiesByDay = getActivitiesByDay();
-      },
-      1000 * 60 // every minute
-    );
+    if (process.browser) {
+      setInterval(
+        () => {
+          this.activitiesByDay = getActivitiesByDay();
+        },
+        1000 * 60 // every minute
+      );
+    }
   },
   data() {
-    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || "Unknown";
+    if (process.browser) {
+      const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || "Unknown";
 
-    const activitiesByDay = getActivitiesByDay();
+      const activitiesByDay = getActivitiesByDay();
 
-    return { timeZone, activitiesByDay };
+      return { timeZone, activitiesByDay };
+    }
+
+    return { timeZone: "unknown", activitiesByDay: [[], []] };
   },
 };
 </script>
