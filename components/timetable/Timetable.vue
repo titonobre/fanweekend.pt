@@ -3,13 +3,6 @@
     <div class="container content">
       <h1>Timetable</h1>
 
-      <article class="message">
-        <div class="message-body">
-          <b>Please note</b> the times below are displayed according to the timezone <b>{{ timeZone }}</b> configured on the device you are
-          reading this!
-        </div>
-      </article>
-
       <div class="timeline">
         <template class="timeline-item" v-for="(day, index) of activitiesByDay">
           <header class="timeline-header" v-bind:key="index">
@@ -23,9 +16,6 @@
             <div class="timeline-content">
               <p class="heading">
                 {{ activity.startTimeFormatted }}
-                <span v-if="activity.isFuture">({{ activity.startTimeDistance }})</span>
-                <span class="tag is-danger is-custom" v-if="activity.isLiveNow && !activity.isBreak">Live</span>
-                <span class="tag is-warning is-custom" v-if="activity.isLiveNow && activity.isBreak">Break</span>
               </p>
               <p>
                 {{ activity.name }}
@@ -47,14 +37,10 @@
 </template>
 
 <script>
-import { utcToZonedTime } from "date-fns-tz";
+import { utcToZonedTime, format } from "date-fns-tz";
 
 import isSameDay from "date-fns/isSameDay";
-import isBefore from "date-fns/isBefore";
-import isAfter from "date-fns/isAfter";
 import parseISO from "date-fns/parseISO";
-import format from "date-fns/format";
-import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 import timetable from "~/data/timetable.json";
 
@@ -76,29 +62,13 @@ function getActivitiesByDay() {
       const style = ACTIVITY_STYLES[activity.type] || ACTIVITY_STYLES.default;
 
       const parsedStartTime = parseISO(activity.startTime);
-      const parsedEndTime = parseISO(activity.endTime);
 
-      const startTimeFormatted = format(parsedStartTime, "HH:mm");
-      const startTimeDistance = formatDistanceToNow(parsedStartTime, {
-        addSuffix: true,
-      });
-
-      const now = new Date();
-
-      const isFuture = isAfter(parsedStartTime, now);
-
-      const isBreak = activity.type === "break";
-
-      const isLiveNow = isAfter(now, parsedStartTime) && isBefore(now, parsedEndTime);
+      const startTimeFormatted = format(parsedStartTime, "HH:mm", { timeZone: eventTimeZone });
 
       return {
         ...activity,
         style,
         startTimeFormatted,
-        startTimeDistance,
-        isFuture,
-        isBreak,
-        isLiveNow,
       };
     })
     .reduce((acc, activity) => {
@@ -125,26 +95,10 @@ function getActivitiesByDay() {
 }
 
 export default {
-  mounted() {
-    if (process.browser) {
-      setInterval(
-        () => {
-          this.activitiesByDay = getActivitiesByDay();
-        },
-        1000 * 60 // every minute
-      );
-    }
-  },
   data() {
-    if (process.browser) {
-      const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || "Unknown";
+    const activitiesByDay = getActivitiesByDay();
 
-      const activitiesByDay = getActivitiesByDay();
-
-      return { timeZone, activitiesByDay };
-    }
-
-    return { timeZone: "unknown", activitiesByDay: [[], []] };
+    return { activitiesByDay };
   },
 };
 </script>
