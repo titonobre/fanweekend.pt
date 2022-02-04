@@ -1,5 +1,6 @@
 <template>
   <div class="soon-page">
+    <img class="image" src="../cover/logo.svg" />
     <div class="cs">Coming Soon!</div>
   </div>
 </template>
@@ -13,7 +14,7 @@
 
   min-width: 100vw;
   min-height: 100vh;
-  background: url(../cover/background.png) #458db6;
+  background: url(../cover/background.svg) #458db6;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
