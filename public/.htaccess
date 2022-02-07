@@ -1,0 +1,42 @@
+RewriteEngine on
+
+# redirect to https
+RewriteCond %{HTTPS} off
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+
+# Serve HTML files
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^(.*)$ /$1.html [L]
+
+# AddEncoding allows you to have certain browsers uncompress information on the fly.
+AddEncoding gzip .gz
+
+# Serve gzip compressed files if they exist and the client accepts gzip.
+RewriteCond %{HTTP:Accept-encoding} gzip
+RewriteCond %{REQUEST_FILENAME}\.gz -s
+RewriteRule ^(.*\.(css|js|svg))$ $1.gz [QSA]
+
+# Serve correct content types, and prevent mod_deflate double gzip.
+RewriteRule \.css\.gz$ - [T=text/css,E=no-gzip:1]
+RewriteRule \.js\.gz$ - [T=text/javascript,E=no-gzip:1]
+RewriteRule \.svg\.gz$ - [T=image/svg+xml,E=no-gzip:1]
+
+# Set cache control headers
+<FilesMatch "\.(ico|jpg|jpeg|png|gif|js|css|svg)$">
+Header set Cache-Control "max-age=86400, public"
+</FilesMatch>
+
+<FilesMatch "(\.html|manifest\.json|sw\.js)$">
+Header set Cache-Control "max-age=0, must-revalidate"
+</FilesMatch>
+
+DirectoryIndex index.html

@@ -1,0 +1,44 @@
+{
+  "name": "fanweekend.pt",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf out .next",
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^1.1.5",
+    "@chakra-ui/react": "^1.8.3",
+    "@chakra-ui/theme-tools": "^1.3.4",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "formdata-polyfill": "^4.0.10",
+    "framer-motion": "^5.6.0",
+    "next": "^12.0.10",
+    "next-pwa": "^5.4.4",
+    "node-fetch": "^3.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.26.0"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^6.2.1",
+    "@types/gtag.js": "^0.0.8",
+    "@types/node": "^16.11.22",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "eslint": "^8.8.0",
+    "eslint-config-next": "^12.0.10",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.3",
+    "next-compose-plugins": "^2.2.1",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "typescript": "~4.5.5"
+  }
+}
