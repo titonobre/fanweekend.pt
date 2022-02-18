@@ -18,7 +18,7 @@
     "@emotion/styled": "^11.6.0",
     "formdata-polyfill": "^4.0.10",
     "framer-motion": "^5.6.0",
-    "next": "^12.0.10",
+    "next": "^12.1.0",
     "next-pwa": "^5.4.4",
     "node-fetch": "^3.2.0",
     "react": "^17.0.2",
