@@ -19,6 +19,7 @@ export default function Where() {
           <VStack align="center" spacing={10}>
             <VStack align="center">
               <Text fontWeight={600}>Address</Text>
+              <Text color="gray.600">Centro Cultural</Text>
               <Text color="gray.600">Av. Cónego Bernardo Chousal</Text>
               <Text color="gray.600">Paredes de Coura</Text>
               <Text color="gray.600">Portugal</Text>

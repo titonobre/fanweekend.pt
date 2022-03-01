@@ -6,19 +6,23 @@ import PricingPlans from "./PricingPlans";
 const features = [
   {
     title: "Accommodation",
-    text: "Accommodation in boarding houses (B&B) for three (3) nights from Thursday to Sunday.",
+    text: "Accommodation in boarding houses (B&B) for three (3) nights.",
   },
   {
     title: "Meals",
-    text: "Breakfast (in the boarding houses for ALL days of your stay), lunch, afternoon snacks and dinner from Thursday through Sunday.",
+    text: "Breakfast, lunch, afternoon snacks and dinner.",
   },
   {
     title: "Activities",
     text: "Access to activities, workshops, presentations and special offers.",
   },
   {
+    title: "Lounge",
+    text: "AFOL lounge with a wide variety of drinks and snacks.",
+  },
+  {
     title: "Swag",
-    text: "Participant wristband that will give you access to the activities.",
+    text: "Goodie Bag, participant wristband that will give you access to the activities.",
   },
 ];
 
@@ -40,7 +44,7 @@ export default function Participate() {
 
       <Stack spacing={4} textAlign="center">
         <Text color="gray.600" fontSize="xl">
-          The registration fee of <b>€110</b> per person includes the following:
+          The Basic package includes the following:
         </Text>
       </Stack>
       <Box marginY={10}>

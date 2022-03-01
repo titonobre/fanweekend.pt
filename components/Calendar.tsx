@@ -8,13 +8,11 @@ export default function Calendar() {
 
   const calendarDays = [...emptyDays, ...monthDays];
 
-  const otherDays = [9];
   const activeDays = [10, 11, 12];
 
   const days = calendarDays.map((date) => ({
     label: date || "",
     isActive: activeDays.includes(date),
-    isOther: otherDays.includes(date),
   }));
 
   return (
@@ -28,11 +26,7 @@ export default function Calendar() {
         </Box>
       ))}
       {days.map((day, index) => (
-        <Box
-          key={index}
-          {...(day.isOther && { backgroundColor: "green.100" })}
-          {...(day.isActive && { backgroundColor: "green.500", color: "white" })}
-        >
+        <Box key={index} {...(day.isActive && { backgroundColor: "green.500", color: "white" })}>
           {day.label}
         </Box>
       ))}
