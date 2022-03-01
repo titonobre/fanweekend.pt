@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 export default function CookieBanner() {
   const [cookieBannerDismissedValue, setCookieBannerDismissedValue] = useLocalStorage("cookieBannerDismissed", "false");
 
-  const [cookieBannerDismissed, setCookieBannerDismissed] = useState(false);
+  const [cookieBannerDismissed, setCookieBannerDismissed] = useState(true);
 
   useEffect(() => {
     setCookieBannerDismissed(cookieBannerDismissedValue === "true");
