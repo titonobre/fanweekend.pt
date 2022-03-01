@@ -7,6 +7,8 @@ import Script from "next/script";
 import Head from "next/head";
 
 import * as gtag from "../lib/gtag";
+import { UserProvider } from "@auth0/nextjs-auth0";
+
 import "../styles/globals.css";
 import theme from "../theme";
 
@@ -34,9 +36,11 @@ function App({ Component, pageProps }: AppProps) {
         <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION_CODE} />
         <link rel="icon" href="/favicon.gif" />
       </Head>
-      <ChakraProvider resetCSS theme={theme}>
-        <Component {...pageProps} />
-      </ChakraProvider>
+      <UserProvider>
+        <ChakraProvider resetCSS theme={theme}>
+          <Component {...pageProps} />
+        </ChakraProvider>
+      </UserProvider>
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} strategy="afterInteractive" />
       <Script id="google-analytics" strategy="afterInteractive">
         {`

@@ -1,3 +1,10 @@
 {
-  "extends": ["next/core-web-vitals", "prettier"]
+  "extends": ["next/core-web-vitals", "prettier"],
+  "rules": {
+    "no-unused-vars": "error",
+    "react/jsx-curly-brace-presence": ["error", { "props": "never", "children": "never", "propElementValues": "always" }],
+    "react/jsx-no-target-blank": "error",
+    "react/jsx-no-useless-fragment": "error",
+    "react/jsx-pascal-case": "error"
+  }
 }
