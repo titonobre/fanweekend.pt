@@ -1,5 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# ide
+
 # dependencies
 /node_modules
 /.pnp
@@ -21,6 +23,7 @@ public/workbox-*.js
 .DS_Store
 *.pem
 .history
+.vscode
 
 # debug
 npm-debug.log*

@@ -1,9 +1,13 @@
 # dependencies
 node_modules
+# testing
+/coverage
 
 # next.js
 /.next/
 /out/
+public/sw.js
+public/workbox-*.js
 
 # production
 /build
@@ -12,6 +16,7 @@ node_modules
 .DS_Store
 *.pem
 .history
+.vscode
 
 # debug
 npm-debug.log*
