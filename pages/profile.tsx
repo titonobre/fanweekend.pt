@@ -17,13 +17,14 @@ const MePage: NextPage = () => {
 
   return (
     <>
-      <Container>
-        <Navbar></Navbar>
+      <Navbar />
 
+      <Container>
         <Content>{user && <Participate />}</Content>
 
         <Footer></Footer>
       </Container>
+
       <CookieBanner />
     </>
   );
