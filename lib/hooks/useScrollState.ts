@@ -19,7 +19,6 @@ export default function useScrollState() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   });
