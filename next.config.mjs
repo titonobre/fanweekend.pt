@@ -1,9 +1,7 @@
-const path = require("path");
+import { PHASE_PRODUCTION_BUILD } from "next/constants.js";
 
-const { PHASE_PRODUCTION_BUILD } = require("next/constants");
-
-const withPlugins = require("next-compose-plugins");
-const pwa = require("next-pwa");
+import withPlugins from "next-compose-plugins";
+import pwa from "next-pwa";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -26,7 +24,7 @@ const nextConfig = {
   },
 };
 
-module.exports = withPlugins(
+export default withPlugins(
   [
     [
       pwa,
