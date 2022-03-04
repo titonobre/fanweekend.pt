@@ -48,7 +48,7 @@ export default function Participate() {
 
       <Stack spacing={4} textAlign="center">
         <Text color="gray.600" fontSize="xl">
-          The Basic package includes the following:
+          The Basic plan includes the following:
         </Text>
       </Stack>
       <Box marginY={10}>

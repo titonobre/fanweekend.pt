@@ -61,7 +61,7 @@ export default function PricingPlans() {
           </List>
           <Box w="80%" pt={7}>
             {REGISTRATION_ENABLED ? (
-              <NextLink href="/register?pack=basic" passHref>
+              <NextLink href="/register?plan=basic" passHref>
                 <Button as={Link} w="full" colorScheme="green" variant="outline">
                   Register
                 </Button>
@@ -131,7 +131,7 @@ export default function PricingPlans() {
             </List>
             <Box w="80%" pt={7}>
               {REGISTRATION_ENABLED ? (
-                <NextLink href="/register?pack=full" passHref>
+                <NextLink href="/register?plan=full" passHref>
                   <Button as={Link} w="full" colorScheme="green">
                     Register
                   </Button>

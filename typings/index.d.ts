@@ -8,3 +8,8 @@ declare module "*.svg?url" {
   const _: string;
   export = _;
 }
+
+declare module "*.md?raw" {
+  const _: string;
+  export = _;
+}

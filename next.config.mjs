@@ -17,6 +17,11 @@ const nextConfig = {
         issuer: /\.[jt]sx?$/,
         resourceQuery: { not: [/url/] },
         use: ["@svgr/webpack"],
+      },
+      {
+        test: /\.md$/,
+        resourceQuery: /raw/, // *.svg?raw
+        use: "raw-loader",
       }
     );
 

@@ -17,7 +17,7 @@ const cal = ical({
   ],
 });
 
-export default async function signup(req: NextApiRequest, res: NextApiResponse) {
+export default async function generateIcal(req: NextApiRequest, res: NextApiResponse): Promise<void> {
   try {
     cal.serve(res);
   } catch (error) {
