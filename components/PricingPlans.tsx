@@ -5,8 +5,6 @@ import { Box, Stack, HStack, Text, VStack, useColorModeValue, List, ListItem, Li
 import { CheckIcon } from "@chakra-ui/icons";
 import { REGISTRATION_ENABLED } from "../lib/env";
 
-const registrationEnabled = REGISTRATION_ENABLED;
-
 function PriceWrapper({ children }: { children: ReactNode }) {
   return (
     <Box mb={4} shadow="2xl" rounded="md">
@@ -62,7 +60,7 @@ export default function PricingPlans() {
             </ListItem>
           </List>
           <Box w="80%" pt={7}>
-            {registrationEnabled ? (
+            {REGISTRATION_ENABLED ? (
               <NextLink href="/register?pack=basic" passHref>
                 <Button as={Link} w="full" colorScheme="green" variant="outline">
                   Register
@@ -132,7 +130,7 @@ export default function PricingPlans() {
               </ListItem>
             </List>
             <Box w="80%" pt={7}>
-              {registrationEnabled ? (
+              {REGISTRATION_ENABLED ? (
                 <NextLink href="/register?pack=full" passHref>
                   <Button as={Link} w="full" colorScheme="green">
                     Register

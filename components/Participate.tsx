@@ -2,6 +2,8 @@ import { Box, Heading, SimpleGrid, Icon, Text, Stack, HStack, VStack, Alert, Ale
 import { CheckIcon } from "@chakra-ui/icons";
 import PricingPlans from "./PricingPlans";
 
+import { REGISTRATION_ENABLED } from "../lib/env";
+
 // Replace test data with your own
 const features = [
   {
@@ -35,12 +37,14 @@ export default function Participate() {
 
       <PricingPlans />
 
-      <Box marginY={10}>
-        <Alert status="warning" borderRadius={6}>
-          <AlertIcon />
-          The registration form is being prepared and will open soon.
-        </Alert>
-      </Box>
+      {!REGISTRATION_ENABLED && (
+        <Box marginY={10}>
+          <Alert status="warning" borderRadius={6}>
+            <AlertIcon />
+            The registration form is being prepared and will open soon.
+          </Alert>
+        </Box>
+      )}
 
       <Stack spacing={4} textAlign="center">
         <Text color="gray.600" fontSize="xl">
