@@ -160,11 +160,21 @@ const RegisterPage: NextPage = () => {
 
               <FormControl isRequired isInvalid={!!errors.plan}>
                 <FormLabel htmlFor="plan">Plan</FormLabel>
-                <Select {...register("plan")}>
-                  <option value=""></option>
-                  <option value="basic">Basic (€120)</option>
-                  <option value="full">Full (€150)</option>
-                </Select>
+                <Controller
+                  name="plan"
+                  control={control}
+                  render={({ field }) => (
+                    <RadioGroup {...field}>
+                      <Stack direction={["column", "row"]} spacing={[1, 8]}>
+                        <Radio value="basic">Basic (€120)</Radio>
+                        <Radio value="full">Full (€150)</Radio>
+                      </Stack>
+                    </RadioGroup>
+                  )}
+                  rules={{
+                    required: { value: true, message: "This is required." },
+                  }}
+                />
                 <FormHelperText></FormHelperText>
                 <FormErrorMessage>{errors?.plan?.message}</FormErrorMessage>
               </FormControl>
