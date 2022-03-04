@@ -6,6 +6,15 @@ import lugs from "../data/lugs.json";
 
 export { countries, lugs };
 
+export enum Gender {
+  male = "Male",
+  female = "Female",
+  other = "Other",
+  "rather not say" = "Rather not say",
+}
+
+export const genders = Object.entries(Gender);
+
 export enum Plan {
   basic = "basic",
   full = "full",
@@ -48,7 +57,7 @@ export const schema: SchemaOf<FormValues> = object({
   dateOfBirth: string()
     .required()
     .matches(/^\d{4}-\d{2}-\d{2}$/),
-  gender: string().max(20),
+  gender: mixed().oneOf<string>([""].concat(Object.keys(Gender))),
   shirtSize: mixed().oneOf<ShirtSize>(shirtSizes).required(),
   lug: mixed().oneOf<string>([""].concat(lugs)),
   notes: string().max(240),

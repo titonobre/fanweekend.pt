@@ -38,7 +38,7 @@ import ReactMarkdown from "react-markdown";
 
 import useApi from "../lib/hooks/useApi";
 
-import { FormValues, schema, shirtSizes, countries, lugs, ShirtSize } from "../lib/registration-schema";
+import { FormValues, schema, shirtSizes, countries, lugs, ShirtSize, genders } from "../lib/registration-schema";
 
 import termsAndConditions from "../data/terms-and-conditions.md?raw";
 import Footer from "../components/Footer";
@@ -232,10 +232,27 @@ const RegisterPage: NextPage = () => {
                 <FormErrorMessage>{errors?.shirtSize?.message}</FormErrorMessage>
               </FormControl>
 
-              <FormControl isInvalid={!!errors.gender}>
+              <FormControl isRequired isInvalid={!!errors.gender}>
                 <FormLabel htmlFor="gender">Gender</FormLabel>
-                <Input max={20} autoComplete="sex" {...register("gender")} />
-                <FormHelperText>In your own words, what is your gender identity?</FormHelperText>
+                <Controller
+                  name="gender"
+                  control={control}
+                  render={({ field }) => (
+                    <RadioGroup {...field}>
+                      <Stack direction={["column", "row"]} spacing={[1, 8]}>
+                        {genders.map(([id, label]) => (
+                          <Radio value={id} key={id}>
+                            {label}
+                          </Radio>
+                        ))}
+                      </Stack>
+                    </RadioGroup>
+                  )}
+                  rules={{
+                    required: { value: true, message: "This is required." },
+                  }}
+                />
+                <FormHelperText></FormHelperText>
                 <FormErrorMessage>{errors?.gender?.message}</FormErrorMessage>
               </FormControl>
 
