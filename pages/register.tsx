@@ -47,7 +47,7 @@ import Navbar from "../components/Navbar";
 import Content from "../components/Content";
 import CookieBanner from "../components/CookieBanner";
 import Container from "../components/Container";
-import Error from "../components/Error";
+import Error from "../components/message/Error";
 
 const RegisterPage: NextPage = () => {
   const [errorMessage, setErrorMessage] = useState("");
