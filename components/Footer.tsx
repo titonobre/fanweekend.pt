@@ -1,5 +1,5 @@
 import NextLink from "next/link";
-import { Box, chakra, Container, Link, Stack, Text, useColorModeValue, VisuallyHidden } from "@chakra-ui/react";
+import { Box, chakra, Container, Flex, Link, Stack, Text, useColorModeValue, VisuallyHidden } from "@chakra-ui/react";
 import { FaInstagram, FaFacebookF, FaHeart } from "react-icons/fa";
 import { ReactNode } from "react";
 
@@ -44,7 +44,9 @@ export default function SmallWithSocial() {
         justify={{ base: "center", md: "space-between" }}
         align={{ base: "center", md: "center" }}
       >
-        <RecognizedEventBadge />
+        <Flex width={{ base: "200px", md: "300px" }}>
+          <RecognizedEventBadge />
+        </Flex>
 
         <Stack direction="column" align={{ base: "center", md: "start" }}>
           <Text>
