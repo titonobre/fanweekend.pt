@@ -2,9 +2,9 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 import { handleProfile, HandlerError } from "@auth0/nextjs-auth0";
 
-export default async function profile(req: NextApiRequest, res: NextApiResponse) {
+export default async function refreshProfile(req: NextApiRequest, res: NextApiResponse) {
   try {
-    await handleProfile(req, res, {});
+    await handleProfile(req, res, { refetch: true });
   } catch (error) {
     console.error(error);
 

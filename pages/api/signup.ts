@@ -5,7 +5,7 @@ import { handleLogin, HandlerError } from "@auth0/nextjs-auth0";
 export default async function signup(req: NextApiRequest, res: NextApiResponse) {
   try {
     await handleLogin(req, res, {
-      returnTo: "/welcome",
+      returnTo: "/account",
       authorizationParams: {
         screen_hint: "signup", // this prompts the signup screen
       },
