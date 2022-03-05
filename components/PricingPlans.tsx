@@ -56,6 +56,10 @@ export default function PricingPlans() {
             </ListItem>
             <ListItem>
               <ListIcon as={CheckIcon} color="green.500" />
+              Lounge
+            </ListItem>
+            <ListItem>
+              <ListIcon as={CheckIcon} color="green.500" />
               Swag
             </ListItem>
           </List>
@@ -119,6 +123,10 @@ export default function PricingPlans() {
               <ListItem>
                 <ListIcon as={CheckIcon} color="green.500" />
                 Activities
+              </ListItem>
+              <ListItem>
+                <ListIcon as={CheckIcon} color="green.500" />
+                Lounge
               </ListItem>
               <ListItem>
                 <ListIcon as={CheckIcon} color="green.500" />
