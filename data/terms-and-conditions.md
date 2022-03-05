@@ -32,10 +32,6 @@ Only once your payment has been confirmed will your registration be accepted as 
 
 VERY IMPORTANT!
 
-The main form of communication between the organization and the participants will be the Fan Weekend forums at http://www.fanweekend.pt/forums/
+The main form of communication between the organization and the participants will be the Fan Weekend website at http://www.fanweekend.pt/
 
-Be sure to follow it since all important stuff will be announced there. You'll be asked later on in this form if you have an account and/or if you wish to create one.
-
-Additional information will be provided in the following relevant sections.
-
-All personal data will be exclusively used by the Paredes de Coura Fan Weekend organization.
+For all the details regarding our Privacy Policy at http://www.fanweekend.pt/privacy
