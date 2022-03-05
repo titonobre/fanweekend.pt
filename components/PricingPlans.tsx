@@ -20,7 +20,7 @@ export default function PricingPlans() {
       textAlign="center"
       justify="center"
       alignItems={{ base: "center", md: "flex-start" }}
-      spacing={{ base: 4, lg: 10 }}
+      spacing={{ base: 10, lg: 10 }}
       marginY={10}
     >
       <PriceWrapper>
