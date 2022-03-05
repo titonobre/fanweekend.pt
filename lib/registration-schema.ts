@@ -23,13 +23,12 @@ export enum Plan {
 export const plans = Object.values(Plan);
 
 export enum ShirtSize {
-  XXS = "XXS",
-  XS = "XS",
-  S = "S",
-  M = "M",
-  L = "L",
-  XL = "XL",
-  XXL = "XXL",
+  "S" = "S",
+  "M" = "M",
+  "L" = "L",
+  "XL" = "XL",
+  "XXL" = "XXL",
+  "3XL" = "3XL",
 }
 
 export const shirtSizes = Object.values(ShirtSize);
