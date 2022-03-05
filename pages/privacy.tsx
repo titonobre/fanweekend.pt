@@ -33,6 +33,7 @@ const PrivacyPolicyPage: NextPage = () => {
             <Text color="gray.600" fontSize="l">
               <UnorderedList>
                 <ListItem>Personal information filled in the registration form</ListItem>
+                <ListItem>Personal information when you contact us</ListItem>
                 <ListItem>Browser information</ListItem>
               </UnorderedList>
             </Text>
@@ -61,12 +62,13 @@ const PrivacyPolicyPage: NextPage = () => {
               </HStack>
             </Heading>
             <Text color="gray.600" fontSize="l">
-              We collect when:
+              We collect data when:
             </Text>
             <Text color="gray.600" fontSize="l">
               <UnorderedList>
                 <ListItem>You browse any page of the website</ListItem>
                 <ListItem>You register for the event</ListItem>
+                <ListItem>You contact us</ListItem>
               </UnorderedList>
             </Text>
           </Stack>
@@ -85,6 +87,7 @@ const PrivacyPolicyPage: NextPage = () => {
               <UnorderedList>
                 <ListItem>Infrastructure: Vercel, WebTuga</ListItem>
                 <ListItem>Analytics: Google Analytics</ListItem>
+                <ListItem>Helpdesk: Tawk.to</ListItem>
                 <ListItem>Authentication: Auth0</ListItem>
               </UnorderedList>
             </Text>
