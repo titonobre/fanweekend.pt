@@ -58,8 +58,8 @@ export default function Navbar({ transparentOnTop }: NavbarProps = { transparent
                 <Avatar size="sm" name={user.name || "?"} src={user.picture || ""} />
               </MenuButton>
               <MenuList>
-                <MenuItem as="a" href="/profile">
-                  Profile
+                <MenuItem as="a" href="/account">
+                  My Account
                 </MenuItem>
                 <MenuDivider />
                 <MenuItem as="a" href="/api/auth/logout">
@@ -69,7 +69,7 @@ export default function Navbar({ transparentOnTop }: NavbarProps = { transparent
             </Menu>
           ) : (
             <Stack flex={{ base: 1, md: 0 }} justify="flex-end" direction="row" spacing={6}>
-              <Button as="a" fontSize="sm" fontWeight={400} variant="link" href="/api/auth/login?returnTo=/profile">
+              <Button as="a" fontSize="sm" fontWeight={400} variant="link" href="/api/auth/login?returnTo=/account">
                 Sign In
               </Button>
               <Button

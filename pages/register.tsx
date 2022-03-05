@@ -120,11 +120,10 @@ const RegisterPage: NextPage = () => {
   };
 
   const closeConfirmationModal = () => {
-    router.push("/profile");
+    router.push("/account");
   };
 
   const closeErrorModal = () => {
-    // router.push("/profile");
     setSubmitEnabled.on();
     onCloseErrorModal();
   };

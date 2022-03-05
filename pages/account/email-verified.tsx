@@ -5,11 +5,11 @@ import { Box, Button, Heading, Link, Stack, Text } from "@chakra-ui/react";
 
 import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
 
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import Content from "../components/Content";
-import Container from "../components/Container";
-import CookieBanner from "../components/CookieBanner";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import Content from "../../components/Content";
+import Container from "../../components/Container";
+import CookieBanner from "../../components/CookieBanner";
 
 const MePage: NextPage = () => {
   const { error, isLoading } = useUser();
@@ -25,13 +25,13 @@ const MePage: NextPage = () => {
         <Content>
           <Box marginY={10}>
             <Stack spacing={4} textAlign="center" alignItems="center">
-              <Heading fontSize="3xl">Register</Heading>
+              <Heading fontSize="3xl">Email Verified</Heading>
               <Text color="gray.600" fontSize="xl">
-                Want to be part of the event? The first step is to register.
+                Thank you for verifying your email address. You can now go back to your account.
               </Text>
-              <NextLink href="/plans" passHref>
+              <NextLink href="/account" passHref>
                 <Button as={Link} w="fit-content" colorScheme="green">
-                  Register
+                  My Account
                 </Button>
               </NextLink>
             </Stack>
