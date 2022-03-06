@@ -46,7 +46,7 @@ const MePage: NextPage = () => {
           <Text color="gray.600" fontSize="xl">
             Want to be part of the event? The first step is to register.
           </Text>
-          <NextLink href="/plans" passHref>
+          <NextLink href="/account/plans" passHref>
             <Button as={Link} w="fit-content" colorScheme="green">
               Register
             </Button>

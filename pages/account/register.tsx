@@ -36,18 +36,18 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
 import ReactMarkdown from "react-markdown";
 
-import useApi from "../lib/hooks/useApi";
+import useApi from "../../lib/hooks/useApi";
 
-import { FormValues, schema, shirtSizes, countries, lugs, ShirtSize, genders } from "../lib/registration-schema";
+import { FormValues, schema, shirtSizes, countries, lugs, ShirtSize, genders } from "../../lib/registration-schema";
 
-import termsAndConditions from "../data/terms-and-conditions.md?raw";
-import Footer from "../components/Footer";
+import termsAndConditions from "../../data/terms-and-conditions.md?raw";
+import Footer from "../../components/Footer";
 import { useRouter } from "next/router";
-import Navbar from "../components/Navbar";
-import Content from "../components/Content";
-import CookieBanner from "../components/CookieBanner";
-import Container from "../components/Container";
-import Error from "../components/message/Error";
+import Navbar from "../../components/Navbar";
+import Content from "../../components/Content";
+import CookieBanner from "../../components/CookieBanner";
+import Container from "../../components/Container";
+import Error from "../../components/message/Error";
 
 const RegisterPage: NextPage = () => {
   const [errorMessage, setErrorMessage] = useState("");
