@@ -9,6 +9,7 @@ import { UserProfile, withPageAuthRequired } from "@auth0/nextjs-auth0";
 import Error from "../../components/message/Error";
 import GenericPage from "../../components/page/GenericPage";
 import Success from "../../components/message/Success";
+import Loading from "../../components/Loading";
 
 const MePage: NextPage = () => {
   const [user, setUser] = useState<UserProfile>();
@@ -29,7 +30,7 @@ const MePage: NextPage = () => {
   if (isLoading) {
     return (
       <GenericPage>
-        <div>Loading...</div>
+        <Loading />
       </GenericPage>
     );
   }

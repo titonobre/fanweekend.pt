@@ -7,14 +7,28 @@ import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 import GenericPage from "../../components/page/GenericPage";
 import Error from "../../components/message/Error";
+import Loading from "../../components/Loading";
 import useTawkTo from "../../lib/hooks/useTawkTo";
 
 const MePage: NextPage = () => {
   const { user, error, isLoading } = useUser();
   useTawkTo();
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>{error.message}</div>;
+  if (isLoading) {
+    return (
+      <GenericPage>
+        <Loading />
+      </GenericPage>
+    );
+  }
+
+  if (error || !user) {
+    return (
+      <GenericPage>
+        <Error title="Something went Sideways" message={`Please logout and login again. ${error?.message || ""}`} />
+      </GenericPage>
+    );
+  }
 
   if (!user?.email_verified) {
     return (
