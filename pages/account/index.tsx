@@ -7,9 +7,11 @@ import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 import GenericPage from "../../components/page/GenericPage";
 import Error from "../../components/message/Error";
+import useTawkTo from "../../lib/hooks/useTawkTo";
 
 const MePage: NextPage = () => {
   const { user, error, isLoading } = useUser();
+  useTawkTo();
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;

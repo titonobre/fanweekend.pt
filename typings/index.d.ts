@@ -13,3 +13,16 @@ declare module "*.md?raw" {
   const _: string;
   export = _;
 }
+
+/**
+ * @see https://github.com/Steve-Junior/tawkto-react
+ */
+declare module "tawkto-react" {
+  class TawkToWidget {
+    constructor(propertyId: string, widgetId: string);
+    onLoad(arg0: () => void);
+    setAttributes(arg0: { name: string; email: string; hash: string });
+  }
+
+  export = TawkToWidget;
+}
