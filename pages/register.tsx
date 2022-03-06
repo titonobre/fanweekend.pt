@@ -294,7 +294,9 @@ const RegisterPage: NextPage = () => {
                 <FormErrorMessage>{errors?.notes?.message}</FormErrorMessage>
               </FormControl>
 
-              <Input type="submit" disabled={!submitEnabled} />
+              <Button type="submit" w="fit-content" colorScheme="green" disabled={!submitEnabled}>
+                Submit
+              </Button>
             </VStack>
           </form>
 
