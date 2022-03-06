@@ -1,4 +1,4 @@
-import { Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 
 import background from "../assets/images/background.svg?url";
 import Logo from "../assets/images/pdcfw-logo.svg";
@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <Flex
       direction="column"
-      justifyContent="center"
+      justifyContent="flex-start"
       alignItems="center"
       top={0}
       position={["absolute", "absolute"]}
@@ -21,8 +21,11 @@ export default function Hero() {
         backgroundPosition: "center center",
         backgroundAttachment: "fixed",
       }}
+      paddingTop={{ base: "10vh" }}
     >
-      <Logo style={{ maxWidth: "50vw", maxHeight: "50vh", height: "inherit" }} />
+      <Box maxWidth={{ base: "200px", sm: "250px", md: "300px" }}>
+        <Logo style={{ width: "100%", maxWidth: "100%", height: "inherit", maxHeight: "100%" }} />
+      </Box>
     </Flex>
   );
 }
