@@ -4,6 +4,7 @@ type UserData = {
   id: string;
   name: string;
   email: string;
+  emailVerified: boolean;
 
   tawkToHash: string;
 };

@@ -2,16 +2,17 @@ import type { NextPage } from "next";
 
 import { Box, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 
-import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 import GenericPage from "../../components/page/GenericPage";
 import Error from "../../components/message/Error";
 import Loading from "../../components/Loading";
 import useTawkTo from "../../lib/hooks/useTawkTo";
 import RegisterCard from "../../components/card/RegisterCard";
+import useUserData from "../../lib/hooks/userUserData";
 
 const MePage: NextPage = () => {
-  const { user, error, isLoading } = useUser();
+  const { user, isLoading } = useUserData();
   useTawkTo();
 
   if (isLoading) {
@@ -22,15 +23,15 @@ const MePage: NextPage = () => {
     );
   }
 
-  if (error || !user) {
+  if (!user) {
     return (
       <GenericPage>
-        <Error title="Something went Sideways" message={`Please logout and login again. ${error?.message || ""}`} />
+        <Error title="Something went Sideways" message="Please logout and login again." />
       </GenericPage>
     );
   }
 
-  if (!user?.email_verified) {
+  if (!user?.emailVerified) {
     return (
       <GenericPage>
         <Error title="Email not Verified" message="Please check your email inbox to verify your account." />
