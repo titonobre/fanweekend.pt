@@ -20,7 +20,7 @@ const features = [
   },
   {
     title: "Lounge",
-    text: "AFOL lounge with a wide variety of drinks and snacks.",
+    text: "Access to the AFOL lounge with a wide variety of drinks and snacks.",
   },
   {
     title: "Swag",

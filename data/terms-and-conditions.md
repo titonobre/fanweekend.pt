@@ -8,9 +8,11 @@ TERMS AND CONDITIONS:
 
 There is a registration fee of €120 (EURO) per person. Included with the fee is the following:
 
-- Accommodation in boarding houses (B&B's) for three (3) nights from Thursday to Sunday.
+- Accommodation in boarding houses (B&B's) for three (3) nights.
 
-- Meals: Breakfast (in the boarding houses for ALL days of your stay), lunch, afternoon snacks, and dinner from Friday through Sunday.
+- Meals: Breakfast, lunch, afternoon snacks, and dinner.
+
+- Access to the AFOL lounge with a wide variety of drinks and snacks.
 
 - Goodie bag and a participant wristband that gives you access to activities, workshops, presentations, and special offers.
 
@@ -18,14 +20,14 @@ There will be a special AFOLs dinner on Saturday. It has an extra cost of €30 
 
 Unfortunately, the canteen will not be able to serve dinner to the participants that night. We'll be sorry not to see you at the AFOLs dinner, but in case you don't want to attend, several restaurants in the town can provide meals. Be sure to check them out in due time and perhaps make a dinner reservation in advance.
 
-Please note that there are no shuttles or transport provided by the organization from the airport or to your accommodation! You'll have to get to Paredes de Coura on your own. There are some budget car rentals online with very cheap rates that will allow you to rent a car at the many airports nearby. If you need any assistance to do this just let us know. We will provide a free car park for the participants in one of the underground parking lots near the Exhibition Hall.
+Please note that there are no shuttles or transport provided by the organization! You'll have to get to Paredes de Coura on your own. There are some budget car rentals online with very cheap rates that will allow you to rent a car at the many airports nearby. If you need any assistance to do this, just let us know. We will provide a free car park for the participants in one of the underground parking lots near the Exhibition Hall.
 
 Remember to bring your bikinis, bathing suits or shorts! Hats and sunblock as well.
 
-Registration will be divided into three parts:
+Registration will be divided into three phases:
 
 1. Sign-up form.
-2. Email confirmation and Payment details.
+2. Email confirmation with Payment details.
 3. Validation of Registration.
 
 Only once your payment has been confirmed will your registration be accepted as valid. After payment and validation, no refunds can be issued.
