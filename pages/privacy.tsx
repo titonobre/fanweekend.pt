@@ -49,7 +49,9 @@ const PrivacyPolicyPage: NextPage = () => {
             <Text color="gray.600" fontSize="l">
               <UnorderedList>
                 <ListItem>To manage the event registrations</ListItem>
+                <ListItem>To manage accommodation allocation</ListItem>
                 <ListItem>To improve the website</ListItem>
+                <ListItem>To elaborate reports after the event</ListItem>
               </UnorderedList>
             </Text>
           </Stack>
@@ -89,6 +91,15 @@ const PrivacyPolicyPage: NextPage = () => {
                 <ListItem>Analytics: Google Analytics</ListItem>
                 <ListItem>Helpdesk: Tawk.to</ListItem>
                 <ListItem>Authentication: Auth0</ListItem>
+              </UnorderedList>
+            </Text>
+            <Text color="gray.600" fontSize="l">
+              The following entities help us organizing this event.
+            </Text>
+            <Text color="gray.600" fontSize="l">
+              <UnorderedList>
+                <ListItem>LEGO Group</ListItem>
+                <ListItem>Município de Paredes de Coura</ListItem>
               </UnorderedList>
             </Text>
           </Stack>
