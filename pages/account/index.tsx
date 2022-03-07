@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
-import NextLink from "next/link";
 
-import { Box, Button, Heading, Link, Stack, Text } from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 
 import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
 
@@ -9,6 +8,7 @@ import GenericPage from "../../components/page/GenericPage";
 import Error from "../../components/message/Error";
 import Loading from "../../components/Loading";
 import useTawkTo from "../../lib/hooks/useTawkTo";
+import RegisterCard from "../../components/card/RegisterCard";
 
 const MePage: NextPage = () => {
   const { user, error, isLoading } = useUser();
@@ -40,19 +40,19 @@ const MePage: NextPage = () => {
 
   return (
     <GenericPage>
-      <Box marginY={10}>
-        <Stack spacing={4} textAlign="center" alignItems="center">
-          <Heading fontSize="3xl">Register</Heading>
-          <Text color="gray.600" fontSize="xl">
-            Want to be part of the event? The first step is to register.
+      <Stack as={Box} textAlign="center" spacing={{ base: 8, md: 14 }} py={{ base: 10, md: 18 }}>
+        <Heading as="h1" fontWeight={600} fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }} lineHeight="110%">
+          Welcome <br />
+          <Text as="span" color="green.400">
+            {user.name}
           </Text>
-          <NextLink href="/account/plans" passHref>
-            <Button as={Link} w="fit-content" colorScheme="green">
-              Register
-            </Button>
-          </NextLink>
-        </Stack>
-      </Box>
+        </Heading>
+        <Text color="gray.500">This is your account page, your gateway into the Paredes de Coura Fan Weekend.</Text>
+      </Stack>
+
+      <SimpleGrid columns={{ base: 1 }} spacing={10}>
+        <RegisterCard />
+      </SimpleGrid>
     </GenericPage>
   );
 };
