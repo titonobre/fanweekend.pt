@@ -18,6 +18,7 @@ public/workbox-*.js
 
 # production
 /build
+public/logo.png
 
 # misc
 .DS_Store
