@@ -68,7 +68,7 @@ const RegisterPage: NextPage = () => {
   const defaultValues: FormValues = {
     plan: sanitizedPlan,
     id: user?.sub || "",
-    name: "",
+    name: user?.name || "",
     email: user?.email || "",
     dateOfBirth: "",
     acceptTerms: false,
@@ -92,10 +92,7 @@ const RegisterPage: NextPage = () => {
   if (!user.email_verified) {
     // add link to resend email verification
     return (
-      <Error
-        title="Email Not Verified"
-        message="Please verify your email inbox and follow the instructions to verify your email address."
-      />
+      <Error title="Email Not Verified" message="Please check your email inbox and follow the instructions to verify your email address." />
     );
   }
 
@@ -289,7 +286,7 @@ const RegisterPage: NextPage = () => {
                 <FormLabel htmlFor="notes">Notes</FormLabel>
                 <Textarea maxLength={240} {...register("notes")} placeholder="" />
                 <FormHelperText>
-                  Is there something important you&apos;d like us to know? Like food allergies or your pet&apos;s name...
+                  Is there something important you&apos;d like us to know? Like food allergies or who are you traveling with?
                 </FormHelperText>
                 <FormErrorMessage>{errors?.notes?.message}</FormErrorMessage>
               </FormControl>
