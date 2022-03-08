@@ -2,7 +2,7 @@ import { Box, Heading, Stack, Alert, AlertIcon } from "@chakra-ui/react";
 import PricingPlans from "./PricingPlans";
 import Features from "./Features";
 
-import { REGISTRATION_ENABLED } from "../lib/env";
+import { REGISTRATION_ENABLED, SHOW_PRICING } from "../lib/env";
 
 export default function Participate() {
   return (
@@ -11,7 +11,7 @@ export default function Participate() {
         <Heading fontSize="3xl">Be Part of It!</Heading>
       </Stack>
 
-      <PricingPlans />
+      {SHOW_PRICING && <PricingPlans />}
 
       {!REGISTRATION_ENABLED && (
         <Box marginY={10}>
@@ -22,7 +22,7 @@ export default function Participate() {
         </Box>
       )}
 
-      <Features />
+      {SHOW_PRICING && <Features />}
     </>
   );
 }

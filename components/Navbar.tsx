@@ -17,6 +17,10 @@ import {
 } from "@chakra-ui/react";
 import { useUser } from "@auth0/nextjs-auth0";
 import useScrollState from "../lib/hooks/useScrollState";
+import { LOGIN_ENABLED } from "../lib/env";
+
+const loginUrl = LOGIN_ENABLED ? "/api/auth/login?returnTo=/account" : "#";
+const signUpUrl = LOGIN_ENABLED ? "/api/signup" : "#";
 
 export type NavbarProps = {
   transparentOnTop?: boolean;
@@ -69,7 +73,7 @@ export default function Navbar({ transparentOnTop }: NavbarProps = { transparent
             </Menu>
           ) : (
             <Stack flex={{ base: 1, md: 0 }} justify="flex-end" direction="row" spacing={6}>
-              <Button as="a" fontSize="sm" fontWeight={400} variant="link" href="/api/auth/login?returnTo=/account">
+              <Button as="a" fontSize="sm" fontWeight={400} variant="link" href={loginUrl}>
                 Sign In
               </Button>
               <Button
@@ -79,7 +83,7 @@ export default function Navbar({ transparentOnTop }: NavbarProps = { transparent
                 fontWeight={600}
                 color="white"
                 bg="pink.400"
-                href="/api/signup"
+                href={signUpUrl}
                 _hover={{
                   bg: "pink.300",
                 }}
