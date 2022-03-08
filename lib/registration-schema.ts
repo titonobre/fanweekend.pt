@@ -1,4 +1,5 @@
-import { SchemaOf, string, object, boolean, mixed } from "yup";
+import { SchemaOf, string, object, boolean, mixed, date, BaseSchema } from "yup";
+import { parse, isDate, startOfDay, addYears } from "date-fns";
 
 import countries from "../data/countries.json";
 
@@ -39,7 +40,7 @@ export type FormValues = {
   email: string;
   acceptTerms: boolean;
   country: string;
-  dateOfBirth: string;
+  dateOfBirth: Date;
   shirtSize: ShirtSize;
   gender?: string;
   lug?: string;
@@ -47,17 +48,29 @@ export type FormValues = {
   plan: string;
 };
 
+function parseDateString(currentValue: string, originalValue: unknown, context: BaseSchema) {
+  if (context.isType(currentValue)) return currentValue;
+
+  return isDate(currentValue) ? currentValue : parse(currentValue, "yyyy-MM-dd", new Date());
+}
+
+const today = startOfDay(new Date());
+const minDate = addYears(today, -10);
+
 export const schema: SchemaOf<FormValues> = object({
   id: string().required().max(50),
   name: string().required().max(100),
   email: string().email().required().max(100),
   acceptTerms: boolean().required(),
   country: mixed().oneOf<string>(countries).required(),
-  dateOfBirth: string()
+  dateOfBirth: date()
+    .transform(parseDateString)
+    .min(minDate, "you are not that old...")
+    .max(today, "you sure?")
     .required()
-    .matches(/^\d{4}-\d{2}-\d{2}$/),
+    .label("date of birth"),
   gender: mixed().oneOf<string>([""].concat(Object.keys(Gender))),
-  shirtSize: mixed().oneOf<ShirtSize>(shirtSizes).required(),
+  shirtSize: mixed().oneOf<ShirtSize>(shirtSizes).required().label("shirt size"),
   lug: mixed().oneOf<string>([""].concat(lugs)),
   notes: string().max(240),
   plan: mixed().oneOf<Plan>(plans).required(),

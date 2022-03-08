@@ -5,6 +5,8 @@ import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
 
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 
+import { format } from "date-fns";
+
 import {
   Checkbox,
   FormControl,
@@ -70,8 +72,9 @@ const RegisterPage: NextPage = () => {
     id: user?.sub || "",
     name: user?.name || "",
     email: user?.email || "",
-    dateOfBirth: "",
+    dateOfBirth: undefined as unknown as Date,
     acceptTerms: false,
+    gender: "",
     shirtSize: "" as ShirtSize,
     country: "",
     lug: "",
@@ -99,10 +102,15 @@ const RegisterPage: NextPage = () => {
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     setSubmitEnabled.off();
 
+    const payload = {
+      ...data,
+      dateOfBirth: format(data.dateOfBirth, "yyyy-MM-dd"),
+    };
+
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify(payload),
     };
 
     const response = await fetch(registerApiEndpoint, requestOptions);
