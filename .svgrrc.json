@@ -1,3 +1,10 @@
 {
-  "svgoConfig": {}
+  "svgoConfig": {
+    "plugins": [
+      {
+        "name": "removeViewBox",
+        "active": false
+      }
+    ]
+  }
 }

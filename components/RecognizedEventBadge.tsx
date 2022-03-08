@@ -11,8 +11,9 @@ export default function RecognizedEventBadge() {
       border="2px solid black"
       borderRadius="8px"
       backgroundColor="white"
+      title="This is a LEGO® Recognized AFOL Networking Event"
     >
-      <Badge width="100%" />
+      <Badge width="100%" height="100%" />
     </Link>
   );
 }
