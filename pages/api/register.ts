@@ -5,6 +5,8 @@ import { withApiAuthRequired, getSession } from "@auth0/nextjs-auth0";
 import fetch from "node-fetch";
 import { FormData } from "formdata-polyfill/esm.min.js";
 
+import { format } from "date-fns";
+
 import { REGISTRATION_FORM_ID } from "../../lib/env";
 import validate from "../../lib/middleware/validate";
 import schema, { FormValues } from "../../lib/registration-schema";
@@ -51,7 +53,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
   formData.append(fields.name, body.name);
   formData.append(fields.country, body.country);
   formData.append(fields.shirtSize, body.shirtSize);
-  formData.append(fields.dateOfBirth, body.dateOfBirth);
+  formData.append(fields.dateOfBirth, format(body.dateOfBirth, "yyyy-MM-dd"));
   formData.append(fields.gender, body.gender || "");
   formData.append(fields.lug, body.lug || "");
   formData.append(fields.notes, body.notes || "");
