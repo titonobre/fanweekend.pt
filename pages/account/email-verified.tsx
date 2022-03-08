@@ -25,8 +25,6 @@ const MePage: NextPage = () => {
       });
   }, []);
 
-  console.log(user);
-
   if (isLoading) {
     return (
       <GenericPage>
