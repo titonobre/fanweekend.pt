@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
 import type { NextPage } from "next";
 import NextLink from "next/link";
 
 import { Button, Flex, Link } from "@chakra-ui/react";
 
-import { UserProfile, withPageAuthRequired } from "@auth0/nextjs-auth0";
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
+
+import useUpdatedUser from "../../lib/hooks/useUpdatedUser";
 
 import Error from "../../components/message/Error";
 import GenericPage from "../../components/page/GenericPage";
@@ -12,18 +13,7 @@ import Success from "../../components/message/Success";
 import Loading from "../../components/Loading";
 
 const MePage: NextPage = () => {
-  const [user, setUser] = useState<UserProfile>();
-  const [isLoading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    fetch("/api/refresh-profile")
-      .then((res) => res.json())
-      .then((data) => {
-        setUser(data);
-        setLoading(false);
-      });
-  }, []);
+  const { user, isLoading } = useUpdatedUser();
 
   if (isLoading) {
     return (

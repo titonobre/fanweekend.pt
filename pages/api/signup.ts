@@ -1,10 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { handleLogin, HandlerError } from "@auth0/nextjs-auth0";
+import { HandlerError } from "@auth0/nextjs-auth0";
+
+import auth0 from "../../lib/auth/initAuth0";
 
 export default async function signup(req: NextApiRequest, res: NextApiResponse) {
   try {
-    await handleLogin(req, res, {
+    await auth0.handleLogin(req, res, {
       returnTo: "/account",
       authorizationParams: {
         screen_hint: "signup", // this prompts the signup screen

@@ -2,9 +2,8 @@ import crypto, { BinaryLike } from "crypto";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { getSession } from "@auth0/nextjs-auth0";
-
 import { TAWK_TO_API_KEY } from "./../../lib/env";
+import auth0 from "../../lib/auth/initAuth0";
 
 function getHash(data: BinaryLike, key: string) {
   const hmac = crypto.createHmac("sha256", key);
@@ -12,9 +11,9 @@ function getHash(data: BinaryLike, key: string) {
   return hmac.digest("hex");
 }
 
-export default async function user(req: NextApiRequest, res: NextApiResponse) {
+async function user(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const session = await getSession(req, res);
+    const session = await auth0.getSession(req, res);
 
     if (!session) {
       // HTTP 401 Unauthorized
@@ -38,3 +37,5 @@ export default async function user(req: NextApiRequest, res: NextApiResponse) {
     res.status(500).end("Internal server error");
   }
 }
+
+export default auth0.withApiAuthRequired(user);

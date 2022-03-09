@@ -1,7 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { withApiAuthRequired, getSession } from "@auth0/nextjs-auth0";
-
 import fetch from "node-fetch";
 import { FormData } from "formdata-polyfill/esm.min.js";
 
@@ -10,6 +8,7 @@ import { format } from "date-fns";
 import { REGISTRATION_FORM_ID } from "../../lib/env";
 import validate from "../../lib/middleware/validate";
 import schema, { FormValues } from "../../lib/registration-schema";
+import auth0 from "../../lib/auth/initAuth0";
 
 const formUrl = `https://docs.google.com/forms/d/e/${REGISTRATION_FORM_ID}/formResponse`;
 
@@ -26,8 +25,8 @@ const fields = {
   shirtSize: "entry.300699649",
 };
 
-async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
-  const session = getSession(req, res);
+async function register(req: NextApiRequest, res: NextApiResponse): Promise<void> {
+  const session = auth0.getSession(req, res);
 
   const body = req.body as FormValues;
 
@@ -71,4 +70,4 @@ async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void>
   return res.status(200).json({ success: true });
 }
 
-export default withApiAuthRequired(validate(schema, handler));
+export default auth0.withApiAuthRequired(validate(schema, register));
