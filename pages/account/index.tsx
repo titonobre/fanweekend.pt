@@ -65,7 +65,7 @@ const MePage: NextPage = () => {
         ) : (
           <>
             <TimelineItem icon={FaWpforms} iconBg="green.500" iconFg="white">
-              <RegisterCard enabled={true} />
+              <RegisterCard enabled={true} registered={user.registered} />
             </TimelineItem>
             <TimelineItem icon={FaCubes} iconBg="gray.500" iconFg="white">
               <ActivitiesCard enabled={false} />

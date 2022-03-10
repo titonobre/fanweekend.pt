@@ -5,6 +5,7 @@ type UserData = {
   name: string;
   email: string;
   emailVerified: boolean;
+  registered: boolean;
 
   tawkToHash: string;
 };
