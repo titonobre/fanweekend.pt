@@ -16,3 +16,7 @@ export const TAWK_TO_API_KEY: string = process.env.TAWK_TO_API_KEY as string;
 export const GOOGLE_CLIENT_EMAIL: string = process.env.GOOGLE_CLIENT_EMAIL as string;
 
 export const REDIS_URL: string = process.env.REDIS_URL as string;
+
+export const AUTH0_DOMAIN: string = process.env.AUTH0_DOMAIN as string;
+export const AUTH0_CLIENT_ID: string = process.env.AUTH0_CLIENT_ID as string;
+export const AUTH0_CLIENT_SECRET: string = process.env.AUTH0_CLIENT_SECRET as string;

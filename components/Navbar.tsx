@@ -59,11 +59,14 @@ export default function Navbar({ transparentOnTop }: NavbarProps = { transparent
           {user ? (
             <Menu>
               <MenuButton as={Button} rounded="full" variant="link" cursor="pointer" minW={0}>
-                <Avatar size="sm" name={user.name || "?"} src={user.picture || ""} />
+                <Avatar size="sm" name={user.name || "?"} src={user.picture || ""} backgroundColor="white" />
               </MenuButton>
               <MenuList>
                 <MenuItem as="a" href="/account">
                   My Account
+                </MenuItem>
+                <MenuItem as="a" href="/account/profile">
+                  Profile
                 </MenuItem>
                 <MenuDivider />
                 <MenuItem as="a" href="/api/auth/logout">

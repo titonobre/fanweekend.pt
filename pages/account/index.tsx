@@ -10,10 +10,11 @@ import Loading from "../../components/Loading";
 import useTawkTo from "../../lib/hooks/useTawkTo";
 import RegisterCard from "../../components/card/RegisterCard";
 import useUserData from "../../lib/hooks/userUserData";
-import { FaExclamation, FaWpforms, FaCubes } from "react-icons/fa";
+import { FaExclamation, FaWpforms, FaCubes, FaIdCard } from "react-icons/fa";
 import VerifyEmailCard from "../../components/card/VerifyEmailCard";
 import TimelineItem from "../../components/timeline/TimelineItem";
 import ActivitiesCard from "../../components/card/ActivitiesCard";
+import UpdateProfileCard from "../../components/card/UpdateProfileCard";
 
 const MePage: NextPage = () => {
   const { user, isLoading } = useUserData();
@@ -55,6 +56,9 @@ const MePage: NextPage = () => {
             <TimelineItem icon={FaExclamation} iconBg="red.500" iconFg="white">
               <VerifyEmailCard />
             </TimelineItem>
+            <TimelineItem icon={FaIdCard} iconBg="orange.400" iconFg="white">
+              <UpdateProfileCard />
+            </TimelineItem>
             <TimelineItem icon={FaWpforms} iconBg="gray.500" iconFg="white">
               <RegisterCard enabled={false} />
             </TimelineItem>
@@ -64,6 +68,9 @@ const MePage: NextPage = () => {
           </>
         ) : (
           <>
+            <TimelineItem icon={FaIdCard} iconBg="orange.400" iconFg="white">
+              <UpdateProfileCard />
+            </TimelineItem>
             <TimelineItem icon={FaWpforms} iconBg="green.500" iconFg="white">
               <RegisterCard enabled={true} registered={user.registered} />
             </TimelineItem>
