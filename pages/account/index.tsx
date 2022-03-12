@@ -18,7 +18,7 @@ import UpdateProfileCard from "../../components/card/UpdateProfileCard";
 
 const MePage: NextPage = () => {
   const { user, isLoading } = useUserData();
-  useTawkTo();
+  useTawkTo(user);
 
   if (isLoading) {
     return (

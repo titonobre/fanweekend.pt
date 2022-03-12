@@ -31,6 +31,7 @@ import { FormValues, schema } from "../../lib/profile-schema";
 import Error from "../../components/message/Error";
 import Loading from "../../components/Loading";
 import GenericPage from "../../components/page/GenericPage";
+import useTawkTo from "../../lib/hooks/useTawkTo";
 
 const RegisterPage: NextPage = () => {
   const [errorMessage, setErrorMessage] = useState<string>();
@@ -38,6 +39,8 @@ const RegisterPage: NextPage = () => {
   const [profileUpdatedMessageVisible, setProfileUpdatedMessageVisible] = useBoolean(false);
 
   const { user, isLoading, checkSession } = useUser();
+
+  useTawkTo({ name: user?.name || "" });
 
   const updateProfileApiEndpoint = useApi("/update-profile");
 
