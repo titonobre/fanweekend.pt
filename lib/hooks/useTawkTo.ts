@@ -20,15 +20,19 @@ export default function useTawkTo({ name, email, tawkToHash: hash }: UserData = 
       return;
     }
 
-    const tawk = new TawkToWidget(propertyId, widgetId);
+    try {
+      const tawk = new TawkToWidget(propertyId, widgetId);
 
-    const setAttributes = () => {
-      name && tawk.setAttributes({ name });
-      email && tawk.setAttributes({ email, hash });
-    };
+      const setAttributes = () => {
+        name && tawk.setAttributes({ name });
+        email && tawk.setAttributes({ email, hash });
+      };
 
-    tawk.onLoad(setAttributes);
+      tawk.onLoad(setAttributes);
 
-    setAttributes();
+      setAttributes();
+    } catch (error) {
+      console.error(error);
+    }
   }, [name, email, hash]);
 }
