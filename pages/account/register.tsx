@@ -44,6 +44,7 @@ import ReactMarkdown from "react-markdown";
 import useApi from "../../lib/hooks/useApi";
 
 import { FormValues, schema, shirtSizes, countries, lugs, ShirtSize, genders } from "../../lib/registration-schema";
+import looksRealName from "../../lib/utils/looksRealName";
 
 import termsAndConditions from "../../data/terms-and-conditions.md?raw";
 import { useRouter } from "next/router";
@@ -69,10 +70,12 @@ const RegisterPage: NextPage = () => {
 
   const sanitizedPlan = typeof plan === "string" ? plan : "";
 
+  const userName = looksRealName(user?.name) && user?.name;
+
   const defaultValues: FormValues = {
     plan: sanitizedPlan,
     id: user?.sub || "",
-    name: user?.name || "",
+    name: userName || "",
     email: user?.email || "",
     dateOfBirth: undefined as unknown as Date,
     acceptTerms: false,

@@ -1,6 +1,8 @@
 import { SchemaOf, string, object, boolean, mixed, date, BaseSchema } from "yup";
 import { parse, isDate, startOfDay, addYears } from "date-fns";
 
+import looksRealName from "./utils/looksRealName";
+
 import countries from "../data/countries.json";
 
 import lugs from "../data/lugs.json";
@@ -59,7 +61,10 @@ const minDate = addYears(today, -100);
 
 export const schema: SchemaOf<FormValues> = object({
   id: string().required().max(50),
-  name: string().required().max(100),
+  name: string()
+    .required()
+    .max(100)
+    .test("not real name", "Please enter your real name", (value) => looksRealName(value)),
   email: string().email().required().max(100),
   acceptTerms: boolean().required(),
   country: mixed().oneOf<string>(countries).required(),
