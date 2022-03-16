@@ -62,12 +62,21 @@ async function register(req: NextApiRequest, res: NextApiResponse): Promise<void
     body: formData,
   };
 
-  await fetch(formUrl, requestOptions).catch((error) => {
-    console.error("error", error);
-    return res.status(500).json({ error: "Form submission rejected." });
-  });
+  try {
 
-  return res.status(200).json({ success: true });
+    const response = await fetch(formUrl, requestOptions);
+
+    if (response.ok) {
+      return res.status(200).json({ success: true });
+    } else {
+      throw response;
+    }
+  }
+  catch (error) {
+    console.error("Error Submitting Form", error)
+    return res.status(500).json({ error: "Form submission rejected." });
+  }
+
 }
 
 export default auth0.withApiAuthRequired(validate(schema, register));
