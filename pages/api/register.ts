@@ -69,6 +69,8 @@ async function register(req: NextApiRequest, res: NextApiResponse): Promise<void
     if (response.ok) {
       return res.status(200).json({ success: true });
     } else {
+      const body = await response.text();
+      console.error(body);
       throw response;
     }
   }
