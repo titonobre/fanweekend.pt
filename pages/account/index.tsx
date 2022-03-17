@@ -15,6 +15,24 @@ import VerifyEmailCard from "../../components/card/VerifyEmailCard";
 import TimelineItem from "../../components/timeline/TimelineItem";
 import ActivitiesCard from "../../components/card/ActivitiesCard";
 import UpdateProfileCard from "../../components/card/UpdateProfileCard";
+import looksRealName from "../../lib/utils/looksRealName";
+import { IconType } from "react-icons";
+
+type Predicate<I> = (item: I) => boolean;
+
+type UserContext = { emailVerified: boolean; nameUpdated: boolean };
+
+type CardDefinition = {
+  condition?: (context: UserContext) => boolean;
+  icon: IconType;
+  iconBg: string;
+  iconFg: string;
+  content: JSX.Element;
+};
+
+function filterContents<T>(contents: [Predicate<T>, T][]): T[] {
+  return contents.filter(([condition, content]) => condition(content)).map(([, content]) => content);
+}
 
 const MePage: NextPage = () => {
   const { user, isLoading } = useUserData();
@@ -37,6 +55,34 @@ const MePage: NextPage = () => {
   }
 
   const emailVerified = user.emailVerified;
+  const userRegistered = user.registered;
+
+  const registerEnabled = emailVerified && !userRegistered;
+
+  const nameUpdated = looksRealName(user.name);
+
+  const userContext = { emailVerified, nameUpdated };
+
+  const always = () => true;
+  const emailNotVerified = () => !userContext.emailVerified;
+  const nameNotUpdated = () => !userContext.nameUpdated;
+
+  const contents: [Predicate<CardDefinition>, CardDefinition][] = [
+    [emailNotVerified, { icon: FaExclamation, iconBg: "red.500", iconFg: "white", content: <VerifyEmailCard /> }],
+    [nameNotUpdated, { icon: FaIdCard, iconBg: "orange.400", iconFg: "white", content: <UpdateProfileCard /> }],
+    [
+      always,
+      {
+        icon: FaWpforms,
+        iconBg: registerEnabled ? "green.500" : "gray.500",
+        iconFg: "white",
+        content: <RegisterCard enabled={registerEnabled} registered={userRegistered} />,
+      },
+    ],
+    [always, { icon: FaCubes, iconBg: "gray.500", iconFg: "white", content: <ActivitiesCard enabled={false} /> }],
+  ];
+
+  const cards: CardDefinition[] = filterContents(contents);
 
   return (
     <GenericPage>
@@ -51,34 +97,11 @@ const MePage: NextPage = () => {
       </Stack>
 
       <Stack spacing={{ base: 8, md: 14 }} py={{ base: 10, md: 18 }}>
-        {!emailVerified ? (
-          <>
-            <TimelineItem icon={FaExclamation} iconBg="red.500" iconFg="white">
-              <VerifyEmailCard />
-            </TimelineItem>
-            <TimelineItem icon={FaIdCard} iconBg="orange.400" iconFg="white">
-              <UpdateProfileCard />
-            </TimelineItem>
-            <TimelineItem icon={FaWpforms} iconBg="gray.500" iconFg="white">
-              <RegisterCard enabled={false} />
-            </TimelineItem>
-            <TimelineItem icon={FaCubes} iconBg="gray.500" iconFg="white">
-              <ActivitiesCard enabled={false} />
-            </TimelineItem>
-          </>
-        ) : (
-          <>
-            <TimelineItem icon={FaIdCard} iconBg="orange.400" iconFg="white">
-              <UpdateProfileCard />
-            </TimelineItem>
-            <TimelineItem icon={FaWpforms} iconBg="green.500" iconFg="white">
-              <RegisterCard enabled={true} registered={user.registered} />
-            </TimelineItem>
-            <TimelineItem icon={FaCubes} iconBg="gray.500" iconFg="white">
-              <ActivitiesCard enabled={false} />
-            </TimelineItem>
-          </>
-        )}
+        {cards.map((card, index) => (
+          <TimelineItem key={index} icon={card.icon} iconBg={card.iconBg} iconFg={card.iconFg}>
+            {card.content}
+          </TimelineItem>
+        ))}
       </Stack>
 
       <SimpleGrid columns={{ base: 1 }} spacing={10}></SimpleGrid>
