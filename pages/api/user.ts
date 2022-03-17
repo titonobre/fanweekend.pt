@@ -2,9 +2,10 @@ import crypto, { BinaryLike } from "crypto";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { TAWK_TO_API_KEY } from "./../../lib/env";
 import auth0 from "../../lib/auth/initAuth0";
 import fetchRegisteredUsers from "../../lib/data/fetchRegisteredUsers";
+
+import { TAWK_TO_API_KEY } from "./../../lib/env";
 
 function getHash(data: BinaryLike, key: string) {
   const hmac = crypto.createHmac("sha256", key);

@@ -1,5 +1,5 @@
-import { createClient } from "redis";
 import { GoogleSpreadsheet } from "google-spreadsheet";
+import { createClient } from "redis";
 
 import { GOOGLE_CLIENT_EMAIL, REDIS_URL, REGISTRATION_SPREADSHEET_ID, REGISTRATION_SPREADSHEET_SHEET_ID } from "../env";
 

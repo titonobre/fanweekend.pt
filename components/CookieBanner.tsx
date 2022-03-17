@@ -1,7 +1,8 @@
-import NextLink from "next/link";
 import { Stack, Text, Button, Link } from "@chakra-ui/react";
-import useLocalStorage from "../lib/hooks/useLocalStorage";
+import NextLink from "next/link";
 import { useEffect, useState } from "react";
+
+import useLocalStorage from "../lib/hooks/useLocalStorage";
 
 export default function CookieBanner() {
   const [cookieBannerDismissedValue, setCookieBannerDismissedValue] = useLocalStorage("cookieBannerDismissed", "false");

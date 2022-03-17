@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 
-import Navbar from "../Navbar";
-import Footer from "../Footer";
-import Content from "../Content";
 import Container from "../Container";
+import Content from "../Content";
 import CookieBanner from "../CookieBanner";
+import Footer from "../Footer";
+import Navbar from "../Navbar";
 
 const GenericPage: NextPage = ({ children }) => {
   return (

@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import TawkToWidget from "tawkto-react";
 
 import { TAWK_TO_PROPERTY_ID, TAWK_TO_WIDGET_ID } from "../env";

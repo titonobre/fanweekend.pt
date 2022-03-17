@@ -1,5 +1,4 @@
-import NextLink from "next/link";
-
+import { useUser } from "@auth0/nextjs-auth0";
 import {
   Box,
   Link,
@@ -15,9 +14,10 @@ import {
   Stack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { useUser } from "@auth0/nextjs-auth0";
-import useScrollState from "../lib/hooks/useScrollState";
+import NextLink from "next/link";
+
 import { LOGIN_ENABLED } from "../lib/env";
+import useScrollState from "../lib/hooks/useScrollState";
 
 const loginUrl = LOGIN_ENABLED ? "/api/auth/login?returnTo=/account" : "#";
 const signUpUrl = LOGIN_ENABLED ? "/api/signup" : "#";

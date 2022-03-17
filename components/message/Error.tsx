@@ -1,5 +1,6 @@
-import { Box, Flex } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
+import { Box, Flex } from "@chakra-ui/react";
+
 import Message, { Props } from "./Message";
 
 export default function Error({ icon, ...props }: Props) {

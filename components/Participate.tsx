@@ -1,8 +1,9 @@
 import { Box, Heading, Stack, Alert, AlertIcon } from "@chakra-ui/react";
-import PricingPlans from "./PricingPlans";
-import Features from "./Features";
 
 import { REGISTRATION_ENABLED, SHOW_PRICING } from "../lib/env";
+
+import Features from "./Features";
+import PricingPlans from "./PricingPlans";
 
 export default function Participate() {
   return (

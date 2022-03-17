@@ -1,9 +1,8 @@
-import type { NextApiRequest, NextApiResponse } from "next";
 import { ManagementClient } from "auth0";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 import auth0 from "../../lib/auth/initAuth0";
 import { AUTH0_CLIENT_ID, AUTH0_CLIENT_SECRET, AUTH0_DOMAIN } from "../../lib/env";
-
 import allowMethod, { HTTPMethod } from "../../lib/middleware/allowMethod";
 
 const auth0Management = new ManagementClient({

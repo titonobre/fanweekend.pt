@@ -1,6 +1,7 @@
-import auth0 from "../../../lib/auth/initAuth0";
 import { HandlerError } from "@auth0/nextjs-auth0";
 import { NextApiRequest, NextApiResponse } from "next";
+
+import auth0 from "../../../lib/auth/initAuth0";
 
 export default auth0.handleAuth({
   async profile(req: NextApiRequest, res: NextApiResponse) {

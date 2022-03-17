@@ -1,16 +1,13 @@
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
+import { Button, Flex, Link } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import NextLink from "next/link";
 
-import { Button, Flex, Link } from "@chakra-ui/react";
-
-import { withPageAuthRequired } from "@auth0/nextjs-auth0";
-
-import useUpdatedUser from "../../lib/hooks/useUpdatedUser";
-
-import Error from "../../components/message/Error";
-import GenericPage from "../../components/page/GenericPage";
-import Success from "../../components/message/Success";
 import Loading from "../../components/Loading";
+import Error from "../../components/message/Error";
+import Success from "../../components/message/Success";
+import GenericPage from "../../components/page/GenericPage";
+import useUpdatedUser from "../../lib/hooks/useUpdatedUser";
 
 const MePage: NextPage = () => {
   const { user, isLoading } = useUpdatedUser();

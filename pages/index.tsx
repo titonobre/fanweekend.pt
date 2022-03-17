@@ -1,16 +1,16 @@
-import type { NextPage } from "next";
 import { Box } from "@chakra-ui/react";
+import type { NextPage } from "next";
 
+import Container from "../components/Container";
+import Content from "../components/Content";
+import CookieBanner from "../components/CookieBanner";
+import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import Where from "../components/Where";
 import Participate from "../components/Participate";
-import Content from "../components/Content";
-import Container from "../components/Container";
-import When from "../components/When";
 import Welcome from "../components/Welcome";
-import CookieBanner from "../components/CookieBanner";
+import When from "../components/When";
+import Where from "../components/Where";
 
 const Index: NextPage = () => (
   <>

@@ -1,13 +1,4 @@
-import React, { useState } from "react";
-import type { NextPage } from "next";
-import NextLink from "next/link";
-
 import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
-
-import { useForm, SubmitHandler, Controller } from "react-hook-form";
-
-import { format } from "date-fns";
-
 import {
   Checkbox,
   FormControl,
@@ -37,21 +28,23 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { yupResolver } from "@hookform/resolvers/yup";
-
 import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+import { format } from "date-fns";
+import type { NextPage } from "next";
+import NextLink from "next/link";
+import { useRouter } from "next/router";
+import React, { useState } from "react";
+import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import ReactMarkdown from "react-markdown";
 
-import useApi from "../../lib/hooks/useApi";
-
-import { FormValues, schema, shirtSizes, countries, lugs, ShirtSize, genders } from "../../lib/registration-schema";
-import looksRealName from "../../lib/utils/looksRealName";
-
-import termsAndConditions from "../../data/terms-and-conditions.md?raw";
-import { useRouter } from "next/router";
-import Error from "../../components/message/Error";
-import useUserData from "../../lib/hooks/userUserData";
 import Loading from "../../components/Loading";
+import Error from "../../components/message/Error";
 import GenericPage from "../../components/page/GenericPage";
+import termsAndConditions from "../../data/terms-and-conditions.md?raw";
+import useApi from "../../lib/hooks/useApi";
+import useUserData from "../../lib/hooks/userUserData";
+import schema, { FormValues, shirtSizes, countries, lugs, ShirtSize, genders } from "../../lib/registration-schema";
+import looksRealName from "../../lib/utils/looksRealName";
 
 const RegisterPage: NextPage = () => {
   const [errorMessage, setErrorMessage] = useState("");

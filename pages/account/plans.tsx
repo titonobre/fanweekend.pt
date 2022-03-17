@@ -1,16 +1,15 @@
+import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
 import type { NextPage } from "next";
 
-import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
-
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
-import Content from "../../components/Content";
 import Container from "../../components/Container";
-import Participate from "../../components/Participate";
+import Content from "../../components/Content";
 import CookieBanner from "../../components/CookieBanner";
+import Footer from "../../components/Footer";
 import Loading from "../../components/Loading";
-import GenericPage from "../../components/page/GenericPage";
 import Error from "../../components/message/Error";
+import Navbar from "../../components/Navbar";
+import GenericPage from "../../components/page/GenericPage";
+import Participate from "../../components/Participate";
 
 const MePage: NextPage = () => {
   const { user, error, isLoading } = useUser();

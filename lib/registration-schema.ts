@@ -1,11 +1,10 @@
-import { SchemaOf, string, object, boolean, mixed, date, BaseSchema } from "yup";
 import { parse, isDate, startOfDay, addYears } from "date-fns";
-
-import looksRealName from "./utils/looksRealName";
+import { SchemaOf, string, object, boolean, mixed, date, BaseSchema } from "yup";
 
 import countries from "../data/countries.json";
-
 import lugs from "../data/lugs.json";
+
+import looksRealName from "./utils/looksRealName";
 
 export { countries, lugs };
 
@@ -59,7 +58,7 @@ function parseDateString(currentValue: string, originalValue: unknown, context: 
 const today = startOfDay(new Date());
 const minDate = addYears(today, -100);
 
-export const schema: SchemaOf<FormValues> = object({
+const schema: SchemaOf<FormValues> = object({
   id: string().required().max(50),
   name: string()
     .required()

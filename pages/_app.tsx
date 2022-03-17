@@ -1,18 +1,15 @@
-import { ChakraProvider } from "@chakra-ui/react";
-
-import { useEffect } from "react";
-import { useRouter } from "next/router";
-import type { AppProps } from "next/app";
-import Script from "next/script";
-import Head from "next/head";
-
-import * as gtag from "../lib/gtag";
 import { UserProvider } from "@auth0/nextjs-auth0";
-
-import "../styles/globals.css";
-import theme from "../theme";
+import { ChakraProvider } from "@chakra-ui/react";
+import type { AppProps } from "next/app";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import Script from "next/script";
+import { useEffect } from "react";
 
 import { GA_TRACKING_ID, GOOGLE_SITE_VERIFICATION_CODE } from "../lib/env";
+import * as gtag from "../lib/gtag";
+import "../styles/globals.css";
+import theme from "../theme";
 
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter();

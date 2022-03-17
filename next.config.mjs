@@ -1,7 +1,6 @@
-import { PHASE_PRODUCTION_BUILD } from "next/constants.js";
-
 import withPlugins from "next-compose-plugins";
 import pwa from "next-pwa";
+import { PHASE_PRODUCTION_BUILD } from "next/constants.js";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

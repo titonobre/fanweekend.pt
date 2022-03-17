@@ -1,5 +1,5 @@
-import React from "react";
 import { Avatar, Box, HStack } from "@chakra-ui/react";
+import React from "react";
 import { IconType } from "react-icons";
 
 export type Props = {

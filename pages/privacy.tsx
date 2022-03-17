@@ -1,12 +1,12 @@
-import type { NextPage } from "next";
 import { Box, Heading, HStack, ListItem, Stack, Text, UnorderedList } from "@chakra-ui/react";
+import type { NextPage } from "next";
 import { FaCookieBite, FaProjectDiagram, FaInbox, FaCogs, FaFolderOpen, FaVoteYea, FaEnvelope } from "react-icons/fa";
 
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import Content from "../components/Content";
 import Container from "../components/Container";
+import Content from "../components/Content";
 import CookieBanner from "../components/CookieBanner";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const PrivacyPolicyPage: NextPage = () => {
   return (

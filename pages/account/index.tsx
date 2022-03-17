@@ -1,22 +1,20 @@
-import type { NextPage } from "next";
-
-import { Box, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
-
 import { withPageAuthRequired } from "@auth0/nextjs-auth0";
-
-import GenericPage from "../../components/page/GenericPage";
-import Error from "../../components/message/Error";
-import Loading from "../../components/Loading";
-import useTawkTo from "../../lib/hooks/useTawkTo";
-import RegisterCard from "../../components/card/RegisterCard";
-import useUserData from "../../lib/hooks/userUserData";
-import { FaExclamation, FaWpforms, FaCubes, FaIdCard } from "react-icons/fa";
-import VerifyEmailCard from "../../components/card/VerifyEmailCard";
-import TimelineItem from "../../components/timeline/TimelineItem";
-import ActivitiesCard from "../../components/card/ActivitiesCard";
-import UpdateProfileCard from "../../components/card/UpdateProfileCard";
-import looksRealName from "../../lib/utils/looksRealName";
+import { Box, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import type { NextPage } from "next";
 import { IconType } from "react-icons";
+import { FaExclamation, FaWpforms, FaCubes, FaIdCard } from "react-icons/fa";
+
+import ActivitiesCard from "../../components/card/ActivitiesCard";
+import RegisterCard from "../../components/card/RegisterCard";
+import UpdateProfileCard from "../../components/card/UpdateProfileCard";
+import VerifyEmailCard from "../../components/card/VerifyEmailCard";
+import Loading from "../../components/Loading";
+import Error from "../../components/message/Error";
+import GenericPage from "../../components/page/GenericPage";
+import TimelineItem from "../../components/timeline/TimelineItem";
+import useUserData from "../../lib/hooks/userUserData";
+import useTawkTo from "../../lib/hooks/useTawkTo";
+import looksRealName from "../../lib/utils/looksRealName";
 
 type Predicate<I> = (item: I) => boolean;
 

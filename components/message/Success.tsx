@@ -1,4 +1,5 @@
 import { CheckCircleIcon } from "@chakra-ui/icons";
+
 import Message, { Props } from "./Message";
 
 export default function Success({ icon, ...props }: Props) {

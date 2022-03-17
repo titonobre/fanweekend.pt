@@ -1,5 +1,5 @@
-import { Box, SimpleGrid, Icon, Text, Stack, HStack, VStack } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
+import { Box, SimpleGrid, Icon, Text, Stack, HStack, VStack } from "@chakra-ui/react";
 
 const features = [
   {

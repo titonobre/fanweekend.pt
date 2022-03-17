@@ -1,13 +1,12 @@
 import crypto from "crypto";
 
-import type { NextApiRequest, NextApiResponse } from "next";
-import { ManagementClient } from "auth0";
 import { Session } from "@auth0/nextjs-auth0";
+import { ManagementClient } from "auth0";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 import auth0 from "../../lib/auth/initAuth0";
 import { AUTH0_CLIENT_ID, AUTH0_CLIENT_SECRET, AUTH0_DOMAIN } from "../../lib/env";
 import validate from "../../lib/middleware/validate";
-
 import schema, { FormValues } from "../../lib/profile-schema";
 
 type UserMetadata = Record<string, string | number | boolean>;

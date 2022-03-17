@@ -1,6 +1,5 @@
-import NextLink from "next/link";
-
 import { Box, Heading, Text, Stack, Link, Button, HStack, useToken } from "@chakra-ui/react";
+import NextLink from "next/link";
 import { FaCheckCircle } from "react-icons/fa";
 
 type RegisterCardProps = {

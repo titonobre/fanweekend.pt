@@ -1,8 +1,8 @@
-import { ReactNode } from "react";
-import NextLink from "next/link";
-
-import { Box, Stack, HStack, Text, VStack, useColorModeValue, List, ListItem, ListIcon, Button, Link } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
+import { Box, Stack, HStack, Text, VStack, useColorModeValue, List, ListItem, ListIcon, Button, Link } from "@chakra-ui/react";
+import NextLink from "next/link";
+import { ReactNode } from "react";
+
 import { REGISTRATION_ENABLED } from "../lib/env";
 
 function PriceWrapper({ children }: { children: ReactNode }) {

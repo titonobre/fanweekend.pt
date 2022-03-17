@@ -1,14 +1,12 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-
-import fetch from "node-fetch";
-import { FormData } from "formdata-polyfill/esm.min.js";
-
 import { format } from "date-fns";
+import { FormData } from "formdata-polyfill/esm.min.js";
+import type { NextApiRequest, NextApiResponse } from "next";
+import fetch from "node-fetch";
 
+import auth0 from "../../lib/auth/initAuth0";
 import { REGISTRATION_FORM_ID } from "../../lib/env";
 import validate from "../../lib/middleware/validate";
 import schema, { FormValues } from "../../lib/registration-schema";
-import auth0 from "../../lib/auth/initAuth0";
 
 const formUrl = `https://docs.google.com/forms/d/e/${REGISTRATION_FORM_ID}/formResponse`;
 

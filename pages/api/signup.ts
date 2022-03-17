@@ -1,6 +1,5 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-
 import { HandlerError } from "@auth0/nextjs-auth0";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 import auth0 from "../../lib/auth/initAuth0";
 

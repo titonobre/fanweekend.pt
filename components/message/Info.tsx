@@ -1,4 +1,5 @@
 import { InfoIcon } from "@chakra-ui/icons";
+
 import Message, { Props } from "./Message";
 
 export default function Info({ icon, ...props }: Props) {

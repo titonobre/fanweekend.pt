@@ -1,7 +1,7 @@
-import NextLink from "next/link";
 import { Box, chakra, Container, Flex, Link, Stack, Text, useColorModeValue, VisuallyHidden } from "@chakra-ui/react";
-import { FaInstagram, FaFacebookF, FaHeart } from "react-icons/fa";
+import NextLink from "next/link";
 import { ReactNode } from "react";
+import { FaInstagram, FaFacebookF, FaHeart } from "react-icons/fa";
 
 import styles from "./Footer.module.css";
 import RecognizedEventBadge from "./RecognizedEventBadge";

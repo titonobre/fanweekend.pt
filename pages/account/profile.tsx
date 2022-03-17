@@ -1,11 +1,4 @@
-import React, { useMemo, useState } from "react";
-import type { NextPage } from "next";
-import NextLink from "next/link";
-
 import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
-
-import { useForm, SubmitHandler, useFormState } from "react-hook-form";
-
 import {
   FormControl,
   FormErrorMessage,
@@ -23,15 +16,17 @@ import {
   AlertIcon,
 } from "@chakra-ui/react";
 import { yupResolver } from "@hookform/resolvers/yup";
+import type { NextPage } from "next";
+import NextLink from "next/link";
+import React, { useMemo, useState } from "react";
+import { useForm, SubmitHandler, useFormState } from "react-hook-form";
 
-import useApi from "../../lib/hooks/useApi";
-
-import { FormValues, schema } from "../../lib/profile-schema";
-
-import Error from "../../components/message/Error";
 import Loading from "../../components/Loading";
+import Error from "../../components/message/Error";
 import GenericPage from "../../components/page/GenericPage";
+import useApi from "../../lib/hooks/useApi";
 import useTawkTo from "../../lib/hooks/useTawkTo";
+import schema, { FormValues } from "../../lib/profile-schema";
 
 const RegisterPage: NextPage = () => {
   const [errorMessage, setErrorMessage] = useState<string>();

@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { useThrottle } from "@react-hook/throttle";
+import { useEffect } from "react";
 
 type Direction = "up" | "down";
 type ScrollState = [position: number, direction: Direction];

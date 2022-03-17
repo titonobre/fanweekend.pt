@@ -1,6 +1,5 @@
-import NextLink from "next/link";
-
 import { Box, Heading, Text, Stack, Link, Button, HStack } from "@chakra-ui/react";
+import NextLink from "next/link";
 
 export default function UpdateProfileCard() {
   return (

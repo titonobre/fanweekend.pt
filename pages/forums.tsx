@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+
 import Info from "../components/message/Info";
 import GenericPage from "../components/page/GenericPage";
 

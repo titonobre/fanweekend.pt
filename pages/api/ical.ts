@@ -1,6 +1,5 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-
 import ical from "ical-generator";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 const cal = ical({
   prodId: "//fanweekend.pt//ical//EN",
