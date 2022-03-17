@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 
 import TawkToWidget from "tawkto-react";
 
@@ -15,8 +15,20 @@ export type UserData = {
 };
 
 export default function useTawkTo({ name, email, tawkToHash: hash }: UserData = { name: "", email: "", tawkToHash: "" }) {
-  useEffect(() => {
+  const tawk = useMemo(() => {
     if (!propertyId || !widgetId) {
+      return;
+    }
+
+    try {
+      return new TawkToWidget(propertyId, widgetId);
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!tawk) {
       return;
     }
 
@@ -24,15 +36,31 @@ export default function useTawkTo({ name, email, tawkToHash: hash }: UserData = 
       const tawk = new TawkToWidget(propertyId, widgetId);
 
       const setAttributes = () => {
-        name && tawk.setAttributes({ name });
-        email && tawk.setAttributes({ email, hash });
+        if (name) {
+          tawk.setAttributes({ name });
+        }
+        if (email) {
+          tawk.setAttributes({ email, hash });
+        }
       };
 
-      tawk.onLoad(setAttributes);
+      if (name || email) {
+        tawk.onLoad(setAttributes);
+      }
 
       setAttributes();
     } catch (error) {
       console.error(error);
     }
-  }, [name, email, hash]);
+  }, [tawk, name, email, hash]);
+
+  const showChat = () => {
+    if (!tawk) {
+      return;
+    }
+
+    tawk.maximize();
+  };
+
+  return { showChat };
 }

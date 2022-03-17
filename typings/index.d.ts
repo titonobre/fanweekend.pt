@@ -22,6 +22,7 @@ declare module "tawkto-react" {
     constructor(propertyId: string, widgetId: string);
     onLoad(arg0: () => void);
     setAttributes(arg0: Partial<{ name: string; email: string; hash: string }>);
+    maximize();
   }
 
   export = TawkToWidget;
