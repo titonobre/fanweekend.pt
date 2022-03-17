@@ -63,7 +63,6 @@ async function register(req: NextApiRequest, res: NextApiResponse): Promise<void
   };
 
   try {
-
     const response = await fetch(formUrl, requestOptions);
 
     if (response.ok) {
@@ -73,12 +72,10 @@ async function register(req: NextApiRequest, res: NextApiResponse): Promise<void
       console.error(body);
       throw response;
     }
-  }
-  catch (error) {
-    console.error("Error Submitting Form", error)
+  } catch (error) {
+    console.error("Error Submitting Form", error);
     return res.status(500).json({ error: "Form submission rejected." });
   }
-
 }
 
 export default auth0.withApiAuthRequired(validate(schema, register));
