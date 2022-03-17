@@ -86,7 +86,7 @@ const MePage: NextPage = () => {
 
   return (
     <GenericPage>
-      <Stack as={Box} textAlign="center" spacing={{ base: 8, md: 14 }} py={{ base: 10, md: 18 }}>
+      <Stack as={Box} textAlign="center" spacing={{ base: 8, md: 14 }} my={{ base: 10, md: 18 }}>
         <Heading as="h1" fontWeight={600} fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }} lineHeight="110%">
           Welcome <br />
           <Text as="span" color="green.400">
@@ -96,7 +96,7 @@ const MePage: NextPage = () => {
         <Text color="gray.500">This is your account page, your gateway into the Paredes de Coura Fan Weekend.</Text>
       </Stack>
 
-      <Stack spacing={{ base: 8, md: 14 }} py={{ base: 10, md: 18 }}>
+      <Stack spacing={{ base: 8, md: 14 }} my={{ base: 10, md: 18 }}>
         {cards.map((card, index) => (
           <TimelineItem key={index} icon={card.icon} iconBg={card.iconBg} iconFg={card.iconFg}>
             {card.content}
