@@ -1,0 +1,27 @@
+{
+  "name": "Fan Weekend",
+  "short_name": "Fan Weekend",
+  "icons": [
+    {
+      "src": "/icons/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/logo-384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#fc7f5f",
+  "background_color": "#EDF2F7",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}

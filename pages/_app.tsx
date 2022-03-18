@@ -31,7 +31,25 @@ function App({ Component, pageProps }: AppProps) {
         <meta name="keywords" content="paredes, coura, fan, weekend" />
         <meta name="author" content="Comunidade 0937" />
         <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION_CODE} />
+
+        <meta name="application-name" content="Fan Weekend" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="theme-color" content="#fc7f5f" />
+        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover" />
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Fan Weekend" />
+
+        <link rel="manifest" href="/manifest.json" />
+
         <link rel="icon" href="/favicon.gif" />
+
+        <link rel="apple-touch-icon" href="/icons/touch-icon-iphone.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/icons/logo-152.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/logo-180.png" />
+        <link rel="apple-touch-icon" sizes="167x167" href="/icons/logo-167.png" />
       </Head>
       <UserProvider>
         <ChakraProvider resetCSS theme={theme}>
