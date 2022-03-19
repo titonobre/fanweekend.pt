@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useState } from "react";
 
 import TawkToWidget from "tawkto-react";
 
@@ -15,25 +15,17 @@ export type UserData = {
 };
 
 export default function useTawkTo({ name, email, tawkToHash: hash }: UserData = { name: "", email: "", tawkToHash: "" }) {
-  const tawk = useMemo(() => {
+  const [tawkTo, setTawkTo] = useState<TawkToWidget>();
+
+  useEffect(() => {
     if (!propertyId || !widgetId) {
       return;
     }
 
     try {
-      return new TawkToWidget(propertyId, widgetId);
-    } catch (error) {
-      console.error(error);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (!tawk) {
-      return;
-    }
-
-    try {
       const tawk = new TawkToWidget(propertyId, widgetId);
+
+      setTawkTo(tawk);
 
       const setAttributes = () => {
         if (name) {
@@ -52,14 +44,14 @@ export default function useTawkTo({ name, email, tawkToHash: hash }: UserData = 
     } catch (error) {
       console.error(error);
     }
-  }, [tawk, name, email, hash]);
+  }, [name, email, hash]);
 
   const showChat = () => {
-    if (!tawk) {
+    if (!tawkTo) {
       return;
     }
 
-    tawk.maximize();
+    tawkTo.maximize();
   };
 
   return { showChat };
