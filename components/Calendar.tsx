@@ -16,7 +16,7 @@ export default function Calendar() {
   }));
 
   return (
-    <SimpleGrid textAlign="center" lineHeight="2.5rem" templateColumns="repeat(7, 2.5rem);">
+    <SimpleGrid textAlign="center" lineHeight="2.5rem" templateColumns="repeat(7, 2.5rem);" shadow="2xl">
       <GridItem colSpan={7} backgroundColor="gray.500" color="white" borderTopRadius="6px">
         June 2022
       </GridItem>
