@@ -5,6 +5,8 @@ export const REGISTRATION_FORM_ID: string = process.env.REGISTRATION_FORM_ID as 
 export const REGISTRATION_SPREADSHEET_ID: string = process.env.REGISTRATION_SPREADSHEET_ID as string;
 export const REGISTRATION_SPREADSHEET_SHEET_ID: string = process.env.REGISTRATION_SPREADSHEET_SHEET_ID as string;
 
+export const EXTRA_NIGHT_FORM_ID: string = process.env.EXTRA_NIGHT_FORM_ID as string;
+
 export const REGISTRATION_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("registration") ?? false;
 export const LOGIN_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("login") ?? false;
 export const SHOW_PRICING: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("pricing") ?? false;

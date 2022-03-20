@@ -9,6 +9,8 @@ type UserData = {
   formSubmitted: boolean;
   paymentEnabled: boolean;
   paymentReceived: boolean;
+  extraNightSelected: boolean;
+
   tawkToHash: string;
 };
 

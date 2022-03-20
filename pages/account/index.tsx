@@ -2,12 +2,13 @@ import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { Box, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import { IconType } from "react-icons";
-import { FaExclamation, FaWpforms, FaCubes, FaIdCard, FaClipboardList, FaFileInvoice } from "react-icons/fa";
+import { FaExclamation, FaWpforms, FaCubes, FaIdCard, FaClipboardList, FaFileInvoice, FaBed } from "react-icons/fa";
 
 import ActivitiesCard from "../../components/card/ActivitiesCard";
 import PaymentDetailsCard from "../../components/card/PaymentDetailsCard";
 import ProgressCard from "../../components/card/ProgressCard";
 import RegisterCard from "../../components/card/RegisterCard";
+import SelectExtraNightCard from "../../components/card/SelectExtraNightCard";
 import UpdateProfileCard from "../../components/card/UpdateProfileCard";
 import VerifyEmailCard from "../../components/card/VerifyEmailCard";
 import Loading from "../../components/Loading";
@@ -65,6 +66,7 @@ const MePage: NextPage = () => {
   const formNotSubmitted = !formSubmitted;
   const registerEnabled = emailVerified && !formSubmitted;
   const showPaymentDetails = user.paymentEnabled && !user.paymentReceived;
+  const showExtraNightSelection = formSubmitted && !user.extraNightSelected;
 
   const progress = {
     paymentEnabled: user.paymentEnabled,
@@ -85,6 +87,7 @@ const MePage: NextPage = () => {
       },
     ],
     [showPaymentDetails, { icon: FaFileInvoice, iconBg: "pink.500", iconFg: "white", content: <PaymentDetailsCard plan={user.plan} /> }],
+    [showExtraNightSelection, { icon: FaBed, iconBg: "orange.700", iconFg: "white", content: <SelectExtraNightCard /> }],
     [always, { icon: FaCubes, iconBg: "gray.500", iconFg: "white", content: <ActivitiesCard enabled={false} /> }],
   ];
 

@@ -10,6 +10,7 @@ export type UserData = {
   plan: string;
   paymentEnabled: string;
   paymentReceived: string;
+  extraNight: string;
 };
 
 let googleClientPrivateKeyCache: string;
@@ -56,5 +57,6 @@ export default async function fetchRegisteredUsers(): Promise<UserData[]> {
     plan: row["Plan"],
     paymentEnabled: row["Payment Enabled"],
     paymentReceived: row["Payment Received"],
+    extraNight: row["Extra Night"],
   }));
 }
