@@ -2,9 +2,10 @@ import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { Box, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import { IconType } from "react-icons";
-import { FaExclamation, FaWpforms, FaCubes, FaIdCard } from "react-icons/fa";
+import { FaExclamation, FaWpforms, FaCubes, FaIdCard, FaClipboardList } from "react-icons/fa";
 
 import ActivitiesCard from "../../components/card/ActivitiesCard";
+import ProgressCard from "../../components/card/ProgressCard";
 import RegisterCard from "../../components/card/RegisterCard";
 import UpdateProfileCard from "../../components/card/UpdateProfileCard";
 import VerifyEmailCard from "../../components/card/VerifyEmailCard";
@@ -28,8 +29,10 @@ type CardDefinition = {
   content: JSX.Element;
 };
 
-function filterContents<T>(contents: [Predicate<T>, T][]): T[] {
-  return contents.filter(([condition, content]) => condition(content)).map(([, content]) => content);
+function filterContents<T>(contents: [boolean | Predicate<T>, T][]): T[] {
+  return contents
+    .filter(([condition, content]) => (typeof condition === "function" ? condition(content) : condition))
+    .map(([, content]) => content);
 }
 
 const MePage: NextPage = () => {
@@ -52,29 +55,31 @@ const MePage: NextPage = () => {
     );
   }
 
+  const always = true;
   const emailVerified = user.emailVerified;
-  const userRegistered = user.registered;
-
-  const registerEnabled = emailVerified && !userRegistered;
-
+  const emailNotVerified = !user.emailVerified;
   const nameUpdated = looksRealName(user.name);
+  const nameNotUpdated = !nameUpdated;
+  const formSubmitted = user.formSubmitted;
+  const formNotSubmitted = !formSubmitted;
+  const registerEnabled = emailVerified && !formSubmitted;
 
-  const userContext = { emailVerified, nameUpdated };
+  const progress = {
+    invoiceSent: user.invoiceSent,
+    paymentReceived: user.paymentReceived,
+  };
 
-  const always = () => true;
-  const emailNotVerified = () => !userContext.emailVerified;
-  const nameNotUpdated = () => !userContext.nameUpdated;
-
-  const contents: [Predicate<CardDefinition>, CardDefinition][] = [
+  const contents: [boolean, CardDefinition][] = [
+    [formSubmitted, { icon: FaClipboardList, iconBg: "blue.500", iconFg: "white", content: <ProgressCard progress={progress} /> }],
     [emailNotVerified, { icon: FaExclamation, iconBg: "red.500", iconFg: "white", content: <VerifyEmailCard /> }],
     [nameNotUpdated, { icon: FaIdCard, iconBg: "orange.400", iconFg: "white", content: <UpdateProfileCard /> }],
     [
-      always,
+      formNotSubmitted,
       {
         icon: FaWpforms,
         iconBg: registerEnabled ? "green.500" : "gray.500",
         iconFg: "white",
-        content: <RegisterCard enabled={registerEnabled} registered={userRegistered} />,
+        content: <RegisterCard enabled={registerEnabled} registered={formSubmitted} />,
       },
     ],
     [always, { icon: FaCubes, iconBg: "gray.500", iconFg: "white", content: <ActivitiesCard enabled={false} /> }],

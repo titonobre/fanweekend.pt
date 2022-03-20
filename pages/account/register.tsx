@@ -114,7 +114,6 @@ const RegisterPage: NextPage = () => {
 
   // check if user email is already verified
   if (!user.email_verified) {
-    // add link to resend email verification
     return (
       <GenericPage>
         <Error
@@ -126,9 +125,8 @@ const RegisterPage: NextPage = () => {
     );
   }
 
-  // check if user email is already verified
-  if (userData.registered) {
-    // add link to resend email verification
+  // check if user already submitted registration form
+  if (userData.formSubmitted) {
     return (
       <GenericPage>
         <Error title="Already Registered" message="You already submitted the registration form once! " />

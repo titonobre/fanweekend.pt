@@ -5,8 +5,9 @@ type UserData = {
   name: string;
   email: string;
   emailVerified: boolean;
-  registered: boolean;
-
+  formSubmitted: boolean;
+  invoiceSent: boolean;
+  paymentReceived: boolean;
   tawkToHash: string;
 };
 
