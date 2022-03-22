@@ -20,3 +20,7 @@ export const REDIS_URL: string = process.env.REDIS_URL as string;
 export const AUTH0_DOMAIN: string = process.env.AUTH0_DOMAIN as string;
 export const AUTH0_CLIENT_ID: string = process.env.AUTH0_CLIENT_ID as string;
 export const AUTH0_CLIENT_SECRET: string = process.env.AUTH0_CLIENT_SECRET as string;
+
+export const PAYMENT_ACCOUNT_HOLDER = process.env.NEXT_PUBLIC_PAYMENT_ACCOUNT_HOLDER as string;
+export const PAYMENT_ACCOUNT_IBAN = process.env.NEXT_PUBLIC_PAYMENT_ACCOUNT_IBAN as string;
+export const PAYMENT_ACCOUNT_BIC_SWIFT = process.env.NEXT_PUBLIC_PAYMENT_ACCOUNT_BIC_SWIFT as string;

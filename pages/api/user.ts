@@ -29,10 +29,11 @@ async function user(req: NextApiRequest, res: NextApiResponse) {
       id: session.user.sub,
       name: session.user.name,
       email: session.user.email,
+      plan: registeredUser?.plan,
 
       emailVerified: session.user.email_verified,
       formSubmitted: !!registeredUser,
-      invoiceSent: !!registeredUser?.invoiceSent,
+      paymentEnabled: !!registeredUser?.paymentEnabled,
       paymentReceived: !!registeredUser?.paymentReceived,
 
       tawkToHash: getHash(session.user.email, TAWK_TO_API_KEY),

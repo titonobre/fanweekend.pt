@@ -3,12 +3,12 @@ import { FaAngleDown, FaAngleRight, FaCheck, FaFileInvoice, FaMoneyBillAlt, FaWp
 
 type RegisterCardProps = {
   progress: {
-    invoiceSent: boolean;
+    paymentEnabled: boolean;
     paymentReceived: boolean;
   };
 };
 
-export default function ProgressCard({ progress: { invoiceSent, paymentReceived } }: RegisterCardProps) {
+export default function ProgressCard({ progress: { paymentEnabled, paymentReceived } }: RegisterCardProps) {
   const breakPoint = "sm";
 
   const [colorGray500] = useToken("colors", ["gray.400"]);
@@ -31,7 +31,7 @@ export default function ProgressCard({ progress: { invoiceSent, paymentReceived 
       color: "green.500",
       text: "Registration Form Submitted",
     },
-    invoiceSent
+    paymentEnabled
       ? {
           icon: <FaFileInvoice color="white" />,
           color: "green.500",
@@ -48,7 +48,7 @@ export default function ProgressCard({ progress: { invoiceSent, paymentReceived 
           color: "green.500",
           text: "Paid and Confirmed",
         }
-      : invoiceSent
+      : paymentEnabled
       ? {
           icon: <FaMoneyBillAlt color="white" />,
           color: "gray.500",

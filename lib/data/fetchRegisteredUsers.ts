@@ -8,7 +8,7 @@ const doc = new GoogleSpreadsheet(REGISTRATION_SPREADSHEET_ID);
 export type UserData = {
   id: string;
   plan: string;
-  invoiceSent: string;
+  paymentEnabled: string;
   paymentReceived: string;
 };
 
@@ -54,7 +54,7 @@ export default async function fetchRegisteredUsers(): Promise<UserData[]> {
   return rows.map((row) => ({
     id: row["ID"],
     plan: row["Plan"],
-    invoiceSent: row["Invoice Sent"],
+    paymentEnabled: row["Payment Enabled"],
     paymentReceived: row["Payment Received"],
   }));
 }

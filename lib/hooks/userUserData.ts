@@ -4,9 +4,10 @@ type UserData = {
   id: string;
   name: string;
   email: string;
+  plan: string;
   emailVerified: boolean;
   formSubmitted: boolean;
-  invoiceSent: boolean;
+  paymentEnabled: boolean;
   paymentReceived: boolean;
   tawkToHash: string;
 };

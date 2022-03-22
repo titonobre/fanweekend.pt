@@ -2,9 +2,10 @@ import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { Box, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import { IconType } from "react-icons";
-import { FaExclamation, FaWpforms, FaCubes, FaIdCard, FaClipboardList } from "react-icons/fa";
+import { FaExclamation, FaWpforms, FaCubes, FaIdCard, FaClipboardList, FaFileInvoice } from "react-icons/fa";
 
 import ActivitiesCard from "../../components/card/ActivitiesCard";
+import PaymentDetailsCard from "../../components/card/PaymentDetailsCard";
 import ProgressCard from "../../components/card/ProgressCard";
 import RegisterCard from "../../components/card/RegisterCard";
 import UpdateProfileCard from "../../components/card/UpdateProfileCard";
@@ -63,9 +64,10 @@ const MePage: NextPage = () => {
   const formSubmitted = user.formSubmitted;
   const formNotSubmitted = !formSubmitted;
   const registerEnabled = emailVerified && !formSubmitted;
+  const showPaymentDetails = user.paymentEnabled && !user.paymentReceived;
 
   const progress = {
-    invoiceSent: user.invoiceSent,
+    paymentEnabled: user.paymentEnabled,
     paymentReceived: user.paymentReceived,
   };
 
@@ -82,6 +84,7 @@ const MePage: NextPage = () => {
         content: <RegisterCard enabled={registerEnabled} registered={formSubmitted} />,
       },
     ],
+    [showPaymentDetails, { icon: FaFileInvoice, iconBg: "pink.500", iconFg: "white", content: <PaymentDetailsCard plan={user.plan} /> }],
     [always, { icon: FaCubes, iconBg: "gray.500", iconFg: "white", content: <ActivitiesCard enabled={false} /> }],
   ];
 
