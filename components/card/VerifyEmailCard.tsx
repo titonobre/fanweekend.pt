@@ -29,9 +29,9 @@ export default function VerifyEmailCard() {
         <Heading color="gray.700" fontSize="2xl" fontFamily="body">
           Email Verification
         </Heading>
-        <Text color="gray.500">Please check your email inbox and follow the instructions to verify your account.</Text>
-        <Text color="gray.500">Also check your spam/junk mail folders.</Text>
-        <Text color="gray.500">Still not working? We can resend you the verification email.</Text>
+        <Text>Please check your email inbox and follow the instructions to verify your account.</Text>
+        <Text>Also check your spam/junk mail folders.</Text>
+        <Text>Still not working? We can resend you the verification email.</Text>
         <HStack justify="end">
           <Button colorScheme="green" variant="outline" onClick={showChat}>
             Help

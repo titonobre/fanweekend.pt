@@ -17,7 +17,7 @@ export default function RegisterCard({ enabled = false, registered = false }: Re
         <Heading color={enabled ? "gray.700" : "gray.500"} fontSize="2xl" fontFamily="body">
           Registration
         </Heading>
-        <Text color="gray.500">Want to be part of the event? The first step is to register.</Text>
+        <Text>Want to be part of the event? The first step is to register.</Text>
         <HStack justify="end">
           {registered ? (
             <>

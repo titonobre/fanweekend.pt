@@ -14,7 +14,7 @@ export default function ActivitiesCard({ enabled = false }: RegisterCardProps) {
         <Text color="gray.500">Here you will be able to register for the several activities available.</Text>
         <Alert colorScheme="gray" borderRadius={6}>
           <AlertIcon />
-          The activities will be available soon.
+          <Text color="gray.500">The activities will be available soon.</Text>
         </Alert>
         <HStack justify="end">
           <Button disabled>Register</Button>

@@ -8,7 +8,7 @@ export default function UpdateProfileCard() {
         <Heading color="gray.700" fontSize="2xl" fontFamily="body">
           Profile
         </Heading>
-        <Text color="gray.500">Update your profile for a better experience.</Text>
+        <Text>Update your profile for a better experience.</Text>
         <HStack justify="end">
           <NextLink href="/account/profile" passHref>
             <Button as={Link} w="fit-content" colorScheme="green">
