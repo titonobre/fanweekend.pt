@@ -46,7 +46,7 @@ export default function Navbar({ transparentOnTop }: NavbarProps = { transparent
   const top = isScrolled && isScrollingDown ? -100 : 0;
 
   return (
-    <Box bg={bg} px={4} position="sticky" top={top} zIndex={9000} transition="all .2s">
+    <Box bg={bg} px={4} position="sticky" top={top} zIndex={9000} transition="all .2s" shadow={isScrolledFar ? "2xl" : undefined}>
       <Flex h={16} alignItems="center" justifyContent="space-between">
         <HStack spacing={8} alignItems="center">
           {showLogo && (
