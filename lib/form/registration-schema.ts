@@ -1,10 +1,9 @@
 import { parse, isDate, startOfDay, addYears } from "date-fns";
 import { SchemaOf, string, object, boolean, mixed, date, BaseSchema } from "yup";
 
-import countries from "../data/countries.json";
-import lugs from "../data/lugs.json";
-
-import looksRealName from "./utils/looksRealName";
+import countries from "../../data/countries.json";
+import lugs from "../../data/lugs.json";
+import looksRealName from "../utils/looksRealName";
 
 export { countries, lugs };
 

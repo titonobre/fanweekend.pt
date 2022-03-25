@@ -6,8 +6,8 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 import auth0 from "../../lib/auth/initAuth0";
 import { AUTH0_CLIENT_ID, AUTH0_CLIENT_SECRET, AUTH0_DOMAIN } from "../../lib/env";
+import schema, { FormValues } from "../../lib/form/profile-schema";
 import validate from "../../lib/middleware/validate";
-import schema, { FormValues } from "../../lib/profile-schema";
 
 type UserMetadata = Record<string, string | number | boolean>;
 

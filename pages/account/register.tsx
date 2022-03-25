@@ -41,9 +41,9 @@ import Loading from "../../components/Loading";
 import Error from "../../components/message/Error";
 import GenericPage from "../../components/page/GenericPage";
 import termsAndConditions from "../../data/terms-and-conditions.md?raw";
+import schema, { FormValues, shirtSizes, countries, lugs, ShirtSize, genders } from "../../lib/form/registration-schema";
 import useApi from "../../lib/hooks/useApi";
 import useUserData from "../../lib/hooks/userUserData";
-import schema, { FormValues, shirtSizes, countries, lugs, ShirtSize, genders } from "../../lib/registration-schema";
 import looksRealName from "../../lib/utils/looksRealName";
 
 const RegisterPage: NextPage = () => {

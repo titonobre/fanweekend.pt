@@ -5,8 +5,8 @@ import fetch from "node-fetch";
 
 import auth0 from "../../lib/auth/initAuth0";
 import { REGISTRATION_FORM_ID } from "../../lib/env";
+import schema, { FormValues } from "../../lib/form/registration-schema";
 import validate from "../../lib/middleware/validate";
-import schema, { FormValues } from "../../lib/registration-schema";
 
 const formUrl = `https://docs.google.com/forms/d/e/${REGISTRATION_FORM_ID}/formResponse`;
 

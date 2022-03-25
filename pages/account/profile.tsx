@@ -24,9 +24,9 @@ import { useForm, SubmitHandler, useFormState } from "react-hook-form";
 import Loading from "../../components/Loading";
 import Error from "../../components/message/Error";
 import GenericPage from "../../components/page/GenericPage";
+import schema, { FormValues } from "../../lib/form/profile-schema";
 import useApi from "../../lib/hooks/useApi";
 import useTawkTo from "../../lib/hooks/useTawkTo";
-import schema, { FormValues } from "../../lib/profile-schema";
 
 const RegisterPage: NextPage = () => {
   const [errorMessage, setErrorMessage] = useState<string>();
