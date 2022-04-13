@@ -10,6 +10,7 @@ export type UserData = {
   plan: string;
   paymentEnabled: string;
   paymentReceived: string;
+  volunteer: string;
   extraNight: string;
 };
 
@@ -57,6 +58,7 @@ export default async function fetchRegisteredUsers(): Promise<UserData[]> {
     plan: row["Plan"],
     paymentEnabled: row["Payment Enabled"],
     paymentReceived: row["Payment Received"],
+    volunteer: row["Volunteer"],
     extraNight: row["Extra Night"],
   }));
 }

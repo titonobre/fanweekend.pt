@@ -60,6 +60,7 @@ const MePage: NextPage = () => {
   const always = true;
   const emailVerified = user.emailVerified;
   const emailNotVerified = !user.emailVerified;
+  const isVolunteer = user.isVolunteer;
   const nameUpdated = looksRealName(user.name);
   const nameNotUpdated = !nameUpdated;
   const formSubmitted = user.formSubmitted;
@@ -86,7 +87,15 @@ const MePage: NextPage = () => {
         content: <RegisterCard enabled={registerEnabled} registered={formSubmitted} />,
       },
     ],
-    [showPaymentDetails, { icon: FaFileInvoice, iconBg: "pink.500", iconFg: "white", content: <PaymentDetailsCard plan={user.plan} /> }],
+    [
+      showPaymentDetails,
+      {
+        icon: FaFileInvoice,
+        iconBg: "pink.500",
+        iconFg: "white",
+        content: <PaymentDetailsCard plan={user.plan} isVolunteer={isVolunteer} />,
+      },
+    ],
     [showExtraNightSelection, { icon: FaBed, iconBg: "orange.700", iconFg: "white", content: <SelectExtraNightCard /> }],
     [always, { icon: FaCubes, iconBg: "gray.500", iconFg: "white", content: <ActivitiesCard enabled={false} /> }],
   ];

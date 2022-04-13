@@ -10,6 +10,7 @@ type UserData = {
   paymentEnabled: boolean;
   paymentReceived: boolean;
   extraNightSelected: boolean;
+  isVolunteer: boolean;
 
   tawkToHash: string;
 };
