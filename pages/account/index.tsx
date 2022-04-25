@@ -8,6 +8,7 @@ import ActivitiesCard from "../../components/card/ActivitiesCard";
 import PaymentDetailsCard from "../../components/card/PaymentDetailsCard";
 import ProgressCard from "../../components/card/ProgressCard";
 import RegisterCard from "../../components/card/RegisterCard";
+import RegisterMOCCard from "../../components/card/RegisterMOCCard";
 import SelectExtraNightCard from "../../components/card/SelectExtraNightCard";
 import UpdateProfileCard from "../../components/card/UpdateProfileCard";
 import VerifyEmailCard from "../../components/card/VerifyEmailCard";
@@ -68,6 +69,7 @@ const MePage: NextPage = () => {
   const registerEnabled = emailVerified && !formSubmitted;
   const showPaymentDetails = user.paymentEnabled && !user.paymentReceived;
   const showExtraNightSelection = formSubmitted && !user.extraNightSelected;
+  const showMOCRegistration = user.paymentReceived;
 
   const progress = {
     paymentEnabled: user.paymentEnabled,
@@ -97,6 +99,8 @@ const MePage: NextPage = () => {
       },
     ],
     [showExtraNightSelection, { icon: FaBed, iconBg: "orange.700", iconFg: "white", content: <SelectExtraNightCard /> }],
+
+    [showMOCRegistration, { icon: FaCubes, iconBg: "teal.500", iconFg: "white", content: <RegisterMOCCard /> }],
     [always, { icon: FaCubes, iconBg: "gray.500", iconFg: "white", content: <ActivitiesCard enabled={false} /> }],
   ];
 
