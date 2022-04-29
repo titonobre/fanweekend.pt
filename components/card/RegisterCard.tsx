@@ -31,7 +31,10 @@ export default function RegisterCard({ enabled = false, registered = false }: Re
               </Button>
             </NextLink>
           ) : (
-            <Button disabled>Register</Button>
+            <>
+              <Text color="gray.500">Registration Closed!</Text>
+              <Button disabled>Register</Button>
+            </>
           )}
         </HStack>
       </Stack>

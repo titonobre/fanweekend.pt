@@ -11,6 +11,7 @@ import Participate from "../components/Participate";
 import Welcome from "../components/Welcome";
 import When from "../components/When";
 import Where from "../components/Where";
+import { REGISTRATION_ENABLED } from "../lib/env";
 
 const Index: NextPage = () => (
   <>
@@ -27,7 +28,7 @@ const Index: NextPage = () => (
 
         <Where />
 
-        <Participate />
+        {REGISTRATION_ENABLED && <Participate />}
       </Content>
 
       <Footer></Footer>

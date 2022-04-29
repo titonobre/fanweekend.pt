@@ -18,7 +18,7 @@ export default function Participate() {
         <Box marginY={10}>
           <Alert status="warning" borderRadius={6}>
             <AlertIcon />
-            The registration form is being prepared and will open soon.
+            The registration form is closed.
           </Alert>
         </Box>
       )}

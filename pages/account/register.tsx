@@ -41,6 +41,7 @@ import Loading from "../../components/Loading";
 import Error from "../../components/message/Error";
 import GenericPage from "../../components/page/GenericPage";
 import termsAndConditions from "../../data/terms-and-conditions.md?raw";
+import { REGISTRATION_ENABLED } from "../../lib/env";
 import schema, { FormValues, shirtSizes, countries, lugs, ShirtSize, genders } from "../../lib/form/registration-schema";
 import useApi from "../../lib/hooks/useApi";
 import useUserData from "../../lib/hooks/userUserData";
@@ -94,6 +95,15 @@ const RegisterPage: NextPage = () => {
       </NextLink>
     </Flex>
   );
+
+  if (!REGISTRATION_ENABLED) {
+    return (
+      <GenericPage>
+        <Error title="Registration Closed" message="The registration form is closed!" />
+        {linkToMyAccount}
+      </GenericPage>
+    );
+  }
 
   if (isLoading || isUserDataLoading) {
     return (

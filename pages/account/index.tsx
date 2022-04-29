@@ -16,6 +16,7 @@ import Loading from "../../components/Loading";
 import Error from "../../components/message/Error";
 import GenericPage from "../../components/page/GenericPage";
 import TimelineItem from "../../components/timeline/TimelineItem";
+import { REGISTRATION_ENABLED } from "../../lib/env";
 import useUserData from "../../lib/hooks/userUserData";
 import useTawkTo from "../../lib/hooks/useTawkTo";
 import looksRealName from "../../lib/utils/looksRealName";
@@ -59,6 +60,7 @@ const MePage: NextPage = () => {
   }
 
   const always = true;
+  const registrationEnabled = REGISTRATION_ENABLED;
   const emailVerified = user.emailVerified;
   const emailNotVerified = !user.emailVerified;
   const isVolunteer = user.isVolunteer;
@@ -66,7 +68,7 @@ const MePage: NextPage = () => {
   const nameNotUpdated = !nameUpdated;
   const formSubmitted = user.formSubmitted;
   const formNotSubmitted = !formSubmitted;
-  const registerEnabled = emailVerified && !formSubmitted;
+  const registerEnabled = registrationEnabled && emailVerified && !formSubmitted;
   const showPaymentDetails = user.paymentEnabled && !user.paymentReceived;
   const showExtraNightSelection = formSubmitted && !user.extraNightSelected;
   const showMOCRegistration = user.paymentReceived;
