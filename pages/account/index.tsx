@@ -2,7 +2,7 @@ import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { Box, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import { IconType } from "react-icons";
-import { FaExclamation, FaWpforms, FaCubes, FaIdCard, FaClipboardList, FaFileInvoice, FaBed } from "react-icons/fa";
+import { FaExclamation, FaWpforms, FaCubes, FaIdCard, FaClipboardList, FaFileInvoice, FaBed, FaChild } from "react-icons/fa";
 
 import ActivitiesCard from "../../components/card/ActivitiesCard";
 import PaymentDetailsCard from "../../components/card/PaymentDetailsCard";
@@ -71,7 +71,7 @@ const MePage: NextPage = () => {
   const registerEnabled = registrationEnabled && emailVerified && !formSubmitted;
   const showPaymentDetails = user.paymentEnabled && !user.paymentReceived;
   const showExtraNightSelection = formSubmitted && !user.extraNightSelected;
-  const showMOCRegistration = user.paymentReceived;
+  const showMOCRegistration = formSubmitted;
 
   const progress = {
     paymentEnabled: user.paymentEnabled,
@@ -103,7 +103,7 @@ const MePage: NextPage = () => {
     [showExtraNightSelection, { icon: FaBed, iconBg: "orange.700", iconFg: "white", content: <SelectExtraNightCard /> }],
 
     [showMOCRegistration, { icon: FaCubes, iconBg: "teal.500", iconFg: "white", content: <RegisterMOCCard /> }],
-    [always, { icon: FaCubes, iconBg: "gray.500", iconFg: "white", content: <ActivitiesCard enabled={false} /> }],
+    [always, { icon: FaChild, iconBg: "gray.500", iconFg: "white", content: <ActivitiesCard enabled={false} /> }],
   ];
 
   const cards: CardDefinition[] = filterContents(contents);
