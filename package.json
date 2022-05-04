@@ -26,7 +26,7 @@
     "formdata-polyfill": "^4.0.10",
     "framer-motion": "^5.6.0",
     "google-spreadsheet": "^3.2.0",
-    "ical-generator": "^3.4.0",
+    "ical-generator": "^3.4.2",
     "next": "^12.1.0",
     "next-compose-plugins": "^2.2.1",
     "next-pwa": "^5.4.6",
