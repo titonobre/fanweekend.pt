@@ -27,6 +27,10 @@ export default function useTawkTo({ name, email, tawkToHash: hash }: UserData = 
       setTawkTo(tawk);
 
       const setAttributes = () => {
+        if (!tawk) {
+          return;
+        }
+
         if (name) {
           tawk.setAttributes({ name });
         }
