@@ -1,11 +1,9 @@
 import { zonedTimeToUtc } from "date-fns-tz";
-import { GoogleSpreadsheet } from "google-spreadsheet";
 import hashSum from "hash-sum";
-import { createClient } from "redis";
 
-import { GOOGLE_CLIENT_EMAIL, REDIS_URL, REGISTRATION_SPREADSHEET_ID, ACTIVITIES_SHEET_ID } from "../env";
+import { ACTIVITIES_SHEET_ID } from "../env";
 
-const doc = new GoogleSpreadsheet(REGISTRATION_SPREADSHEET_ID);
+import { getSpreadsheet } from "./spreadsheet";
 
 type RawActivity = {
   title: string;
@@ -35,41 +33,8 @@ export type Activity = {
   keyPeople?: string[];
 };
 
-let googleClientPrivateKeyCache: string;
-
-async function getGoogleClientPrivateKey() {
-  if (googleClientPrivateKeyCache) {
-    return googleClientPrivateKeyCache;
-  }
-
-  console.log("Fetching Google client private key...");
-
-  const client = createClient({ url: REDIS_URL });
-
-  client.on("error", (err) => console.error("Redis Client Error", err));
-
-  await client.connect();
-
-  const value = await client.get("google-client-private-key");
-
-  if (value) {
-    googleClientPrivateKeyCache = value;
-  }
-
-  client.disconnect();
-
-  return googleClientPrivateKeyCache;
-}
-
 export default async function fetchEventProgram(): Promise<Activity[]> {
-  const googleClientPrivateKey = await getGoogleClientPrivateKey();
-
-  await doc.useServiceAccountAuth({
-    client_email: GOOGLE_CLIENT_EMAIL,
-    private_key: googleClientPrivateKey,
-  });
-
-  await doc.loadInfo();
+  const doc = await getSpreadsheet();
 
   const sheet = doc.sheetsById[ACTIVITIES_SHEET_ID];
   const rows = await sheet.getRows();

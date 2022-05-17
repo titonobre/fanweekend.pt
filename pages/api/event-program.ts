@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import fetchCachedEventProgram from "../../lib/data/fetchCachedEventProgram";
+import { fetchCachedEventProgram } from "../../lib/data/cachedData";
 
 async function eventProgram(req: NextApiRequest, res: NextApiResponse) {
   try {

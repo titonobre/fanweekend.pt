@@ -6,7 +6,7 @@ import { FaClock, FaDirections, FaMapMarkerAlt, FaUser, FaUsers } from "react-ic
 import useSWR from "swr";
 
 import GenericPage from "../components/page/GenericPage";
-import fetchCachedEventProgram from "../lib/data/fetchCachedEventProgram";
+import { fetchCachedEventProgram } from "../lib/data/cachedData";
 import { Activity } from "../lib/data/fetchEventProgram";
 import useApi from "../lib/hooks/useApi";
 
