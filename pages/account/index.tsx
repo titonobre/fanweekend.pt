@@ -5,6 +5,7 @@ import { IconType } from "react-icons";
 import { FaExclamation, FaWpforms, FaCubes, FaIdCard, FaClipboardList, FaFileInvoice, FaBed, FaChild } from "react-icons/fa";
 
 import ActivitiesCard from "../../components/card/ActivitiesCard";
+import MyAccommodation from "../../components/card/MyAccommodation";
 import MyMocsCard from "../../components/card/MyMocs";
 import PaymentDetailsCard from "../../components/card/PaymentDetailsCard";
 import ProgressCard from "../../components/card/ProgressCard";
@@ -16,7 +17,7 @@ import Loading from "../../components/Loading";
 import Error from "../../components/message/Error";
 import GenericPage from "../../components/page/GenericPage";
 import TimelineItem from "../../components/timeline/TimelineItem";
-import { REGISTRATION_ENABLED } from "../../lib/env";
+import { REGISTRATION_ENABLED, ACCOMMODATION_CARD_ENABLED } from "../../lib/env";
 import useTawkTo from "../../lib/hooks/useTawkTo";
 import useUserData from "../../lib/hooks/useUserData";
 import looksRealName from "../../lib/utils/looksRealName";
@@ -61,6 +62,7 @@ const MePage: NextPage = () => {
 
   const always = true;
   const registrationEnabled = REGISTRATION_ENABLED;
+  const accommodationCardEnabled = ACCOMMODATION_CARD_ENABLED;
   const emailVerified = user.emailVerified;
   const emailNotVerified = !user.emailVerified;
   const isVolunteer = user.isVolunteer;
@@ -72,6 +74,8 @@ const MePage: NextPage = () => {
   const showPaymentDetails = user.paymentEnabled && !user.paymentReceived;
   const showExtraNightSelection = formSubmitted && !user.extraNightSelected;
   const showMOCRegistration = formSubmitted;
+  const hasAccommodation = !!user.accommodation;
+  const showAccommodationCard = accommodationCardEnabled && hasAccommodation;
 
   const progress = {
     paymentEnabled: user.paymentEnabled,
@@ -80,6 +84,7 @@ const MePage: NextPage = () => {
 
   const contents: [boolean, CardDefinition][] = [
     [formSubmitted, { icon: FaClipboardList, iconBg: "blue.500", iconFg: "white", content: <ProgressCard progress={progress} /> }],
+    [showAccommodationCard, { icon: FaBed, iconBg: "orange.700", iconFg: "white", content: <MyAccommodation /> }],
     [emailNotVerified, { icon: FaExclamation, iconBg: "red.500", iconFg: "white", content: <VerifyEmailCard /> }],
     [nameNotUpdated, { icon: FaIdCard, iconBg: "orange.400", iconFg: "white", content: <UpdateProfileCard /> }],
     [

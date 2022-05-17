@@ -35,6 +35,7 @@ async function user(req: NextApiRequest, res: NextApiResponse) {
       paymentReceived: !!registeredUser?.paymentReceived,
       isVolunteer: !!registeredUser?.volunteer,
       extraNightSelected: !!registeredUser?.extraNight,
+      accommodation: registeredUser?.accommodation,
 
       tawkToHash: getHash(session.user.email, TAWK_TO_API_KEY),
     };
