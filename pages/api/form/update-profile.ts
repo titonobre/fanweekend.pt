@@ -64,8 +64,6 @@ async function user(req: NextApiRequest, res: NextApiResponse) {
     await updateUserMetadata(session, userData);
 
     return auth0.handleProfile(req, res, { refetch: true });
-
-    // res.status(200).json({ success: true });
   } catch (error) {
     console.error(error);
 
