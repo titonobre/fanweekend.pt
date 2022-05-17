@@ -3,6 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import fetch from "node-fetch";
 
 import auth0 from "../../../lib/auth/initAuth0";
+import { invalidateMOCs } from "../../../lib/data/cachedData";
 import { REGISTER_MOC_FORM_ID } from "../../../lib/env";
 import schema, { FormValues } from "../../../lib/form/register-moc-form-schema";
 import validate from "../../../lib/middleware/validate";
@@ -51,6 +52,8 @@ async function registerMocs(req: NextApiRequest, res: NextApiResponse): Promise<
 
   try {
     const response = await fetch(formUrl, requestOptions);
+
+    invalidateMOCs();
 
     if (response.ok) {
       return res.status(200).json({ success: true });

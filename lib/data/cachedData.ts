@@ -1,6 +1,7 @@
 import { createStaleWhileRevalidateCache } from "stale-while-revalidate-cache";
 
 import fetchEventProgram from "./fetchEventProgram";
+import fetchMocs from "./fetchMocs";
 import { loadSpreadsheet } from "./spreadsheet";
 import storage from "./storage";
 
@@ -11,6 +12,7 @@ const swr = createStaleWhileRevalidateCache({
 });
 
 const CacheKeys = {
+  MOCS: "mocs",
   EVENT_PROGRAM: "event-program",
 };
 
@@ -22,3 +24,14 @@ export async function fetchCachedEventProgram() {
   });
 }
 
+export async function fetchCachedMOCs() {
+  return swr(CacheKeys.MOCS, async () => {
+    await loadSpreadsheet();
+
+    return fetchMocs();
+  });
+}
+
+export function invalidateMOCs() {
+  storage.removeItem(CacheKeys.MOCS);
+}

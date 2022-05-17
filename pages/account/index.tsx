@@ -5,10 +5,10 @@ import { IconType } from "react-icons";
 import { FaExclamation, FaWpforms, FaCubes, FaIdCard, FaClipboardList, FaFileInvoice, FaBed, FaChild } from "react-icons/fa";
 
 import ActivitiesCard from "../../components/card/ActivitiesCard";
+import MyMocsCard from "../../components/card/MyMocs";
 import PaymentDetailsCard from "../../components/card/PaymentDetailsCard";
 import ProgressCard from "../../components/card/ProgressCard";
 import RegisterCard from "../../components/card/RegisterCard";
-import RegisterMOCCard from "../../components/card/RegisterMOCCard";
 import SelectExtraNightCard from "../../components/card/SelectExtraNightCard";
 import UpdateProfileCard from "../../components/card/UpdateProfileCard";
 import VerifyEmailCard from "../../components/card/VerifyEmailCard";
@@ -102,7 +102,7 @@ const MePage: NextPage = () => {
     ],
     [showExtraNightSelection, { icon: FaBed, iconBg: "orange.700", iconFg: "white", content: <SelectExtraNightCard /> }],
 
-    [showMOCRegistration, { icon: FaCubes, iconBg: "teal.500", iconFg: "white", content: <RegisterMOCCard /> }],
+    [showMOCRegistration, { icon: FaCubes, iconBg: "teal.500", iconFg: "white", content: <MyMocsCard /> }],
     [always, { icon: FaChild, iconBg: "gray.500", iconFg: "white", content: <ActivitiesCard enabled={false} /> }],
   ];
 
