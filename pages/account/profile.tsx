@@ -37,7 +37,7 @@ const RegisterPage: NextPage = () => {
 
   useTawkTo({ name: user?.name || "" });
 
-  const updateProfileApiEndpoint = useApi("/update-profile");
+  const updateProfileApiEndpoint = useApi("/form/update-profile");
 
   const defaultValues: FormValues = {
     name: user?.name || "",

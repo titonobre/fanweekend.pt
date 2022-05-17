@@ -44,7 +44,7 @@ import termsAndConditions from "../../data/terms-and-conditions.md?raw";
 import { REGISTRATION_ENABLED } from "../../lib/env";
 import schema, { FormValues, shirtSizes, countries, lugs, ShirtSize, genders } from "../../lib/form/registration-schema";
 import useApi from "../../lib/hooks/useApi";
-import useUserData from "../../lib/hooks/userUserData";
+import useUserData from "../../lib/hooks/useUserData";
 import looksRealName from "../../lib/utils/looksRealName";
 
 const RegisterPage: NextPage = () => {
@@ -57,7 +57,7 @@ const RegisterPage: NextPage = () => {
   const { user, isLoading } = useUser();
   const { user: userData, isLoading: isUserDataLoading } = useUserData();
 
-  const registerApiEndpoint = useApi("/register");
+  const registerApiEndpoint = useApi("/register/register");
 
   const router = useRouter();
   const { plan } = router.query;

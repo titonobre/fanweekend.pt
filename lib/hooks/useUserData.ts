@@ -11,6 +11,7 @@ type UserData = {
   paymentReceived: boolean;
   extraNightSelected: boolean;
   isVolunteer: boolean;
+  accommodation: string;
 
   tawkToHash: string;
 };

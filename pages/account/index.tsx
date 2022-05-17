@@ -17,8 +17,8 @@ import Error from "../../components/message/Error";
 import GenericPage from "../../components/page/GenericPage";
 import TimelineItem from "../../components/timeline/TimelineItem";
 import { REGISTRATION_ENABLED } from "../../lib/env";
-import useUserData from "../../lib/hooks/userUserData";
 import useTawkTo from "../../lib/hooks/useTawkTo";
+import useUserData from "../../lib/hooks/useUserData";
 import looksRealName from "../../lib/utils/looksRealName";
 
 type Predicate<I> = (item: I) => boolean;

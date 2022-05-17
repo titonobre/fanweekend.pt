@@ -29,8 +29,8 @@ import Error from "../../components/message/Error";
 import GenericPage from "../../components/page/GenericPage";
 import schema, { FormValues } from "../../lib/form/extra-night-schema";
 import useApi from "../../lib/hooks/useApi";
-import useUserData from "../../lib/hooks/userUserData";
 import useTawkTo from "../../lib/hooks/useTawkTo";
+import useUserData from "../../lib/hooks/useUserData";
 
 const RegisterPage: NextPage = () => {
   const [errorMessage, setErrorMessage] = useState<string>();
