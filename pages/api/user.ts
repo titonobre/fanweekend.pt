@@ -3,7 +3,7 @@ import crypto, { BinaryLike } from "crypto";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 import auth0 from "../../lib/auth/initAuth0";
-import fetchRegisteredUsers from "../../lib/data/fetchRegisteredUsers";
+import { getCurrentUser, getCurrentUserSession } from "../../lib/data/currentUser";
 
 import { TAWK_TO_API_KEY } from "./../../lib/env";
 
@@ -15,15 +15,13 @@ function getHash(data: BinaryLike, key: string) {
 
 async function user(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const [session, registeredUsers] = await Promise.all([auth0.getSession(req, res), fetchRegisteredUsers()]);
+    const [session, registeredUser] = await Promise.all([getCurrentUserSession(req, res), getCurrentUser(req, res)]);
 
     if (!session) {
       // HTTP 401 Unauthorized
       res.status(401).end();
       return;
     }
-
-    const registeredUser = registeredUsers.find((u) => u.id === session.user.sub);
 
     const data = {
       id: session.user.sub,
