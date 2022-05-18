@@ -6,7 +6,11 @@ import CookieBanner from "../CookieBanner";
 import Footer from "../Footer";
 import Navbar from "../Navbar";
 
-const GenericPage: NextPage = ({ children }) => {
+export type Props = {
+  children: React.ReactNode;
+};
+
+const GenericPage: NextPage<Props> = ({ children }) => {
   return (
     <>
       <Navbar />
