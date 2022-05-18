@@ -8,6 +8,7 @@ import useSWR from "swr";
 import GenericPage from "../components/page/GenericPage";
 import { fetchCachedEventProgram } from "../lib/data/cachedData";
 import { Activity } from "../lib/data/fetchEventProgram";
+import { REDIS_URL } from "../lib/env";
 import useApi from "../lib/hooks/useApi";
 
 type EventProgram = Activity[];
@@ -147,6 +148,14 @@ const Index: NextPage<Props> = ({ fallbackData = [] }) => {
 export default Index;
 
 export async function getStaticProps() {
+  if (!REDIS_URL) {
+    return {
+      props: {
+        fallbackData: [],
+      },
+    };
+  }
+
   const eventProgram = (await fetchCachedEventProgram()).map((entry) => {
     return Object.fromEntries(Object.entries(entry).filter(([, value]) => value !== undefined));
   });
