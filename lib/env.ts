@@ -9,7 +9,7 @@ export const EXTRA_NIGHT_FORM_ID: string = process.env.EXTRA_NIGHT_FORM_ID as st
 
 export const REGISTER_MOC_FORM_ID: string = process.env.REGISTER_MOC_FORM_ID as string;
 
-export const ACTIVITIES_SHEET_ID: string = process.env.ACTIVITIES_SHEET_ID as string;
+export const EVENT_PROGRAM_SHEET_ID: string = process.env.EVENT_PROGRAM_SHEET_ID as string;
 
 export const ACCOMMODATIONS_SHEET_ID: string = process.env.ACCOMMODATIONS_SHEET_ID as string;
 

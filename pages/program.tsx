@@ -89,12 +89,12 @@ const Index: NextPage<Props> = ({ fallbackData = [] }) => {
 
       <VStack spacing={8} align="start">
         {activities?.map((item, index) => (
-          <VStack key={index} spacing={8} align="stretch">
+          <VStack key={index} spacing={8} align="stretch" width="full">
             <Flex justifyContent="center" width={14}>
               <Text fontSize="xl">Day {index + 1}</Text>
             </Flex>
             {item.map((activity) => (
-              <HStack key={activity.id} spacing={4} align="start">
+              <HStack key={activity.id} spacing={4} align="start" width="full">
                 <VStack spacing={0} width={14}>
                   <Text fontSize="md" lineHeight={9}>
                     {activity.startTimeFormatted}

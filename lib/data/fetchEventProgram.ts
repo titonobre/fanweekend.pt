@@ -1,7 +1,7 @@
 import { zonedTimeToUtc } from "date-fns-tz";
 import hashSum from "hash-sum";
 
-import { ACTIVITIES_SHEET_ID } from "../env";
+import { EVENT_PROGRAM_SHEET_ID } from "../env";
 
 import { getSpreadsheet } from "./spreadsheet";
 
@@ -36,7 +36,7 @@ export type Activity = {
 export default async function fetchEventProgram(): Promise<Activity[]> {
   const doc = await getSpreadsheet();
 
-  const sheet = doc.sheetsById[ACTIVITIES_SHEET_ID];
+  const sheet = doc.sheetsById[EVENT_PROGRAM_SHEET_ID];
   const rows = await sheet.getRows();
 
   return rows
@@ -48,8 +48,8 @@ export default async function fetchEventProgram(): Promise<Activity[]> {
           date: row["Date"],
           time: row["Time"],
           duration: row["Duration"],
-          location: row["Location"] || undefined,
-          directions: row["Directions"] || undefined,
+          location: row["Location"],
+          directions: row["Directions"],
           audience: row["Audience"],
           signUpRequired: row["Sign Up Required"],
           keyPeople: row["Key People"],
@@ -74,7 +74,11 @@ export default async function fetchEventProgram(): Promise<Activity[]> {
         directions: rawActivity.directions?.trim() || undefined,
         audience: rawActivity.audience?.trim() || undefined,
         signUpRequired: rawActivity.signUpRequired === "Yes",
-        keyPeople: rawActivity.keyPeople?.split(",").map((person: string) => person.trim()),
+        keyPeople:
+          rawActivity.keyPeople
+            ?.split(",")
+            .map((person: string) => person.trim())
+            .filter((person) => !!person) || undefined,
       };
 
       return activity;
