@@ -4,6 +4,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import fetch from "node-fetch";
 
 import auth0 from "../../../lib/auth/initAuth0";
+import { invalidateRegisteredUsers } from "../../../lib/data/cachedData";
 import { REGISTRATION_FORM_ID } from "../../../lib/env";
 import schema, { FormValues } from "../../../lib/form/registration-schema";
 import validate from "../../../lib/middleware/validate";
@@ -62,6 +63,8 @@ async function register(req: NextApiRequest, res: NextApiResponse): Promise<void
 
   try {
     const response = await fetch(formUrl, requestOptions);
+
+    invalidateRegisteredUsers();
 
     if (response.ok) {
       return res.status(200).json({ success: true });

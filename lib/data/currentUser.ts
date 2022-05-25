@@ -3,10 +3,11 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 import auth0 from "../auth/initAuth0";
 
-import fetchRegisteredUsers, { UserData } from "./fetchRegisteredUsers";
+import { fetchCachedRegisteredUsers } from "./cachedData";
+import { UserData } from "./fetchRegisteredUsers";
 
 export async function getCurrentUser(req: NextApiRequest, res: NextApiResponse): Promise<UserData | undefined> {
-  const [session, registeredUsers] = await Promise.all([auth0.getSession(req, res), fetchRegisteredUsers()]);
+  const [session, registeredUsers] = await Promise.all([auth0.getSession(req, res), fetchCachedRegisteredUsers()]);
 
   if (!session) {
     return undefined;
