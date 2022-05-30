@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import fetch from "node-fetch";
 
 import auth0 from "../../../lib/auth/initAuth0";
-import { invalidateMOCs } from "../../../lib/data/cachedData";
+import { invalidateMOCs } from "../../../lib/data/dataStore";
 import { REGISTER_MOC_FORM_ID } from "../../../lib/env";
 import schema, { FormValues } from "../../../lib/form/register-moc-form-schema";
 import validate from "../../../lib/middleware/validate";

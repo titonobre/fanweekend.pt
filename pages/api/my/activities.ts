@@ -1,15 +1,15 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 import auth0 from "../../../lib/auth/initAuth0";
-import { fetchCachedActivitiesResponses, fetchCachedEventProgram } from "../../../lib/data/cachedData";
 import { getCurrentUser } from "../../../lib/data/currentUser";
+import { getRegisteredActivities, getEventProgram } from "../../../lib/data/dataStore";
 
 async function activities(req: NextApiRequest, res: NextApiResponse) {
   try {
     const [registeredUser, eventProgram, activitiesResponses] = await Promise.all([
       getCurrentUser(req, res),
-      fetchCachedEventProgram(),
-      fetchCachedActivitiesResponses(),
+      getEventProgram(),
+      getRegisteredActivities(),
     ]);
 
     if (!registeredUser) {

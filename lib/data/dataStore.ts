@@ -22,7 +22,7 @@ const CacheKeys = {
   ACTIVITIES_RESPONSES: "activities-responses",
 };
 
-export async function fetchCachedEventProgram() {
+export async function getEventProgram() {
   return swr(CacheKeys.EVENT_PROGRAM, async () => {
     await loadSpreadsheet();
 
@@ -30,7 +30,7 @@ export async function fetchCachedEventProgram() {
   });
 }
 
-export async function fetchCachedAccommodations() {
+export async function getAccommodations() {
   return swr(CacheKeys.ACCOMMODATIONS, async () => {
     await loadSpreadsheet();
 
@@ -38,7 +38,7 @@ export async function fetchCachedAccommodations() {
   });
 }
 
-export async function fetchCachedMOCs() {
+export async function getRegisteredMOCs() {
   return swr(CacheKeys.MOCS, async () => {
     await loadSpreadsheet();
 
@@ -46,13 +46,13 @@ export async function fetchCachedMOCs() {
   });
 }
 
-export async function fetchCachedRegisteredUsers() {
+export async function getRegisteredUsers() {
   return swr(CacheKeys.REGISTERED_USERS, async () => {
     return fetchRegisteredUsers();
   });
 }
 
-export async function fetchCachedActivitiesResponses() {
+export async function getRegisteredActivities() {
   return swr(CacheKeys.ACTIVITIES_RESPONSES, async () => {
     await loadSpreadsheet();
 

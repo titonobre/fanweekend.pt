@@ -6,7 +6,7 @@ import { FaClock, FaDirections, FaMapMarkerAlt, FaUser, FaUsers } from "react-ic
 import useSWR from "swr";
 
 import GenericPage from "../components/page/GenericPage";
-import { fetchCachedEventProgram } from "../lib/data/cachedData";
+import { getEventProgram } from "../lib/data/dataStore";
 import { Activity } from "../lib/data/fetchEventProgram";
 import { REDIS_URL } from "../lib/env";
 import useApi from "../lib/hooks/useApi";
@@ -156,7 +156,7 @@ export async function getStaticProps() {
     };
   }
 
-  const eventProgram = (await fetchCachedEventProgram()).map((entry) => {
+  const eventProgram = (await getEventProgram()).map((entry) => {
     return Object.fromEntries(Object.entries(entry).filter(([, value]) => value !== undefined));
   });
 

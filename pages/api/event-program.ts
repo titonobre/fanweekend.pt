@@ -1,10 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { fetchCachedEventProgram } from "../../lib/data/cachedData";
+import { getEventProgram } from "../../lib/data/dataStore";
 
 async function eventProgram(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const activities = await fetchCachedEventProgram();
+    const activities = await getEventProgram();
 
     res.status(200).json(activities);
   } catch (error) {

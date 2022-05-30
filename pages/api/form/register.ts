@@ -4,7 +4,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import fetch from "node-fetch";
 
 import auth0 from "../../../lib/auth/initAuth0";
-import { invalidateRegisteredUsers } from "../../../lib/data/cachedData";
+import { invalidateRegisteredUsers } from "../../../lib/data/dataStore";
 import { REGISTRATION_FORM_ID } from "../../../lib/env";
 import schema, { FormValues } from "../../../lib/form/registration-schema";
 import validate from "../../../lib/middleware/validate";

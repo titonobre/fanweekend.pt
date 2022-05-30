@@ -1,15 +1,15 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 import auth0 from "../../../lib/auth/initAuth0";
-import { fetchCachedAccommodations } from "../../../lib/data/cachedData";
 import { getCurrentUser } from "../../../lib/data/currentUser";
+import { getAccommodations } from "../../../lib/data/dataStore";
 import { loadSpreadsheet } from "../../../lib/data/spreadsheet";
 
 async function accommodation(req: NextApiRequest, res: NextApiResponse) {
   try {
     await loadSpreadsheet();
 
-    const [registeredUser, houses] = await Promise.all([getCurrentUser(req, res), fetchCachedAccommodations()]);
+    const [registeredUser, houses] = await Promise.all([getCurrentUser(req, res), getAccommodations()]);
 
     if (!registeredUser) {
       // HTTP 401 Unauthorized

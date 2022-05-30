@@ -1,12 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 import auth0 from "../../../lib/auth/initAuth0";
-import { fetchCachedMOCs } from "../../../lib/data/cachedData";
 import { getCurrentUser } from "../../../lib/data/currentUser";
+import { getRegisteredMOCs } from "../../../lib/data/dataStore";
 
 async function mocs(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const [registeredUser, mocs] = await Promise.all([getCurrentUser(req, res), fetchCachedMOCs()]);
+    const [registeredUser, mocs] = await Promise.all([getCurrentUser(req, res), getRegisteredMOCs()]);
 
     if (!registeredUser) {
       // HTTP 401 Unauthorized
