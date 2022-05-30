@@ -23,6 +23,8 @@ export type Activity = {
   id: string;
   title: string;
   startTime: string;
+  date: string;
+  time: string;
   type?: string;
   description?: string;
   duration?: number;
@@ -67,6 +69,8 @@ export default async function fetchEventProgram(): Promise<Activity[]> {
         id,
         title,
         startTime,
+        date: rawActivity.date,
+        time: rawActivity.time,
         duration: rawActivity.duration ? parseInt(rawActivity.duration, 10) : undefined,
         type: rawActivity.type?.trim() || undefined,
         description: rawActivity.description?.trim() || undefined,

@@ -15,6 +15,8 @@ export const ACCOMMODATIONS_SHEET_ID: string = process.env.ACCOMMODATIONS_SHEET_
 
 export const MOCS_SHEET_ID: string = process.env.MOCS_SHEET_ID as string;
 
+export const ACTIVITIES_SHEET_ID: string = process.env.ACTIVITIES_SHEET_ID as string;
+
 export const REGISTRATION_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("registration") ?? false;
 export const LOGIN_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("login") ?? false;
 export const SHOW_PRICING: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("pricing") ?? false;

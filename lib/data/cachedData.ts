@@ -1,6 +1,7 @@
 import { createStaleWhileRevalidateCache } from "stale-while-revalidate-cache";
 
 import fetchAccommodations from "./fetchAccommodations";
+import fetchActivitiesResponses from "./fetchActivitiesResponses";
 import fetchEventProgram from "./fetchEventProgram";
 import fetchMocs from "./fetchMocs";
 import fetchRegisteredUsers from "./fetchRegisteredUsers";
@@ -18,6 +19,7 @@ const CacheKeys = {
   EVENT_PROGRAM: "event-program",
   ACCOMMODATIONS: "accommodations",
   REGISTERED_USERS: "registered-users",
+  ACTIVITIES_RESPONSES: "activities-responses",
 };
 
 export async function fetchCachedEventProgram() {
@@ -50,10 +52,22 @@ export async function fetchCachedRegisteredUsers() {
   });
 }
 
+export async function fetchCachedActivitiesResponses() {
+  return swr(CacheKeys.ACTIVITIES_RESPONSES, async () => {
+    await loadSpreadsheet();
+
+    return fetchActivitiesResponses();
+  });
+}
+
 export function invalidateMOCs() {
   storage.removeItem(CacheKeys.MOCS);
 }
 
 export function invalidateRegisteredUsers() {
   storage.removeItem(CacheKeys.REGISTERED_USERS);
+}
+
+export function invalidateActivitiesResponses() {
+  storage.removeItem(CacheKeys.ACTIVITIES_RESPONSES);
 }
