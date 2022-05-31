@@ -68,7 +68,15 @@ function getActivitiesByDay(activities: Activity[]) {
       }
 
       return [...firstGroups, lastGroup, [activity]];
-    }, [] as ActivityExtended[][]);
+    }, [] as ActivityExtended[][])
+    .map((activitiesByDay) => {
+      const dateLabel = format(parseISO(activitiesByDay[0].startTime), "EEEE, MMMM d", { timeZone: eventTimeZone });
+
+      return {
+        dateLabel,
+        activities: activitiesByDay,
+      };
+    });
 }
 
 const Index: NextPage<Props> = ({ fallbackData = [] }) => {
@@ -90,10 +98,10 @@ const Index: NextPage<Props> = ({ fallbackData = [] }) => {
       <VStack spacing={8} align="start">
         {activities?.map((item, index) => (
           <VStack key={index} spacing={8} align="stretch" width="full">
-            <Flex justifyContent="center" width={14}>
-              <Text fontSize="xl">Day {index + 1}</Text>
+            <Flex justifyContent="flex-start">
+              <Text fontSize="xl">{item.dateLabel}</Text>
             </Flex>
-            {item.map((activity) => (
+            {item.activities.map((activity) => (
               <HStack key={activity.id} spacing={4} align="start" width="full">
                 <VStack spacing={0} width={14}>
                   <Text fontSize="md" lineHeight={9}>
