@@ -108,7 +108,7 @@ const MePage: NextPage = () => {
     [showExtraNightSelection, { icon: FaBed, iconBg: "orange.700", iconFg: "white", content: <SelectExtraNightCard /> }],
 
     [showMOCRegistration, { icon: FaCubes, iconBg: "teal.500", iconFg: "white", content: <MyMocsCard /> }],
-    [always, { icon: FaChild, iconBg: "gray.500", iconFg: "white", content: <ActivitiesCard enabled={false} /> }],
+    [always, { icon: FaChild, iconBg: "purple.500", iconFg: "white", content: <ActivitiesCard /> }],
   ];
 
   const cards: CardDefinition[] = filterContents(contents);

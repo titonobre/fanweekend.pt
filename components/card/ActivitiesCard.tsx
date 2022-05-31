@@ -1,23 +1,27 @@
-import { Box, Heading, Text, Stack, Button, HStack, AlertIcon, Alert } from "@chakra-ui/react";
+import { Box, Heading, Stack, Button, HStack, Link } from "@chakra-ui/react";
+import ChakraUIRenderer from "chakra-ui-markdown-renderer";
+import NextLink from "next/link";
+import ReactMarkdown from "react-markdown";
 
-type RegisterCardProps = {
-  enabled: boolean;
-};
+import activitiesCardText from "../../data/activities-card.md?raw";
 
-export default function ActivitiesCard({ enabled = false }: RegisterCardProps) {
+export default function ActivitiesCard() {
   return (
     <Box w="full" bg="white" boxShadow="2xl" rounded="md" p={6} overflow="hidden">
       <Stack>
-        <Heading color={enabled ? "gray.700" : "gray.500"} fontSize="2xl" fontFamily="body">
+        <Heading fontSize="2xl" fontFamily="body">
           Activities
         </Heading>
-        <Text color="gray.500">Here you will be able to register for the several activities available.</Text>
-        <Alert colorScheme="gray" borderRadius={6}>
-          <AlertIcon />
-          <Text color="gray.500">The activities will be available soon.</Text>
-        </Alert>
+        <ReactMarkdown components={ChakraUIRenderer()} skipHtml>
+          {activitiesCardText}
+        </ReactMarkdown>
+
         <HStack justify="end">
-          <Button disabled>Register</Button>
+          <NextLink href="/program" passHref>
+            <Button as={Link} w="fit-content" colorScheme="green">
+              Event Program
+            </Button>
+          </NextLink>
         </HStack>
       </Stack>
     </Box>
