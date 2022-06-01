@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, HStack, Icon, IconButton, Link, Stack, Text, VStack } from "@chakra-ui/react";
 import { addMinutes, formatDuration, intervalToDuration, isSameDay, parseISO } from "date-fns";
-import { format, utcToZonedTime } from "date-fns-tz";
+import { formatInTimeZone, utcToZonedTime } from "date-fns-tz";
 import type { NextPage } from "next";
 import { FaClock, FaDirections, FaMapMarkerAlt, FaUser, FaUsers } from "react-icons/fa";
 import useSWR from "swr";
@@ -33,7 +33,7 @@ function getActivitiesByDay(activities: Activity[]) {
     .map<ActivityExtended>((activity: Activity) => {
       const parsedStartTime = parseISO(activity.startTime);
 
-      const startTimeFormatted = format(parsedStartTime, "HH:mm", { timeZone: eventTimeZone });
+      const startTimeFormatted = formatInTimeZone(parsedStartTime, eventTimeZone, "HH:mm");
 
       const durationFormatted =
         (activity.duration &&
@@ -70,7 +70,7 @@ function getActivitiesByDay(activities: Activity[]) {
       return [...firstGroups, lastGroup, [activity]];
     }, [] as ActivityExtended[][])
     .map((activitiesByDay) => {
-      const dateLabel = format(parseISO(activitiesByDay[0].startTime), "EEEE, MMMM d", { timeZone: eventTimeZone });
+      const dateLabel = formatInTimeZone(parseISO(activitiesByDay[0].startTime), eventTimeZone, "EEEE, MMMM d");
 
       return {
         dateLabel,
