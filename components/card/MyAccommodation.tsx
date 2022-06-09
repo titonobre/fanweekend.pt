@@ -46,7 +46,7 @@ export default function MyAccommodation() {
                   <Text>{data?.contact}</Text>
                 </HStack>
               )}
-              {data.phones && (
+              {data?.phones?.length && (
                 <HStack>
                   <Icon as={FaPhoneAlt} title="Phone" />
                   <Stack direction={{ base: "column", md: "row" }}>
