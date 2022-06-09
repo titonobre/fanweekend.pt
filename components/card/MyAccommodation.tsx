@@ -40,31 +40,46 @@ export default function MyAccommodation() {
                 <Icon as={FaMap} title="Locality" />
                 <Text>{data?.locality}</Text>
               </HStack>
-              <HStack>
-                <Icon as={FaUser} title="Contact Persons" />
-                <Text>{data?.contact}</Text>
-              </HStack>
-              <HStack>
-                <Icon as={FaPhoneAlt} title="Phone" />
-                <Stack direction={{ base: "column", md: "row" }}>
-                  {data?.phones?.map((phone, i) => (
-                    <Link key={i} href={`tel:${phone}`}>
-                      {phone}
-                    </Link>
-                  ))}
-                </Stack>
-              </HStack>
-              <HStack>
-                <Icon as={FaEnvelope} title="Email" />
-                <Link href={`mailto:${data?.email}`}>{data?.email}</Link>
-              </HStack>
+              {data.contact && (
+                <HStack>
+                  <Icon as={FaUser} title="Contact Persons" />
+                  <Text>{data?.contact}</Text>
+                </HStack>
+              )}
+              {data.phones && (
+                <HStack>
+                  <Icon as={FaPhoneAlt} title="Phone" />
+                  <Stack direction={{ base: "column", md: "row" }}>
+                    {data?.phones?.map((phone, i) => (
+                      <Link key={i} href={`tel:${phone}`}>
+                        {phone}
+                      </Link>
+                    ))}
+                  </Stack>
+                </HStack>
+              )}
+              {data.email && (
+                <HStack>
+                  <Icon as={FaEnvelope} title="Email" />
+                  <Link href={`mailto:${data?.email}`}>{data?.email}</Link>
+                </HStack>
+              )}
             </VStack>
 
-            <HStack justify="end">
-              <Button as={Link} href={data?.directionsLink} target="_blank" w="fit-content" colorScheme="blue" rightIcon={<FaDirections />}>
-                Directions
-              </Button>
-            </HStack>
+            {data.directionsLink && (
+              <HStack justify="end">
+                <Button
+                  as={Link}
+                  href={data?.directionsLink}
+                  target="_blank"
+                  w="fit-content"
+                  colorScheme="blue"
+                  rightIcon={<FaDirections />}
+                >
+                  Directions
+                </Button>
+              </HStack>
+            )}
           </>
         )}
       </Stack>
