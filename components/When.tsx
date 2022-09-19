@@ -1,7 +1,11 @@
 import { Box, Heading, Text, Stack, Link, Button, Center } from "@chakra-ui/react";
 import { FaCalendar } from "react-icons/fa";
 
+import { ADD_TO_CALENDAR } from "../lib/env";
+
 import Calendar from "./Calendar";
+
+const showAddToCalendarButton = ADD_TO_CALENDAR;
 
 export default function When() {
   return (
@@ -13,13 +17,15 @@ export default function When() {
         </Text>
       </Stack>
 
-      <Box marginY={10}>
-        <Center>
-          <Button as={Link} leftIcon={<FaCalendar />} colorScheme="green" href="/api/ical">
-            add to your calendar
-          </Button>
-        </Center>
-      </Box>
+      {showAddToCalendarButton && (
+        <Box marginY={10}>
+          <Center>
+            <Button as={Link} leftIcon={<FaCalendar />} colorScheme="green" href="/api/ical">
+              add to your calendar
+            </Button>
+          </Center>
+        </Box>
+      )}
 
       <Box marginY={10}>
         <Center>

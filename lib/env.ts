@@ -19,6 +19,7 @@ export const ACTIVITIES_SHEET_ID: string = process.env.ACTIVITIES_SHEET_ID as st
 
 export const REGISTRATION_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("registration") ?? false;
 export const LOGIN_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("login") ?? false;
+export const ADD_TO_CALENDAR: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("add-to-calendar") ?? false;
 export const SHOW_PRICING: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("pricing") ?? false;
 export const ACCOMMODATION_CARD_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("accommodation") ?? false;
 
