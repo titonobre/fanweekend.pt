@@ -22,6 +22,7 @@ export const LOGIN_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.
 export const ADD_TO_CALENDAR: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("add-to-calendar") ?? false;
 export const SHOW_PRICING: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("pricing") ?? false;
 export const ACCOMMODATION_CARD_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("accommodation") ?? false;
+export const EVENT_PROGRAM_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("program") ?? false;
 
 export const TAWK_TO_PROPERTY_ID: string = process.env.NEXT_PUBLIC_TAWK_TO_PROPERTY_ID as string;
 export const TAWK_TO_WIDGET_ID: string = process.env.NEXT_PUBLIC_TAWK_TO_WIDGET_ID as string;

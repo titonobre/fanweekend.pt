@@ -17,7 +17,7 @@ import Loading from "../../components/Loading";
 import Error from "../../components/message/Error";
 import GenericPage from "../../components/page/GenericPage";
 import TimelineItem from "../../components/timeline/TimelineItem";
-import { REGISTRATION_ENABLED, ACCOMMODATION_CARD_ENABLED } from "../../lib/env";
+import { REGISTRATION_ENABLED, ACCOMMODATION_CARD_ENABLED, EVENT_PROGRAM_ENABLED } from "../../lib/env";
 import useTawkTo from "../../lib/hooks/useTawkTo";
 import useUserData from "../../lib/hooks/useUserData";
 import looksRealName from "../../lib/utils/looksRealName";
@@ -60,7 +60,6 @@ const MePage: NextPage = () => {
     );
   }
 
-  const always = true;
   const registrationEnabled = REGISTRATION_ENABLED;
   const accommodationCardEnabled = ACCOMMODATION_CARD_ENABLED;
   const emailVerified = user.emailVerified;
@@ -76,6 +75,7 @@ const MePage: NextPage = () => {
   const showMOCRegistration = formSubmitted;
   const hasAccommodation = !!user.accommodation;
   const showAccommodationCard = accommodationCardEnabled && hasAccommodation;
+  const showActivitiesCard = EVENT_PROGRAM_ENABLED;
 
   const progress = {
     paymentEnabled: user.paymentEnabled,
@@ -108,7 +108,7 @@ const MePage: NextPage = () => {
     [showExtraNightSelection, { icon: FaBed, iconBg: "orange.700", iconFg: "white", content: <SelectExtraNightCard /> }],
 
     [showMOCRegistration, { icon: FaCubes, iconBg: "teal.500", iconFg: "white", content: <MyMocsCard /> }],
-    [always, { icon: FaChild, iconBg: "purple.500", iconFg: "white", content: <ActivitiesCard /> }],
+    [showActivitiesCard, { icon: FaChild, iconBg: "purple.500", iconFg: "white", content: <ActivitiesCard /> }],
   ];
 
   const cards: CardDefinition[] = filterContents(contents);
