@@ -4,6 +4,7 @@ import { PHASE_PRODUCTION_BUILD } from "next/constants.js";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: process.env.BASE_PATH || "",
   reactStrictMode: true,
   webpack: (config) => {
     config.module.rules.push(
