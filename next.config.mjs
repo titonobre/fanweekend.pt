@@ -1,6 +1,4 @@
 import withPlugins from "next-compose-plugins";
-import pwa from "next-pwa";
-import { PHASE_PRODUCTION_BUILD } from "next/constants.js";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -30,16 +28,6 @@ const nextConfig = {
 };
 
 export default withPlugins(
-  [
-    [
-      pwa,
-      {
-        pwa: {
-          dest: "public",
-        },
-      },
-      [PHASE_PRODUCTION_BUILD],
-    ],
-  ],
+  [],
   nextConfig
 );
