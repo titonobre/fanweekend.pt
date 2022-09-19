@@ -19,6 +19,7 @@ import NextLink from "next/link";
 import { LOGIN_ENABLED } from "../lib/env";
 import useScrollState from "../lib/hooks/useScrollState";
 
+const loginEnabled = LOGIN_ENABLED;
 const loginUrl = LOGIN_ENABLED ? "/api/auth/login?returnTo=/account" : "#";
 const signUpUrl = LOGIN_ENABLED ? "/api/signup" : "#";
 
@@ -74,7 +75,7 @@ export default function Navbar({ transparentOnTop }: NavbarProps = { transparent
                 </MenuItem>
               </MenuList>
             </Menu>
-          ) : (
+          ) : loginEnabled ? (
             <Stack flex={{ base: 1, md: 0 }} justify="flex-end" direction="row" spacing={6}>
               <Button as="a" fontSize="sm" fontWeight={400} variant="link" href={loginUrl}>
                 Sign In
@@ -94,7 +95,7 @@ export default function Navbar({ transparentOnTop }: NavbarProps = { transparent
                 Sign Up
               </Button>
             </Stack>
-          )}
+          ) : undefined}
         </Flex>
       </Flex>
     </Box>
