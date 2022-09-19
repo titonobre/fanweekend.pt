@@ -17,7 +17,13 @@ import Loading from "../../components/Loading";
 import Error from "../../components/message/Error";
 import GenericPage from "../../components/page/GenericPage";
 import TimelineItem from "../../components/timeline/TimelineItem";
-import { REGISTRATION_ENABLED, ACCOMMODATION_CARD_ENABLED, EVENT_PROGRAM_ENABLED } from "../../lib/env";
+import {
+  REGISTRATION_ENABLED,
+  ACCOMMODATION_CARD_ENABLED,
+  EVENT_PROGRAM_ENABLED,
+  EXTRA_NIGHT_ENABLED,
+  MOC_REGISTRATION_ENABLED,
+} from "../../lib/env";
 import useTawkTo from "../../lib/hooks/useTawkTo";
 import useUserData from "../../lib/hooks/useUserData";
 import looksRealName from "../../lib/utils/looksRealName";
@@ -71,8 +77,8 @@ const MePage: NextPage = () => {
   const formNotSubmitted = !formSubmitted;
   const registerEnabled = registrationEnabled && emailVerified && !formSubmitted;
   const showPaymentDetails = user.paymentEnabled && !user.paymentReceived;
-  const showExtraNightSelection = formSubmitted && !user.extraNightSelected;
-  const showMOCRegistration = formSubmitted;
+  const showExtraNightSelection = EXTRA_NIGHT_ENABLED && formSubmitted && !user.extraNightSelected;
+  const showMOCRegistration = MOC_REGISTRATION_ENABLED && formSubmitted;
   const hasAccommodation = !!user.accommodation;
   const showAccommodationCard = accommodationCardEnabled && hasAccommodation;
   const showActivitiesCard = EVENT_PROGRAM_ENABLED;
