@@ -57,7 +57,7 @@ const RegisterPage: NextPage = () => {
   const { user, isLoading } = useUser();
   const { user: userData, isLoading: isUserDataLoading } = useUserData();
 
-  const registerApiEndpoint = useApi("/register/register");
+  const registerApiEndpoint = useApi("/form/register");
 
   const router = useRouter();
   const { plan } = router.query;
