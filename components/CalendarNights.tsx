@@ -34,7 +34,7 @@ export default function Calendar(props?: CalendarProps) {
   return (
     <SimpleGrid textAlign="center" lineHeight="2.5rem" templateColumns="repeat(7, 2.5rem);" shadow="2xl">
       <GridItem colSpan={7} backgroundColor="gray.500" color="white" borderTopRadius="6px">
-        June 2022
+        June 2023
       </GridItem>
       {daysOfTheWeek.map((day) => (
         <Box key={day} backgroundColor="gray.200">

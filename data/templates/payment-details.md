@@ -6,7 +6,7 @@ Please transfer the amount **{{AMOUNT}}** to the following account:
 
 **BIC/SWIFT**: {{ACCOUNT_BIC_SWIFT}}
 
-Please make sure that the payment is done no later than **30th April 2022**.
+Please make sure that the payment is done no later than **30th April 2023**.
 
 Sometimes the account holder is not the same as the person who has registered. Please send us an email with a proof of transfer so we can be sure who is paying for whom.
 

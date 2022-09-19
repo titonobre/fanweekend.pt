@@ -3,12 +3,12 @@ import { Box, GridItem, SimpleGrid } from "@chakra-ui/react";
 const daysOfTheWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 export default function Calendar() {
-  const emptyDays = Array.from({ length: 2 }, () => 0);
+  const emptyDays = Array.from({ length: 3 }, () => 0);
   const monthDays = Array.from({ length: 30 }, (v, k) => k + 1);
 
   const calendarDays = [...emptyDays, ...monthDays];
 
-  const activeDays = [10, 11, 12];
+  const activeDays = [9, 10, 11];
 
   const days = calendarDays.map((date) => ({
     label: date || "",
@@ -18,7 +18,7 @@ export default function Calendar() {
   return (
     <SimpleGrid textAlign="center" lineHeight="2.5rem" templateColumns="repeat(7, 2.5rem);" shadow="2xl">
       <GridItem colSpan={7} backgroundColor="gray.500" color="white" borderTopRadius="6px">
-        June 2022
+        June 2023
       </GridItem>
       {daysOfTheWeek.map((day) => (
         <Box key={day} backgroundColor="gray.200">
