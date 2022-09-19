@@ -39,7 +39,7 @@ export default function MyMocsCard() {
         {isValidating && <Text>Updating MOCs...</Text>}
 
         <HStack justify="end">
-          <NextLink href="/form/register-moc" passHref>
+          <NextLink href="/account/form/register-moc" passHref>
             <Button as={Link} w="fit-content" colorScheme="green">
               Register MOC
             </Button>

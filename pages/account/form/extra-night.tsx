@@ -23,14 +23,14 @@ import NextLink from "next/link";
 import React, { useState } from "react";
 import { useForm, SubmitHandler, useFormState, Controller, useWatch } from "react-hook-form";
 
-import CalendarNights from "../../components/CalendarNights";
-import Loading from "../../components/Loading";
-import Error from "../../components/message/Error";
-import GenericPage from "../../components/page/GenericPage";
-import schema, { FormValues } from "../../lib/form/extra-night-schema";
-import useApi from "../../lib/hooks/useApi";
-import useTawkTo from "../../lib/hooks/useTawkTo";
-import useUserData from "../../lib/hooks/useUserData";
+import CalendarNights from "../../../components/CalendarNights";
+import Loading from "../../../components/Loading";
+import Error from "../../../components/message/Error";
+import GenericPage from "../../../components/page/GenericPage";
+import schema, { FormValues } from "../../../lib/form/extra-night-schema";
+import useApi from "../../../lib/hooks/useApi";
+import useTawkTo from "../../../lib/hooks/useTawkTo";
+import useUserData from "../../../lib/hooks/useUserData";
 
 const RegisterPage: NextPage = () => {
   const [errorMessage, setErrorMessage] = useState<string>();

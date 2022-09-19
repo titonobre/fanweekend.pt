@@ -30,14 +30,14 @@ import React, { useState } from "react";
 import { useForm, SubmitHandler, useFormState, Controller } from "react-hook-form";
 import ReactMarkdown from "react-markdown";
 
-import Loading from "../../components/Loading";
-import Error from "../../components/message/Error";
-import GenericPage from "../../components/page/GenericPage";
-import termsAndConditions from "../../data/terms-and-conditions-mocs.md?raw";
-import schema, { FormValues } from "../../lib/form/register-moc-form-schema";
-import useApi from "../../lib/hooks/useApi";
-import useTawkTo from "../../lib/hooks/useTawkTo";
-import useUserData from "../../lib/hooks/useUserData";
+import Loading from "../../../components/Loading";
+import Error from "../../../components/message/Error";
+import GenericPage from "../../../components/page/GenericPage";
+import termsAndConditions from "../../../data/terms-and-conditions-mocs.md?raw";
+import schema, { FormValues } from "../../../lib/form/register-moc-form-schema";
+import useApi from "../../../lib/hooks/useApi";
+import useTawkTo from "../../../lib/hooks/useTawkTo";
+import useUserData from "../../../lib/hooks/useUserData";
 
 const RegisterPage: NextPage = () => {
   const [errorMessage, setErrorMessage] = useState<string>();

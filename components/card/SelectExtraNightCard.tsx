@@ -10,7 +10,7 @@ export default function SelectExtraNightCard() {
         </Heading>
         <Text>Your registration fee includes an extra night. We need you to make a choice.</Text>
         <HStack justify="end">
-          <NextLink href="/form/extra-night" passHref>
+          <NextLink href="/account/form/extra-night" passHref>
             <Button as={Link} w="fit-content" colorScheme="green">
               Select Extra Night
             </Button>

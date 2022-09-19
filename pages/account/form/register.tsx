@@ -37,15 +37,15 @@ import React, { useState } from "react";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import ReactMarkdown from "react-markdown";
 
-import Loading from "../../components/Loading";
-import Error from "../../components/message/Error";
-import GenericPage from "../../components/page/GenericPage";
-import termsAndConditions from "../../data/terms-and-conditions.md?raw";
-import { REGISTRATION_ENABLED } from "../../lib/env";
-import schema, { FormValues, shirtSizes, countries, lugs, ShirtSize, genders } from "../../lib/form/registration-schema";
-import useApi from "../../lib/hooks/useApi";
-import useUserData from "../../lib/hooks/useUserData";
-import looksRealName from "../../lib/utils/looksRealName";
+import Loading from "../../../components/Loading";
+import Error from "../../../components/message/Error";
+import GenericPage from "../../../components/page/GenericPage";
+import termsAndConditions from "../../../data/terms-and-conditions.md?raw";
+import { REGISTRATION_ENABLED } from "../../../lib/env";
+import schema, { FormValues, shirtSizes, countries, lugs, ShirtSize, genders } from "../../../lib/form/registration-schema";
+import useApi from "../../../lib/hooks/useApi";
+import useUserData from "../../../lib/hooks/useUserData";
+import looksRealName from "../../../lib/utils/looksRealName";
 
 const RegisterPage: NextPage = () => {
   const [errorMessage, setErrorMessage] = useState("");
