@@ -33,7 +33,7 @@ export default function PricingPlans() {
               €
             </Text>
             <Text fontSize="5xl" fontWeight="900">
-              120
+              150
             </Text>
             <Text fontSize="3xl" color="gray.500">
               /person
@@ -103,7 +103,7 @@ export default function PricingPlans() {
                 €
               </Text>
               <Text fontSize="5xl" fontWeight="900">
-                150
+                180
               </Text>
               <Text fontSize="3xl" color="gray.500">
                 /person

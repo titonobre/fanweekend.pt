@@ -212,8 +212,8 @@ const RegisterPage: NextPage = () => {
               render={({ field }) => (
                 <RadioGroup {...field}>
                   <Stack direction={["column", "row"]} spacing={[1, 8]}>
-                    <Radio value="basic">Basic (€120)</Radio>
-                    <Radio value="full">Full (€150)</Radio>
+                    <Radio value="basic">Basic (€150)</Radio>
+                    <Radio value="full">Full (€180)</Radio>
                   </Stack>
                 </RadioGroup>
               )}

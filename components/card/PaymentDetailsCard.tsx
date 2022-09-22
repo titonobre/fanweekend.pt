@@ -8,8 +8,8 @@ import { PAYMENT_ACCOUNT_HOLDER, PAYMENT_ACCOUNT_IBAN, PAYMENT_ACCOUNT_BIC_SWIFT
 import useTawkTo from "../../lib/hooks/useTawkTo";
 
 const PLAN_AMOUNT: { [k: string]: string } = {
-  basic: "€120.00",
-  full: "€150.00",
+  basic: "€150.00",
+  full: "€180.00",
   volunteer: "€30.00",
 };
 
