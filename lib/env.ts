@@ -41,3 +41,11 @@ export const AUTH0_CLIENT_SECRET: string = process.env.AUTH0_CLIENT_SECRET as st
 export const PAYMENT_ACCOUNT_HOLDER = process.env.NEXT_PUBLIC_PAYMENT_ACCOUNT_HOLDER as string;
 export const PAYMENT_ACCOUNT_IBAN = process.env.NEXT_PUBLIC_PAYMENT_ACCOUNT_IBAN as string;
 export const PAYMENT_ACCOUNT_BIC_SWIFT = process.env.NEXT_PUBLIC_PAYMENT_ACCOUNT_BIC_SWIFT as string;
+
+export const SMTP_HOST = process.env.SMTP_HOST as string;
+export const SMTP_USER = process.env.SMTP_USER as string;
+export const SMTP_PASS = process.env.SMTP_PASS as string;
+
+export const MAIL_FROM_NAME = process.env.MAIL_FROM_NAME as string;
+export const MAIL_FROM_ADDRESS = process.env.MAIL_FROM_ADDRESS as string;
+export const MAIL_SUBJECT = process.env.MAIL_SUBJECT as string;

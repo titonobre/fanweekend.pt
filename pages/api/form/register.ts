@@ -8,6 +8,7 @@ import { invalidateRegisteredUsers } from "../../../lib/data/dataStore";
 import { REGISTRATION_FORM_ID } from "../../../lib/env";
 import schema, { FormValues } from "../../../lib/form/registration-schema";
 import validate from "../../../lib/middleware/validate";
+import { sendRegistrationMail } from "../../../lib/utils/sendRegistrationMail";
 
 const formUrl = `https://docs.google.com/forms/d/e/${REGISTRATION_FORM_ID}/formResponse`;
 
@@ -67,6 +68,11 @@ async function register(req: NextApiRequest, res: NextApiResponse): Promise<void
     invalidateRegisteredUsers();
 
     if (response.ok) {
+      await sendRegistrationMail({
+        name: body.name,
+        address: body.email,
+      });
+
       return res.status(200).json({ success: true });
     } else {
       const body = await response.text();
