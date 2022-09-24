@@ -13,7 +13,7 @@ export default function When() {
       <Stack spacing={4} textAlign="center">
         <Heading fontSize="3xl">When?</Heading>
         <Text color="gray.600" fontSize="xl">
-          The event takes place from 9 to 11 of June, 2021. Setup will be on 9 of June, 2023.
+          The event takes place from 9 to 11 of June, 2023. Setup will be on 9 of June, 2023.
         </Text>
       </Stack>
 
