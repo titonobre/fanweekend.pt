@@ -53,7 +53,7 @@ export default function SmallWithSocial() {
             Made with{" "}
             <FaHeart className={styles.pulsating} style={{ display: "inline", verticalAlign: "middle", color: "#f14668" }} title="love" />{" "}
             by{" "}
-            <Link href="http://comunidade0937.com" target="_blank" rel="noreferrer">
+            <Link href="https://comunidade0937.com" target="_blank" rel="noreferrer">
               Comunidade 0937
             </Link>
             . LEGO® is a trademark of the LEGO Group, which does not sponsor, authorize or endorse this web site.

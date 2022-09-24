@@ -34,6 +34,6 @@ Only once your payment has been confirmed will your registration be accepted as 
 
 VERY IMPORTANT!
 
-The main form of communication between the organization and the participants will be the Fan Weekend website at http://www.fanweekend.pt/
+The main form of communication between the organization and the participants will be the Fan Weekend website at https://www.fanweekend.pt/
 
-For all the details regarding our Privacy Policy at http://www.fanweekend.pt/privacy
+For all the details regarding our Privacy Policy at https://www.fanweekend.pt/privacy
