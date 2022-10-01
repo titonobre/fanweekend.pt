@@ -24,7 +24,15 @@ export default function Hero() {
       paddingTop={{ base: "10vh" }}
     >
       <Box maxWidth={{ base: "200px", sm: "250px", md: "300px" }}>
-        <Logo style={{ width: "100%", maxWidth: "100%", height: "inherit", maxHeight: "100%" }} />
+        <Logo
+          style={{
+            width: "100%",
+            maxWidth: "100%",
+            height: "inherit",
+            maxHeight: "100%",
+            filter: "drop-shadow(0px 0px 3px rgba(0,0,0,0.3))",
+          }}
+        />
       </Box>
     </Flex>
   );
