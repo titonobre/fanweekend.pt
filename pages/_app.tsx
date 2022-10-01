@@ -35,7 +35,7 @@ function App({ Component, pageProps }: AppProps) {
         <meta name="application-name" content="Fan Weekend" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="theme-color" content="#fc7f5f" />
+        <meta name="theme-color" content="#5AC4E9" />
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover" />
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
