@@ -30,7 +30,7 @@
     "hash-sum": "^2.0.0",
     "ical-generator": "^3.5.1",
     "marked": "^4.1.0",
-    "next": "^12.3.1",
+    "next": "^12.3.2",
     "next-compose-plugins": "^2.2.1",
     "next-pwa": "^5.6.0",
     "node-fetch": "^3.2.10",
