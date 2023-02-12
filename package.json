@@ -12,7 +12,7 @@
     "postbuild": "node tools/logo-to-png.mjs"
   },
   "dependencies": {
-    "@auth0/nextjs-auth0": "^1.9.1",
+    "@auth0/nextjs-auth0": "^2.2.1",
     "@chakra-ui/icons": "^2.0.10",
     "@chakra-ui/react": "^2.3.4",
     "@chakra-ui/theme-tools": "^2.0.11",
