@@ -15,13 +15,13 @@ export default function Calendar(props?: CalendarProps) {
 
   const showExtras = true;
 
-  const emptyDays = Array.from({ length: 3 }, () => 0);
+  const emptyDays = Array.from({ length: 4 }, () => 0);
   const monthDays = Array.from({ length: 30 }, (v, k) => k + 1);
 
   const calendarDays = [...emptyDays, ...monthDays];
 
-  const activeDays = [10, 11, 12];
-  const extraDays = showExtras ? [9, 12] : [];
+  const activeDays = [9, 10, 11];
+  const extraDays = showExtras ? [8, 11] : [];
 
   const days = calendarDays.map((date) => ({
     label: date > 0 ? `${date}` : "",

@@ -141,8 +141,8 @@ const RegisterPage: NextPage = () => {
               render={({ field }) => (
                 <RadioGroup {...field}>
                   <Stack direction={["column", "row"]} spacing={[1, 8]}>
-                    <Radio value="9">Thursday, June 9</Radio>
-                    <Radio value="12">Sunday, June 12</Radio>
+                    <Radio value="8">Thursday, June 8</Radio>
+                    <Radio value="11">Sunday, June 11</Radio>
                     <Radio value="none">No Extra Night</Radio>
                   </Stack>
                 </RadioGroup>
