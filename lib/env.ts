@@ -24,7 +24,7 @@ export const SHOW_PRICING: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.i
 export const ACCOMMODATION_CARD_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("accommodation") ?? false;
 export const EVENT_PROGRAM_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("program") ?? false;
 export const EXTRA_NIGHT_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("extra-night") ?? false;
-export const MOC_REGISTRATION_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("extra-night") ?? false;
+export const MOC_REGISTRATION_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("moc-registration") ?? false;
 
 export const TAWK_TO_PROPERTY_ID: string = process.env.NEXT_PUBLIC_TAWK_TO_PROPERTY_ID as string;
 export const TAWK_TO_WIDGET_ID: string = process.env.NEXT_PUBLIC_TAWK_TO_WIDGET_ID as string;
