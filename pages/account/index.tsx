@@ -70,6 +70,7 @@ const MePage: NextPage = () => {
   const accommodationCardEnabled = ACCOMMODATION_CARD_ENABLED;
   const emailVerified = user.emailVerified;
   const emailNotVerified = !user.emailVerified;
+  const extraNightSelected = user.extraNightSelected;
   const isVolunteer = user.isVolunteer;
   const nameUpdated = looksRealName(user.name);
   const nameNotUpdated = !nameUpdated;
@@ -77,7 +78,7 @@ const MePage: NextPage = () => {
   const formNotSubmitted = !formSubmitted;
   const registerEnabled = registrationEnabled && emailVerified && !formSubmitted;
   const showPaymentDetails = user.paymentEnabled && !user.paymentReceived;
-  const showExtraNightSelection = EXTRA_NIGHT_ENABLED && formSubmitted && !user.extraNightSelected;
+  const showExtraNightSelection = EXTRA_NIGHT_ENABLED && formSubmitted;
   const showMOCRegistration = MOC_REGISTRATION_ENABLED && formSubmitted;
   const hasAccommodation = !!user.accommodation;
   const showAccommodationCard = accommodationCardEnabled && hasAccommodation;
@@ -111,7 +112,10 @@ const MePage: NextPage = () => {
         content: <PaymentDetailsCard plan={user.plan} isVolunteer={isVolunteer} />,
       },
     ],
-    [showExtraNightSelection, { icon: FaBed, iconBg: "orange.700", iconFg: "white", content: <SelectExtraNightCard /> }],
+    [
+      showExtraNightSelection,
+      { icon: FaBed, iconBg: "orange.700", iconFg: "white", content: <SelectExtraNightCard done={extraNightSelected} /> },
+    ],
 
     [showMOCRegistration, { icon: FaCubes, iconBg: "teal.500", iconFg: "white", content: <MyMocsCard /> }],
     [showActivitiesCard, { icon: FaChild, iconBg: "purple.500", iconFg: "white", content: <ActivitiesCard /> }],
