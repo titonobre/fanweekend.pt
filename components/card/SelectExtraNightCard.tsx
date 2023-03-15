@@ -1,14 +1,17 @@
 import { Box, Heading, Text, Stack, Link, Button, HStack, useToken } from "@chakra-ui/react";
+import { format } from "date-fns";
 import NextLink from "next/link";
 import { FaCheckCircle } from "react-icons/fa";
 
 type SelectExtraNightCardProps = {
-  done?: boolean;
+  selected?: string;
 };
 
-export default function SelectExtraNightCard({ done = false }: SelectExtraNightCardProps) {
+export default function SelectExtraNightCard({ selected }: SelectExtraNightCardProps) {
   const [colorGreen500] = useToken("colors", ["green.500"]);
   const [size2xl] = useToken("sizes", [8]);
+
+  const selectedDate = selected && format(new Date(2023, 5, Number(selected)), "EEEE, MMMM d");
 
   return (
     <Box w="full" bg="white" boxShadow="2xl" rounded="md" p={6} overflow="hidden">
@@ -18,9 +21,9 @@ export default function SelectExtraNightCard({ done = false }: SelectExtraNightC
         </Heading>
         <Text>Your registration fee includes an extra night. We need you to make a choice.</Text>
         <HStack justify="end">
-          {done ? (
+          {!!selectedDate ? (
             <>
-              <Text color="gray.500">Extra Night Selected!</Text>
+              <Text color="gray.500">Extra Night Selected: {selectedDate}</Text>
               <FaCheckCircle color={colorGreen500} fontSize={size2xl} />
             </>
           ) : (

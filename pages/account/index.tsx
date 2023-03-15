@@ -114,7 +114,7 @@ const MePage: NextPage = () => {
     ],
     [
       showExtraNightSelection,
-      { icon: FaBed, iconBg: "orange.700", iconFg: "white", content: <SelectExtraNightCard done={extraNightSelected} /> },
+      { icon: FaBed, iconBg: "orange.700", iconFg: "white", content: <SelectExtraNightCard selected={extraNightSelected} /> },
     ],
 
     [showMOCRegistration, { icon: FaCubes, iconBg: "teal.500", iconFg: "white", content: <MyMocsCard /> }],

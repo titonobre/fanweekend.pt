@@ -9,7 +9,7 @@ type UserData = {
   formSubmitted: boolean;
   paymentEnabled: boolean;
   paymentReceived: boolean;
-  extraNightSelected: boolean;
+  extraNightSelected?: string;
   isVolunteer: boolean;
   accommodation: string;
 
