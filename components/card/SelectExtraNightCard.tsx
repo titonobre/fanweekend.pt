@@ -11,7 +11,7 @@ export default function SelectExtraNightCard({ selected }: SelectExtraNightCardP
   const [colorGreen500] = useToken("colors", ["green.500"]);
   const [size2xl] = useToken("sizes", [8]);
 
-  const selectedDate = selected && format(new Date(2023, 5, Number(selected)), "EEEE, MMMM d");
+  const selectedDate = selected === "none" ? "None" : selected && format(new Date(2023, 5, Number(selected)), "EEEE, MMMM d");
 
   return (
     <Box w="full" bg="white" boxShadow="2xl" rounded="md" p={6} overflow="hidden">
