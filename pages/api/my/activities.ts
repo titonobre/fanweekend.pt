@@ -18,21 +18,11 @@ async function activities(req: NextApiRequest, res: NextApiResponse) {
       return;
     }
 
-    const userActivitiesResponses = activitiesResponses
-      .filter((m) => m.user === registeredUser.id)
-      .reduce((acc, response) => {
-        const key = `${response.date}|${response.time}|${response.activity}`;
+    const userRegisteredActivities = activitiesResponses.filter((m) => m.user === registeredUser.id).map((response) => response.activity);
 
-        acc[key] = response.action === "register";
+    const userRegisteredActivitiesSet = new Set(userRegisteredActivities);
 
-        return acc;
-      }, {} as { [key: string]: boolean });
-
-    const userActivities = eventProgram.filter((activity) => {
-      const key = `${activity.date}|${activity.time}|${activity.title}`;
-
-      return !!userActivitiesResponses[key];
-    });
+    const userActivities = eventProgram.filter((activity) => userRegisteredActivitiesSet.has(activity.id));
 
     res.status(200).json(userActivities);
   } catch (error) {

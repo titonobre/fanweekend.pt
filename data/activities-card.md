@@ -1,5 +1,8 @@
-If you want, join us to have a little fun participating in short contests or enjoy supporting your fellow AFOLs!
+Join us and have fun in short contests that will run through the entire afternoon on Saturday and Sunday, just show up and let the organizers know that you're willing to participate!
 
-**No registration needed**, just show up at the stage in the venue and let the organizers know that you're willing to have fun!
+Or maybe you want something else...
 
-These activities will run through the entire afternoon on Saturday and Sunday.
+**Note the following activities have limited capacity and require registration**:
+
+- AFOLs in the Nature, on Saturday
+- Tour - Corno de Bico, on Sunday

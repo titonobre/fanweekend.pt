@@ -1,11 +1,11 @@
 import { zonedTimeToUtc } from "date-fns-tz";
-import hashSum from "hash-sum";
 
 import { EVENT_PROGRAM_SHEET_ID } from "../env";
 
 import { getSpreadsheet } from "./spreadsheet";
 
 type RawActivity = {
+  id: string;
   title: string;
   date: string;
   time: string;
@@ -15,6 +15,8 @@ type RawActivity = {
   directions?: string;
   audience?: string;
   signUpRequired?: string;
+  participantsLimit?: string;
+  registrationNotes?: string;
   keyPeople?: string;
   description?: string;
 };
@@ -32,6 +34,8 @@ export type Activity = {
   directions?: string;
   audience?: string;
   signUpRequired?: boolean;
+  participantsLimit?: number;
+  registrationNotes?: string;
   keyPeople?: string[];
 };
 
@@ -42,31 +46,29 @@ export default async function fetchEventProgram(): Promise<Activity[]> {
   const rows = await sheet.getRows();
 
   return rows
-    .map(
-      (row) =>
-        ({
-          type: row["Type"],
-          title: row["Title"],
-          date: row["Date"],
-          time: row["Time"],
-          duration: row["Duration"],
-          location: row["Location"],
-          directions: row["Directions"],
-          audience: row["Audience"],
-          signUpRequired: row["Sign Up Required"],
-          keyPeople: row["Key People"],
-          description: row["Description"],
-        } as RawActivity)
-    )
-    .filter((activity) => !!activity.title && !!activity.date && !!activity.time)
+    .map<RawActivity>((row) => ({
+      id: row["ID"],
+      type: row["Type"],
+      title: row["Title"],
+      date: row["Date"],
+      time: row["Time"],
+      duration: row["Duration"],
+      location: row["Location"],
+      directions: row["Directions"],
+      audience: row["Audience"],
+      signUpRequired: row["Sign Up Required"],
+      participantsLimit: row["Participants Limit"],
+      registrationNotes: row["Registration Notes"],
+      keyPeople: row["Key People"],
+      description: row["Description"],
+    }))
+    .filter((activity) => !!activity.id && !!activity.title && !!activity.date && !!activity.time)
     .map((rawActivity) => {
       const title = rawActivity.title?.trim() || "";
       const startTime = zonedTimeToUtc(`${rawActivity.date}T${rawActivity.time}:00`, "Europe/Lisbon").toISOString();
 
-      const id = hashSum({ startTime, title });
-
       const activity: Activity = {
-        id,
+        id: rawActivity.id,
         title,
         startTime,
         date: rawActivity.date,
@@ -78,6 +80,8 @@ export default async function fetchEventProgram(): Promise<Activity[]> {
         directions: rawActivity.directions?.trim() || undefined,
         audience: rawActivity.audience?.trim() || undefined,
         signUpRequired: rawActivity.signUpRequired === "Yes",
+        participantsLimit: rawActivity.participantsLimit ? parseInt(rawActivity.participantsLimit, 10) : undefined,
+        registrationNotes: rawActivity.registrationNotes?.trim() || undefined,
         keyPeople:
           rawActivity.keyPeople
             ?.split(",")

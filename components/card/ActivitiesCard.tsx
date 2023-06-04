@@ -17,9 +17,9 @@ export default function ActivitiesCard() {
         </ReactMarkdown>
 
         <HStack justify="end">
-          <NextLink href="/program" passHref>
+          <NextLink href="/account/form/register-activity" passHref>
             <Button as={Link} w="fit-content" colorScheme="green">
-              Event Program
+              Register
             </Button>
           </NextLink>
         </HStack>

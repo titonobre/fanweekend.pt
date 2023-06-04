@@ -5,9 +5,6 @@ import { getSpreadsheet } from "./spreadsheet";
 export type ActivityFormResponse = {
   user: string;
   activity: string;
-  date: string;
-  time: string;
-  action: string;
 };
 
 export default async function fetchActivitiesResponses(): Promise<ActivityFormResponse[]> {
@@ -21,8 +18,5 @@ export default async function fetchActivitiesResponses(): Promise<ActivityFormRe
   return rows.map((row) => ({
     user: row["User"],
     activity: row["Activity"],
-    date: row["Date"],
-    time: row["Time"],
-    action: row["Action"],
   }));
 }

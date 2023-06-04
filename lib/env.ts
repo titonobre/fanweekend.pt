@@ -16,6 +16,7 @@ export const ACCOMMODATIONS_SHEET_ID: string = process.env.ACCOMMODATIONS_SHEET_
 export const MOCS_SHEET_ID: string = process.env.MOCS_SHEET_ID as string;
 
 export const ACTIVITIES_SHEET_ID: string = process.env.ACTIVITIES_SHEET_ID as string;
+export const ACTIVITIES_FORM_ID: string = process.env.ACTIVITIES_FORM_ID as string;
 
 export const REGISTRATION_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("event-registration") ?? false;
 export const LOGIN_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("login") ?? false;
@@ -25,6 +26,7 @@ export const ACCOMMODATION_CARD_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABL
 export const EVENT_PROGRAM_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("program") ?? false;
 export const EXTRA_NIGHT_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("extra-night") ?? false;
 export const MOC_REGISTRATION_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("moc-registration") ?? false;
+export const ACTIVITY_REGISTRATION_ENABLED: boolean = process.env.NEXT_PUBLIC_ENABLED_FEATURES?.includes("activity-registration") ?? false;
 
 export const TAWK_TO_PROPERTY_ID: string = process.env.NEXT_PUBLIC_TAWK_TO_PROPERTY_ID as string;
 export const TAWK_TO_WIDGET_ID: string = process.env.NEXT_PUBLIC_TAWK_TO_WIDGET_ID as string;
