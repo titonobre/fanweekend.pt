@@ -2,9 +2,10 @@ import { withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { Box, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import { IconType } from "react-icons";
-import { FaExclamation, FaWpforms, FaCubes, FaIdCard, FaClipboardList, FaFileInvoice, FaBed, FaChild } from "react-icons/fa";
+import { FaExclamation, FaWpforms, FaCubes, FaIdCard, FaClipboardList, FaFileInvoice, FaBed, FaChild, FaCalendar } from "react-icons/fa";
 
 import ActivitiesCard from "../../components/card/ActivitiesCard";
+import EventProgramCard from "../../components/card/EventProgramCard";
 import MyAccommodation from "../../components/card/MyAccommodation";
 import MyMocsCard from "../../components/card/MyMocs";
 import PaymentDetailsCard from "../../components/card/PaymentDetailsCard";
@@ -23,6 +24,7 @@ import {
   EVENT_PROGRAM_ENABLED,
   EXTRA_NIGHT_ENABLED,
   MOC_REGISTRATION_ENABLED,
+  ACTIVITY_REGISTRATION_ENABLED,
 } from "../../lib/env";
 import useTawkTo from "../../lib/hooks/useTawkTo";
 import useUserData from "../../lib/hooks/useUserData";
@@ -82,7 +84,8 @@ const MePage: NextPage = () => {
   const showMOCRegistration = MOC_REGISTRATION_ENABLED && formSubmitted;
   const hasAccommodation = !!user.accommodation;
   const showAccommodationCard = accommodationCardEnabled && hasAccommodation;
-  const showActivitiesCard = EVENT_PROGRAM_ENABLED;
+  const showEventProgramCard = EVENT_PROGRAM_ENABLED;
+  const showActivitiesCard = ACTIVITY_REGISTRATION_ENABLED;
 
   const progress = {
     paymentEnabled: user.paymentEnabled,
@@ -116,9 +119,9 @@ const MePage: NextPage = () => {
       showExtraNightSelection,
       { icon: FaBed, iconBg: "orange.700", iconFg: "white", content: <SelectExtraNightCard selected={extraNightSelected} /> },
     ],
-
-    [showMOCRegistration, { icon: FaCubes, iconBg: "teal.500", iconFg: "white", content: <MyMocsCard /> }],
+    [showEventProgramCard, { icon: FaCalendar, iconBg: "purple.500", iconFg: "white", content: <EventProgramCard /> }],
     [showActivitiesCard, { icon: FaChild, iconBg: "purple.500", iconFg: "white", content: <ActivitiesCard /> }],
+    [showMOCRegistration, { icon: FaCubes, iconBg: "teal.500", iconFg: "white", content: <MyMocsCard /> }],
   ];
 
   const cards: CardDefinition[] = filterContents(contents);
