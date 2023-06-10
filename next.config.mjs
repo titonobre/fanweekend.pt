@@ -27,12 +27,7 @@ const nextConfig = {
   },
 };
 
-const plugins = [
-  pwa({
-    dest: "public",
-    disable: process.env.NODE_ENV === "development",
-  }),
-];
+const plugins = [];
 
 const config = () => plugins.reduce((acc, next) => next(acc), nextConfig);
 
