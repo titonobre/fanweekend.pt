@@ -85,7 +85,7 @@ const MePage: NextPage = () => {
   const hasAccommodation = !!user.accommodation;
   const showAccommodationCard = accommodationCardEnabled && hasAccommodation;
   const showEventProgramCard = EVENT_PROGRAM_ENABLED;
-  const showActivitiesCard = ACTIVITY_REGISTRATION_ENABLED;
+  const showActivitiesCard = ACTIVITY_REGISTRATION_ENABLED && user.paymentReceived;
 
   const progress = {
     paymentEnabled: user.paymentEnabled,
