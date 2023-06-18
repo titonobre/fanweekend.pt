@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="78"
+   height="78"
+   viewBox="0 0 78 78"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath110">
+      <path
+         id="path110"
+         d="M 39.000077,62.5 C 26.042197,62.5 15.5,51.957924 15.5,39 15.5,26.042077 26.042197,15.5 39.000077,15.5 51.957955,15.5 62.5,26.042077 62.5,39 62.5,51.957924 51.957955,62.5 39.000077,62.5"
+         style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333"
+         clip-path="none" />
+    </clipPath>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       id="filter130"
+       x="-0.25531915"
+       y="-0.25531915"
+       width="1.6808511"
+       height="1.6808511">
+      <feFlood
+         result="flood"
+         in="SourceGraphic"
+         flood-opacity="1.000000"
+         flood-color="rgb(86,72,51)"
+         id="feFlood129" />
+      <feGaussianBlur
+         result="blur"
+         in="SourceGraphic"
+         stdDeviation="5.000000"
+         id="feGaussianBlur129" />
+      <feOffset
+         result="offset"
+         in="blur"
+         dx="8"
+         dy="8"
+         id="feOffset129" />
+      <feComposite
+         result="comp1"
+         operator="in"
+         in="flood"
+         in2="offset"
+         id="feComposite129" />
+      <feComposite
+         result="comp2"
+         operator="over"
+         in="SourceGraphic"
+         in2="comp1"
+         id="feComposite130" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       id="filter131"
+       x="-0.10212766"
+       y="-0.10212766"
+       width="1.2680851"
+       height="1.2680851">
+      <feOffset
+         dy="3"
+         dx="3"
+         id="feOffset131" />
+      <feGaussianBlur
+         stdDeviation="2"
+         result="blur"
+         id="feGaussianBlur131" />
+      <feFlood
+         flood-color="rgb(255,255,255)"
+         flood-opacity="1"
+         result="flood"
+         id="feFlood131" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite"
+         id="feComposite131" />
+      <feBlend
+         in="blur"
+         in2="composite"
+         mode="normal"
+         id="feBlend131" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath131">
+      <path
+         id="path131"
+         d="M 39.00008,63 C 25.766499,63 15,52.233625 15,39 15,25.766378 25.766499,15 39.00008,15 52.23366,15 63,25.766378 63,39 63,52.233625 52.23366,63 39.00008,63"
+         style="display:inline;fill:#00ff00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333"
+         clip-path="none" />
+    </clipPath>
+  </defs>
+  <g
+     id="layer-MC0">
+    <path
+       id="path1"
+       d="M 0,78 H 78 V 0 H 0 Z"
+       style="fill:#ffce00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333" />
+    <path
+       id="path4"
+       d="M 39.000077,62.5 C 26.042197,62.5 15.5,51.957924 15.5,39 15.5,26.042077 26.042197,15.5 39.000077,15.5 51.957955,15.5 62.5,26.042077 62.5,39 62.5,51.957924 51.957955,62.5 39.000077,62.5"
+       style="display:inline;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333;filter:url(#filter130)"
+       clip-path="none" />
+    <path
+       id="path4-1"
+       d="M 39.000076,62.5 C 26.042197,62.5 15.5,51.957923 15.5,39 15.5,26.042077 26.042197,15.5 39.000076,15.5 51.957958,15.5 62.5,26.042077 62.5,39 62.5,51.957923 51.957958,62.5 39.000076,62.5"
+       style="display:inline;fill:#ffce00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.1;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1;paint-order:normal;filter:url(#filter131)"
+       clip-path="url(#clipPath131)" />
+    <path
+       id="path6"
+       d="M 39,15 C 32.589327,15 26.562463,17.496462 22.029463,22.029463 17.496462,26.562463 15,32.589327 15,39 15,45.410519 17.496462,51.437537 22.029463,55.970537 26.562463,60.503538 32.589327,63 39,63 45.410673,63 51.437537,60.503538 55.970537,55.970537 60.503538,51.437537 63,45.410519 63,39 63,32.589327 60.503538,26.562463 55.970537,22.029463 51.437537,17.496462 45.410673,15 39,15 m 0,0.590845 C 51.928492,15.590845 62.409155,26.071508 62.409155,39 62.409155,51.928492 51.928492,62.409155 39,62.409155 26.071508,62.409155 15.590845,51.928492 15.590845,39 15.590845,26.071508 26.071508,15.590845 39,15.590845"
+       style="display:inline;fill:#7e694b;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.33333"
+       clip-path="none" />
+  </g>
+</svg>
