@@ -34,7 +34,7 @@ The following services help us keep this site running by storing or processing y
 - Infrastructure: Vercel, WebTuga
 - Data Storage: Google Drive
 - Helpdesk: Tawk.to
-- Authentication: Clerk
+- Authentication: [Clerk](https://clerk.com/)
 
 The following entities help us organizing this event.
 
