@@ -31,15 +31,15 @@ We collect data when:
 
 The following services help us keep this site running by storing or processing your data on our behalf:
 
-- Infrastructure: Vercel, WebTuga
-- Data Storage: Google Drive
-- Helpdesk: Tawk.to
+- Infrastructure: [Vercel](https://vercel.com/), [WebTuga](https://www.webtuga.pt/)
+- Data Storage: [Google Drive](https://drive.google.com/)
+- Helpdesk: [Tawk.to](https://www.tawk.to/)
 - Authentication: [Clerk](https://clerk.com/)
 
 The following entities help us organizing this event.
 
-- LEGO Group
-- Município de Paredes de Coura
+- [LEGO Group](https://www.lego.com/)
+- [Município de Paredes de Coura](https://www.paredesdecoura.pt/)
 
 ## We Use Cookies 🍪
 
