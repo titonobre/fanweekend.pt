@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { usePrivacyConsentContext } from "@/lib/providers/privacy-consent";
 
 export function PrivacyBanner() {
-  const { accepted } = usePrivacyConsentContext();
+  const { accepted, setAccepted } = usePrivacyConsentContext();
 
   const [privacyBannerHidden, setPrivacyBannerHidden] = useState(true);
 
@@ -27,7 +27,8 @@ export function PrivacyBanner() {
           We use cookies and other tracking technologies to help provide you a better experience. Please take a few minutes to read our
           Privacy Policy.
         </p>
-        <div className="self-end whitespace-nowrap">
+        <div className="flex flex-row gap-4 self-center whitespace-nowrap sm:self-end">
+          <Button onClick={() => setAccepted()}>Accept</Button>
           <Button asChild>
             <NextLink href="/privacy">Privacy Policy</NextLink>
           </Button>
