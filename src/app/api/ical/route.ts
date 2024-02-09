@@ -1,16 +1,39 @@
 import ical from "ical-generator";
+import { z } from "zod";
+
+import { parseDocument } from "@/lib/utils/parse-document";
+
+import calendarEvent from "../../../documents/calendar-event.md?raw";
+
+const { plain, html, frontmatter } = await parseDocument(calendarEvent);
+
+const frontmatterSchema = z.object({
+  id: z.string().min(1),
+  start: z.coerce.date(),
+  end: z.coerce.date(),
+  timezone: z.string().min(1),
+  summary: z.string().min(1),
+  location: z.string().min(1),
+  url: z.string().url(),
+});
+
+const { id, start, end, timezone, summary, location, url } = frontmatterSchema.parse(frontmatter);
 
 const calendar = ical({
   prodId: "//fanweekend.pt//ical//EN",
   events: [
     {
-      id: "pdcfw-2024",
-      start: "2024-06-07T10:00:00Z",
-      end: "2024-06-09T17:00:00Z",
-      summary: "Paredes de Coura Fan Weekend 2024",
-      description:
-        "The Paredes de Coura Fan Weekend is back!\n\nWe will once again turn the cosy little village of Paredes de Coura into the centre stage of the AFOL community. Hosted by the Comunidade 0937 we hope to gather LEGO® fans from all around the world and make this an unforgettable experience with passionate AFOLs, fantastic models and creations and insightful workshops!",
-      url: "https://fanweekend.pt",
+      id,
+      start,
+      end,
+      timezone,
+      location,
+      summary,
+      description: {
+        plain,
+        html,
+      },
+      url,
     },
   ],
 });
@@ -19,7 +42,7 @@ export async function GET() {
   return new Response(calendar.toString(), {
     headers: {
       "Content-Type": "text/calendar; charset=utf-8",
-      "Content-Disposition": 'attachment; filename="calendar.ics"',
+      "Content-Disposition": `attachment; filename="${id}.ics"`,
     },
   });
 }
