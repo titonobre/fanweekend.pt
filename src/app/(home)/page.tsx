@@ -6,7 +6,6 @@ import { Intro } from "@/components/section/intro";
 import { Register } from "@/components/section/register";
 import { Welcome } from "@/components/section/welcome";
 import { What } from "@/components/section/what";
-import { When } from "@/components/section/when";
 import { Where } from "@/components/section/where";
 
 export default async function Home() {
@@ -25,9 +24,6 @@ export default async function Home() {
       </section>
       <section className="flex flex-1 py-10">
         <Welcome />
-      </section>
-      <section className="flex flex-1 py-10">
-        <When />
       </section>
       <section className="flex flex-1 overflow-hidden py-10">
         <Where />
