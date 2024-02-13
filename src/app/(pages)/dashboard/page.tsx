@@ -30,7 +30,7 @@ function renderCard(card: CardDef): ReactNode {
 export default function Account() {
   const cardsQuery = api.dashboard.getCards.useQuery();
 
-  if (cardsQuery.isFetching) {
+  if (cardsQuery.status === "loading") {
     return (
       <div className="thin-container mt-10 flex flex-col gap-10">
         <div className="flex flex-col gap-1">
@@ -44,7 +44,7 @@ export default function Account() {
     );
   }
 
-  if (!cardsQuery.data) {
+  if (cardsQuery.status === "error" || !cardsQuery.data) {
     return (
       <div className="thin-container mt-10 flex flex-col gap-10">
         <Alert variant="destructive">
