@@ -28,7 +28,7 @@ export async function getGoogleClientPrivateKey(): Promise<string | undefined> {
 
 export async function getEnabledFeatures(): Promise<Set<string>> {
   const result = await swr("enabled-features", async () => {
-    const features = await kv.get<string[]>("enabled-features");
+    const features = await kv.smembers("enabled-features");
     return new Set([...(features ?? []), ...env.ENABLED_FEATURES]);
   });
 
