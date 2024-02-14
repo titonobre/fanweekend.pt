@@ -7,9 +7,10 @@
  * need to use are documented accordingly near the end.
  */
 
-import { getAuth } from "@clerk/nextjs/server";
-import { initTRPC,TRPCError } from "@trpc/server";
 import { type NextRequest, type NextResponse } from "next/server";
+
+import { getAuth } from "@clerk/nextjs/server";
+import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
 import { ZodError } from "zod";
 

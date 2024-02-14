@@ -1,5 +1,6 @@
-import { UserProfile } from "@clerk/nextjs";
 import NextLink from "next/link";
+
+import { UserProfile } from "@clerk/nextjs";
 
 import { Button } from "@/components/ui/button";
 

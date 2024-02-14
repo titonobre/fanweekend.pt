@@ -4,8 +4,8 @@ import { addMinutes, formatDuration, intervalToDuration, isSameDay, parseISO } f
 import { formatInTimeZone, utcToZonedTime } from "date-fns-tz";
 import { Clock, MapPin, Navigation, User2, Users2 } from "lucide-react";
 
+import type { EventProgramEntry } from "@/lib/data/event-program";
 import { api } from "@/trpc/react";
-import type { EventProgramEntry } from "~/lib/data/event-program";
 
 const eventTimeZone = "Europe/Lisbon";
 

@@ -1,9 +1,10 @@
-import NextLink from "next/link";
 import { type HTMLAttributes, type RefAttributes } from "react";
+
+import NextLink from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import { cn } from "@/components/utils";
 
 type RegistrationCardProps = HTMLAttributes<HTMLDivElement> &
   RefAttributes<HTMLDivElement> & {

@@ -1,9 +1,8 @@
 import ical from "ical-generator";
 
+import calendarEvent from "@/documents/calendar-event.md?raw";
 import { parseCalendarEventFrontMatter } from "@/lib/utils/parse-calendar-event-frontmatter";
 import { parseDocument } from "@/lib/utils/parse-document";
-
-import calendarEvent from "../../../documents/calendar-event.md?raw";
 
 const { plain, html, frontmatter } = await parseDocument(calendarEvent);
 

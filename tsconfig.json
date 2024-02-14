@@ -27,18 +27,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "~/*": ["./src/*"]
-    }
+      "~/*": ["./*"],
+    },
   },
-  "include": [
-    ".eslintrc.cjs",
-    "next-env.d.ts",
-    "typings.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.cjs",
-    "**/*.js",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": ["node_modules"]
+  "include": [".eslintrc.cjs", "next-env.d.ts", "typings.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.js", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"],
 }

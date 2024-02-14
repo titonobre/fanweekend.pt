@@ -2,7 +2,7 @@ import { currentUser } from "@clerk/nextjs/server";
 
 import { isFeatureEnabled } from "@/config";
 import { getUserRegistrationData } from "@/lib/data/registered-users";
-import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
+import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 
 export type RegistrationCard = {
   type: "REGISTRATION";

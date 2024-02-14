@@ -1,7 +1,7 @@
 import Image from "next/image";
 import NextLink from "next/link";
 
-import raneBadge from "../../../assets/images/rane-badge.svg";
+import raneBadge from "~/assets/images/rane-badge.svg";
 
 export function RecognizedEventBadge() {
   return (

@@ -5,7 +5,7 @@ import { getUserRegistrationData, invalidateRegisteredUsers } from "@/lib/data/r
 import { submitUserRegistration, type UserRegistrationData } from "@/lib/forms/register";
 import { sendRegistrationMail } from "@/lib/utils/sendRegistrationMail";
 import { registrationSchema } from "@/schema/registration-form.schema";
-import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
+import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 
 type RegistrationResponse = {
   type: "SUCCESS";

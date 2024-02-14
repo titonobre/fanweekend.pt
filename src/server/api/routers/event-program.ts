@@ -1,5 +1,5 @@
-import fetchEventProgram from "~/lib/data/event-program";
-import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
+import fetchEventProgram from "@/lib/data/event-program";
+import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 
 export const eventProgram = createTRPCRouter({
   getEventProgram: publicProcedure.query(async () => {

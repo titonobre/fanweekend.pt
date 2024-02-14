@@ -1,7 +1,7 @@
 import { z } from "zod";
 
-import countries from "../data/countries.json";
-import lugs from "../data/lugs.json";
+import countries from "@/data/countries.json";
+import lugs from "@/data/lugs.json";
 
 enum Gender {
   "Male" = "male",

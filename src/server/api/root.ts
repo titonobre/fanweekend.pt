@@ -1,4 +1,4 @@
-import { createTRPCRouter } from "~/server/api/trpc";
+import { createTRPCRouter } from "@/server/api/trpc";
 
 import { dashboard } from "./routers/dashboard";
 import { eventProgram } from "./routers/event-program";

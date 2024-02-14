@@ -1,13 +1,15 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+
+import { useRouter } from "next/navigation";
 
 import AutoForm from "@/components/ui/auto-form";
 import { DependencyType } from "@/components/ui/auto-form/types";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { type RegistrationSchema,registrationSchema } from "@/schema/registration-form.schema";
+
+import { type RegistrationSchema, registrationSchema } from "@/schema/registration-form.schema";
 import { api } from "@/trpc/react";
 
 export default function RegistrationForm() {

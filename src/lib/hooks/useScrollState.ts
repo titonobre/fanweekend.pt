@@ -1,5 +1,6 @@
-import { useThrottle } from "@react-hook/throttle";
 import { useLayoutEffect } from "react";
+
+import { useThrottle } from "@react-hook/throttle";
 
 type Direction = "up" | "down";
 type ScrollState = [position: number, direction: Direction];

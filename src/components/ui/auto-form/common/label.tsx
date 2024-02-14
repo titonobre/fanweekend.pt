@@ -1,5 +1,5 @@
 import { FormLabel } from "@/components/ui/form";
-import { cn } from "@/lib/utils";
+import { cn } from "@/components/utils";
 
 function AutoFormLabel({ label, isRequired, className }: { label: string; isRequired: boolean; className?: string }) {
   return (

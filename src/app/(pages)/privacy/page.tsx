@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-import PrivacyPolicy from "../../../documents/privacy-policy.md";
+import PrivacyPolicy from "@/documents/privacy-policy.md";
 
 const AcceptPrivacyPolicy = dynamic(() => import("./accept-privacy-policy"), { ssr: false });
 

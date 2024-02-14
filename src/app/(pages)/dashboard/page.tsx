@@ -1,7 +1,8 @@
 "use client";
 
-import { AlertCircle } from "lucide-react";
 import { type ReactNode } from "react";
+
+import { AlertCircle } from "lucide-react";
 
 import { MessageCard } from "@/components/card/message-card";
 import { ProgressCard } from "@/components/card/progress-card";
@@ -9,6 +10,7 @@ import { RegistrationCard } from "@/components/card/registration-card";
 import { WelcomeCard } from "@/components/card/welcome-card";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Skeleton } from "@/components/ui/skeleton";
+
 import { api } from "@/trpc/react";
 import { type RouterOutputs } from "@/trpc/shared";
 

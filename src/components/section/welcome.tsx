@@ -1,9 +1,10 @@
-import { CalendarIcon } from "lucide-react";
 import NextLink from "next/link";
-import { type DateRange } from "react-day-picker";
+
+import { CalendarIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
+
 import { default as CalendarEventMessage, frontmatter } from "@/documents/calendar-event.md";
 import { parseCalendarEventFrontMatter } from "@/lib/utils/parse-calendar-event-frontmatter";
 

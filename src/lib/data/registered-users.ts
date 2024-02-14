@@ -3,10 +3,9 @@
 import { currentUser } from "@clerk/nextjs";
 import { createStaleWhileRevalidateCache } from "stale-while-revalidate-cache";
 
-import { env } from "~/env.js";
-
-import getRows from "../data-sources/spreadsheet";
-import { Storage } from "../utils/storage";
+import { env } from "@/env";
+import getRows from "@/lib/data-sources/spreadsheet";
+import { Storage } from "@/lib/utils/storage";
 
 const sheetId = env.REGISTERED_USERS_SHEET_ID;
 

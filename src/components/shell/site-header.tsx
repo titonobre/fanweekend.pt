@@ -1,13 +1,14 @@
 "use client";
 
-import { SignedIn, SignedOut, SignInButton, UserButton, useUser } from "@clerk/nextjs";
-import { cva, type VariantProps } from "class-variance-authority";
 import NextLink from "next/link";
 
-import useScrollState from "@/lib/hooks/useScrollState";
-import { cn } from "@/lib/utils";
+import { SignedIn, SignedOut, SignInButton, UserButton, useUser } from "@clerk/nextjs";
+import { cva, type VariantProps } from "class-variance-authority";
 
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/components/utils";
+
+import useScrollState from "@/lib/hooks/useScrollState";
 
 const variants = cva("sticky z-50 transition-all", {
   variants: {

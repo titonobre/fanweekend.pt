@@ -1,8 +1,8 @@
 import NextLink from "next/link";
 
-import { isFeatureEnabled } from "@/config";
+import { Button } from "@/components/ui/button";
 
-import { Button } from "../ui/button";
+import { isFeatureEnabled } from "@/config";
 
 export async function Register() {
   const registrationEnabled = await isFeatureEnabled("event-registration");

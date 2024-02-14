@@ -1,14 +1,16 @@
-import { AlertCircle } from "lucide-react";
+import { type PropsWithChildren } from "react";
+
 import dynamic from "next/dynamic";
 import NextLink from "next/link";
-import { type PropsWithChildren } from "react";
+
+import { AlertCircle } from "lucide-react";
 
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { isFeatureEnabled } from "@/config";
-import { getUserRegistrationData } from "@/lib/data/registered-users";
 
-import RegistrationTerms from "../../../documents/registration-terms-and-conditions.md";
+import { isFeatureEnabled } from "@/config";
+import RegistrationTerms from "@/documents/registration-terms-and-conditions.md";
+import { getUserRegistrationData } from "@/lib/data/registered-users";
 
 const RegisterForm = dynamic(() => import("./register-form"), { ssr: false });
 

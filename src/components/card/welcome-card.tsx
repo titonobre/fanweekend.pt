@@ -1,6 +1,6 @@
 import { type HTMLAttributes, type RefAttributes } from "react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/components/utils";
 
 type WelcomeCardProps = HTMLAttributes<HTMLDivElement> &
   RefAttributes<HTMLDivElement> & {

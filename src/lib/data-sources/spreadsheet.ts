@@ -2,8 +2,8 @@ import { JWT } from "google-auth-library";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { z } from "zod";
 
-import { getGoogleClientPrivateKey } from "~/config";
-import { env } from "~/env.js";
+import { getGoogleClientPrivateKey } from "@/config";
+import { env } from "@/env";
 
 const privateKeySchema = z.string().nonempty();
 

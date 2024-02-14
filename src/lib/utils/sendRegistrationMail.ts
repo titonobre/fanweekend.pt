@@ -1,6 +1,6 @@
-import { env } from "~/env.js";
+import emailTemplate from "@/documents/registration-email.md?raw";
+import { env } from "@/env";
 
-import emailTemplate from "../../documents/registration-email.md?raw";
 import { hydrateTemplate } from "./hydrate-template";
 import { parseDocument } from "./parse-document";
 import { type NameAndAddress, sendMail, type SMTPParams } from "./sendMail";

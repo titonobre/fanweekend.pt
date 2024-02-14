@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import { Checkbox } from "@/components/ui/checkbox";
+
 import { usePrivacyConsentContext } from "@/lib/providers/privacy-consent";
 
 export default function AcceptPrivacyPolicy() {

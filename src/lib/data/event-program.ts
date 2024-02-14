@@ -1,8 +1,7 @@
 import { zonedTimeToUtc } from "date-fns-tz";
 
-import { env } from "~/env.js";
-
-import getRows from "../data-sources/spreadsheet";
+import { env } from "@/env";
+import getRows from "@/lib/data-sources/spreadsheet";
 
 const sheetId = env.EVENT_PROGRAM_SHEET_ID;
 

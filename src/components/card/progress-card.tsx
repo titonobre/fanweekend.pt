@@ -1,8 +1,9 @@
-import { cva, type VariantProps } from "class-variance-authority";
-import { BanknoteIcon, ClipboardCheckIcon, FileSpreadsheetIcon, LayersIcon, ReceiptTextIcon } from "lucide-react";
 import { type HTMLAttributes, type ReactNode, type RefAttributes } from "react";
 
-import { cn } from "@/lib/utils";
+import { cva, type VariantProps } from "class-variance-authority";
+import { BanknoteIcon, ClipboardCheckIcon, FileSpreadsheetIcon, LayersIcon, ReceiptTextIcon } from "lucide-react";
+
+import { cn } from "@/components/utils";
 
 const iconVariants = cva("relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border-2", {
   variants: {

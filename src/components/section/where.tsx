@@ -1,11 +1,13 @@
-import { MapIcon } from "lucide-react";
 import Image, { type StaticImageData } from "next/image";
 import NextLink from "next/link";
 
+import { MapIcon } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+
 import { siteConfig } from "@/config/site";
 
-import map from "../../../assets/images/iberia-map.svg";
-import { Button } from "../ui/button";
+import map from "~/assets/images/iberia-map.svg";
 
 const mapAsset = map as StaticImageData;
 

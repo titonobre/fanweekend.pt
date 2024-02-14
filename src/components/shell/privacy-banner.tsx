@@ -1,9 +1,11 @@
 "use client";
 
-import NextLink from "next/link";
 import { useEffect, useState } from "react";
 
+import NextLink from "next/link";
+
 import { Button } from "@/components/ui/button";
+
 import { usePrivacyConsentContext } from "@/lib/providers/privacy-consent";
 
 export function PrivacyBanner() {

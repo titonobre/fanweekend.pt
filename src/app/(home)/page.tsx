@@ -1,6 +1,7 @@
-import { auth } from "@clerk/nextjs";
 import { unstable_noStore as noStore } from "next/cache";
 import { redirect } from "next/navigation";
+
+import { auth } from "@clerk/nextjs";
 
 import { Intro } from "@/components/section/intro";
 import { Register } from "@/components/section/register";

@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { createContext, type PropsWithChildren,useContext } from "react";
+import { createContext, type PropsWithChildren, useContext } from "react";
 import { useLocalStorage } from "react-use";
 
-import { frontmatter } from "../../documents/privacy-policy.md";
+import { frontmatter } from "@/documents/privacy-policy.md";
 
 type PrivacyConsent = {
   readonly accepted: boolean;

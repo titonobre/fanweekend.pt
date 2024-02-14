@@ -1,7 +1,7 @@
 import Image, { type StaticImageData } from "next/image";
 
-import background from "../../../assets/images/background.webp";
-import logo from "../../../assets/images/pdcfw.svg";
+import background from "~/assets/images/background.webp";
+import logo from "~/assets/images/pdcfw.svg";
 
 const logoAsset = logo as StaticImageData;
 

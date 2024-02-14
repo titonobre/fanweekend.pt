@@ -1,12 +1,15 @@
+import * as React from "react";
+
+import NextLink from "next/link";
+
 import { SiFacebook, SiInstagram } from "@icons-pack/react-simple-icons";
 import { HeartIcon } from "lucide-react";
-import NextLink from "next/link";
-import * as React from "react";
 
 import { Button } from "@/components/ui/button";
 import { ThemeModeToggle } from "@/components/ui-alt/theme-mode-toggle";
+import { cn } from "@/components/utils";
+
 import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
 
 import { RecognizedEventBadge } from "./recognized-event-badge";
 

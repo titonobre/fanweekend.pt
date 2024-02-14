@@ -3,8 +3,7 @@ import { createStaleWhileRevalidateCache } from "stale-while-revalidate-cache";
 import { type z } from "zod";
 
 import { env, type featureSchema } from "@/env";
-
-import { Storage } from "../lib/utils/storage";
+import { Storage } from "@/lib/utils/storage";
 
 type FeatureName = z.infer<typeof featureSchema>; // string
 

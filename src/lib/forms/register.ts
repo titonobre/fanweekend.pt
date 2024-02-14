@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 
-import { env } from "@/env.js";
+import { env } from "@/env";
 
 const formUrl = `https://docs.google.com/forms/d/e/${env.REGISTRATION_FORM_ID}/formResponse`;
 
