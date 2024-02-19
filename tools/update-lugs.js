@@ -1,8 +1,8 @@
 /* eslint-disable */
 import assert from "node:assert";
+import { writeFile } from "node:fs/promises";
 
 import * as cheerio from "cheerio";
-import { writeFile } from "node:fs/promises";
 
 const response = await fetch("https://lan.lego.com/clubs/overview/");
 
