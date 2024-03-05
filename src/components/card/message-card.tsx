@@ -3,13 +3,13 @@ import { type HTMLAttributes, type RefAttributes } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/components/utils";
 
-type WelcomeCardProps = HTMLAttributes<HTMLDivElement> &
+type MessageCardProps = HTMLAttributes<HTMLDivElement> &
   RefAttributes<HTMLDivElement> & {
     title: string;
     content: string;
   };
 
-export function MessageCard({ className, title, content, ...props }: WelcomeCardProps) {
+export function MessageCard({ className, title, content, ...props }: MessageCardProps) {
   return (
     <Card className={cn("w-full", className)} {...props}>
       <CardHeader>
