@@ -5,6 +5,7 @@ import { type ReactNode } from "react";
 import { AlertCircle } from "lucide-react";
 
 import { MessageCard } from "@/components/card/message-card";
+import { PaymentDetailsCard } from "@/components/card/payment-details";
 import { ProgressCard } from "@/components/card/progress-card";
 import { RegistrationCard } from "@/components/card/registration-card";
 import { WelcomeCard } from "@/components/card/welcome-card";
@@ -26,6 +27,8 @@ function renderCard(card: CardDef): ReactNode {
       return <RegistrationCard {...card}></RegistrationCard>;
     case "PROGRESS":
       return <ProgressCard {...card}></ProgressCard>;
+    case "PAYMENT_DETAILS":
+      return <PaymentDetailsCard />;
   }
 }
 

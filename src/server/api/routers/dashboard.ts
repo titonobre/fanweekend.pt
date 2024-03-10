@@ -13,6 +13,11 @@ export type WelcomeCard = {
   type: "WELCOME";
   name: string;
 };
+
+export type PaymentDetailsCard = {
+  type: "PAYMENT_DETAILS";
+};
+
 export type MessageCard = {
   type: "MESSAGE";
   title: string;
@@ -26,7 +31,7 @@ export type ProgressCard = {
   paymentReceived: boolean;
 };
 
-export type Card = RegistrationCard | WelcomeCard | ProgressCard | MessageCard;
+export type Card = RegistrationCard | WelcomeCard | ProgressCard | MessageCard | PaymentDetailsCard;
 
 export const dashboard = createTRPCRouter({
   getCards: publicProcedure.query(async (): Promise<Card[]> => {
@@ -54,11 +59,18 @@ export const dashboard = createTRPCRouter({
         paymentEnabled: registeredUser.paymentEnabled,
         paymentReceived: registeredUser.paymentReceived,
       });
-      cards.push({
-        type: "MESSAGE",
-        title: "What Next?",
-        content: "We are preparing the next steps. Come back later.",
-      });
+
+      if (registeredUser.paymentEnabled) {
+        cards.push({
+          type: "PAYMENT_DETAILS",
+        });
+      } else {
+        cards.push({
+          type: "MESSAGE",
+          title: "What Next?",
+          content: "We are preparing the next steps. Come back later.",
+        });
+      }
     } else {
       cards.push({
         type: "PROGRESS",
