@@ -3,6 +3,7 @@ import { createTRPCRouter } from "@/server/api/trpc";
 import { dashboard } from "./routers/dashboard";
 import { eventProgram } from "./routers/event-program";
 import { eventRegistrationRouter } from "./routers/event-registration";
+import { extraNightRouter } from "./routers/extra-night";
 
 /**
  * This is the primary router for your server.
@@ -11,6 +12,7 @@ import { eventRegistrationRouter } from "./routers/event-registration";
  */
 export const appRouter = createTRPCRouter({
   eventRegistration: eventRegistrationRouter,
+  extraNight: extraNightRouter,
   eventProgram,
   dashboard,
 });

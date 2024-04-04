@@ -18,6 +18,10 @@ export type PaymentDetailsCard = {
   type: "PAYMENT_DETAILS";
 };
 
+export type ExtraNightCard = {
+  type: "EXTRA_NIGHT";
+};
+
 export type MessageCard = {
   type: "MESSAGE";
   title: string;
@@ -31,7 +35,7 @@ export type ProgressCard = {
   paymentReceived: boolean;
 };
 
-export type Card = RegistrationCard | WelcomeCard | ProgressCard | MessageCard | PaymentDetailsCard;
+export type Card = RegistrationCard | WelcomeCard | ProgressCard | MessageCard | PaymentDetailsCard | ExtraNightCard;
 
 export const dashboard = createTRPCRouter({
   getCards: publicProcedure.query(async (): Promise<Card[]> => {
@@ -44,6 +48,9 @@ export const dashboard = createTRPCRouter({
     const registeredUser = await getUserRegistrationData();
 
     const registrationEnabled = await isFeatureEnabled("event-registration");
+    const extraNightEnabled = await isFeatureEnabled("extra-night");
+
+    const extraNightSelected = !!registeredUser?.extraNight;
 
     const cards: Card[] = [
       {
@@ -60,17 +67,23 @@ export const dashboard = createTRPCRouter({
         paymentReceived: registeredUser.paymentReceived,
       });
 
-      if (registeredUser.paymentEnabled) {
+      if (registeredUser.paymentEnabled && !registeredUser.paymentReceived) {
         cards.push({
           type: "PAYMENT_DETAILS",
         });
-      } else {
+      }
+
+      if (extraNightEnabled && !extraNightSelected) {
         cards.push({
-          type: "MESSAGE",
-          title: "What Next?",
-          content: "We are preparing the next steps. Come back later.",
+          type: "EXTRA_NIGHT",
         });
       }
+
+      cards.push({
+        type: "MESSAGE",
+        title: "What Next?",
+        content: "We are preparing the next steps. Come back later.",
+      });
     } else {
       cards.push({
         type: "PROGRESS",

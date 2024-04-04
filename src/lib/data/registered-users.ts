@@ -23,8 +23,8 @@ export type UserData = {
   paymentEnabled: boolean;
   paymentReceived: boolean;
   volunteer: boolean;
-  extraNight: string;
-  accommodation: string;
+  extraNight: string | undefined;
+  accommodation: string | undefined;
 };
 
 const storage = new Storage();
@@ -43,8 +43,8 @@ export default async function fetchRegisteredUsers(): Promise<UserData[]> {
     const paymentEnabled = !!row["Payment Enabled"];
     const paymentReceived = !!row["Payment Received"];
     const volunteer = !!row["Volunteer"];
-    const extraNight = row["Extra Night"] ?? "";
-    const accommodation = row["Accommodation"] ?? "";
+    const extraNight = (row["Extra Night"] ?? "") || undefined;
+    const accommodation = (row["Accommodation"] ?? "") || undefined;
 
     if (id) {
       acc.push({
