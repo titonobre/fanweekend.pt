@@ -123,7 +123,7 @@ export default function AutoFormObject<SchemaType extends z.ZodObject<any, any>>
                 ...zodToHtmlInputProps(item),
                 ...field,
                 ...fieldConfigItem.inputProps,
-                disabled: isDisabled,
+                disabled: fieldConfigItem.inputProps?.disabled || isDisabled,
                 ref: undefined,
                 value: value,
               };

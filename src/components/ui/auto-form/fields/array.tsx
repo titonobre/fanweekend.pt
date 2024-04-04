@@ -7,6 +7,14 @@ import * as z from "zod";
 import { beautifyObjectName } from "../utils";
 import AutoFormObject from "./object";
 
+function isZodArray(item: z.ZodArray<any> | z.ZodDefault<any>): item is z.ZodArray<any> {
+  return item instanceof z.ZodArray;
+}
+
+function isZodDefault(item: z.ZodArray<any> | z.ZodDefault<any>): item is z.ZodDefault<any> {
+  return item instanceof z.ZodDefault;
+}
+
 export default function AutoFormArray({
   name,
   item,
@@ -15,7 +23,7 @@ export default function AutoFormArray({
   fieldConfig,
 }: {
   name: string;
-  item: z.ZodArray<any>;
+  item: z.ZodArray<any> | z.ZodDefault<any>;
   form: ReturnType<typeof useForm>;
   path?: string[];
   fieldConfig?: any;
@@ -26,16 +34,18 @@ export default function AutoFormArray({
   });
   const title = item._def.description ?? beautifyObjectName(name);
 
+  const itemDefType = isZodArray(item) ? item._def.type : isZodDefault(item) ? item._def.innerType._def.type : null;
+
   return (
     <AccordionItem value={name} className="border-none">
       <AccordionTrigger>{title}</AccordionTrigger>
       <AccordionContent>
         {fields.map((_field, index) => {
-          const key = [...path, index.toString()].join(".");
+          const key = _field.id;
           return (
             <div className="mt-4 flex flex-col" key={`${key}`}>
               <AutoFormObject
-                schema={item._def.type as z.ZodObject<any, any>}
+                schema={itemDefType as z.ZodObject<any, any>}
                 form={form}
                 fieldConfig={fieldConfig}
                 path={[...path, index.toString()]}
