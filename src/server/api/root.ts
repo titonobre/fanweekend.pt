@@ -4,6 +4,7 @@ import { dashboard } from "./routers/dashboard";
 import { eventProgram } from "./routers/event-program";
 import { eventRegistrationRouter } from "./routers/event-registration";
 import { extraNightRouter } from "./routers/extra-night";
+import { mocsRouter } from "./routers/mocs";
 
 /**
  * This is the primary router for your server.
@@ -15,6 +16,7 @@ export const appRouter = createTRPCRouter({
   extraNight: extraNightRouter,
   eventProgram,
   dashboard,
+  mocs: mocsRouter,
 });
 
 // export type definition of API
