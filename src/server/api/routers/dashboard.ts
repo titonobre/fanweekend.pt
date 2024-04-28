@@ -1,6 +1,7 @@
 import { currentUser } from "@clerk/nextjs/server";
 
 import { isFeatureEnabled } from "@/config";
+import { type Accommodation, getAccommodations } from "@/lib/data/accommodations";
 import { getUserMOCs } from "@/lib/data/registered-mocs";
 import { getUserRegistrationData } from "@/lib/data/registered-users";
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
@@ -42,7 +43,20 @@ export type ProgressCard = {
   paymentReceived: boolean;
 };
 
-export type Card = RegistrationCard | WelcomeCard | ProgressCard | MessageCard | PaymentDetailsCard | ExtraNightCard | MOCsCard;
+export type AccommodationCard = {
+  type: "ACCOMMODATION";
+  accommodation: Accommodation;
+};
+
+export type Card =
+  | RegistrationCard
+  | WelcomeCard
+  | ProgressCard
+  | MessageCard
+  | PaymentDetailsCard
+  | ExtraNightCard
+  | MOCsCard
+  | AccommodationCard;
 
 export const dashboard = createTRPCRouter({
   getCards: publicProcedure.query(async (): Promise<Card[]> => {
@@ -57,6 +71,7 @@ export const dashboard = createTRPCRouter({
     const registrationEnabled = await isFeatureEnabled("event-registration");
     const mocRegistrationEnabled = await isFeatureEnabled("moc-registration");
     const extraNightEnabled = await isFeatureEnabled("extra-night");
+    const accommodationCardEnabled = await isFeatureEnabled("accommodation-card");
 
     const extraNightSelected = !!registeredUser?.extraNight;
 
@@ -85,6 +100,19 @@ export const dashboard = createTRPCRouter({
         cards.push({
           type: "EXTRA_NIGHT",
         });
+      }
+
+      if (accommodationCardEnabled && registeredUser.accommodation) {
+        const accommodations = await getAccommodations();
+
+        const accommodation = accommodations[registeredUser.accommodation];
+
+        if (accommodation) {
+          cards.push({
+            type: "ACCOMMODATION",
+            accommodation,
+          });
+        }
       }
 
       const registeredMOCs = await getUserMOCs();

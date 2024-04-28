@@ -3,7 +3,7 @@
 import { createEnv } from "@t3-oss/env-nextjs";
 import { z } from "zod";
 
-export const featureSchema = z.enum(["event-registration", "moc-registration", "extra-night"]).describe("Feature");
+export const featureSchema = z.enum(["event-registration", "moc-registration", "extra-night", "accommodation-card"]).describe("Feature");
 
 const sheetIdSchema = z
   .string()
@@ -36,6 +36,7 @@ export const env = createEnv({
     GOOGLE_CLIENT_EMAIL: z.string().email(),
     SPREADSHEET_ID: z.string().min(1),
 
+    ACCOMMODATIONS_SHEET_ID: sheetIdSchema,
     EVENT_PROGRAM_SHEET_ID: sheetIdSchema,
     REGISTERED_MOCS_SHEET_ID: sheetIdSchema,
     REGISTERED_USERS_SHEET_ID: sheetIdSchema,
@@ -78,6 +79,7 @@ export const env = createEnv({
 
     SPREADSHEET_ID: process.env.SPREADSHEET_ID,
 
+    ACCOMMODATIONS_SHEET_ID: process.env.ACCOMMODATIONS_SHEET_ID,
     EVENT_PROGRAM_SHEET_ID: process.env.EVENT_PROGRAM_SHEET_ID,
     REGISTERED_MOCS_SHEET_ID: process.env.REGISTERED_MOCS_SHEET_ID,
     REGISTERED_USERS_SHEET_ID: process.env.REGISTERED_USERS_SHEET_ID,

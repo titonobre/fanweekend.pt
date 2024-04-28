@@ -4,6 +4,7 @@ import { type ReactNode } from "react";
 
 import { AlertCircle } from "lucide-react";
 
+import { AccommodationCard } from "@/components/card/accommodation-card";
 import { ExtraNightCard } from "@/components/card/extra-night-card";
 import { MessageCard } from "@/components/card/message-card";
 import { MOCsCard } from "@/components/card/mocs-card";
@@ -35,6 +36,8 @@ function renderCard(card: CardDef): ReactNode {
       return <MOCsCard {...card} />;
     case "EXTRA_NIGHT":
       return <ExtraNightCard />;
+    case "ACCOMMODATION":
+      return <AccommodationCard {...card} />;
   }
 }
 
