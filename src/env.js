@@ -3,7 +3,9 @@
 import { createEnv } from "@t3-oss/env-nextjs";
 import { z } from "zod";
 
-export const featureSchema = z.enum(["event-registration", "moc-registration", "extra-night", "accommodation-card"]).describe("Feature");
+export const featureSchema = z
+  .enum(["event-registration", "moc-registration", "extra-night", "accommodation-card", "event-program", "event-program-card"])
+  .describe("Feature");
 
 const sheetIdSchema = z
   .string()

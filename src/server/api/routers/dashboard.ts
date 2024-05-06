@@ -20,6 +20,10 @@ export type PaymentDetailsCard = {
   type: "PAYMENT_DETAILS";
 };
 
+export type EventProgramCard = {
+  type: "EVENT_PROGRAM";
+};
+
 export type ExtraNightCard = {
   type: "EXTRA_NIGHT";
 };
@@ -54,6 +58,7 @@ export type Card =
   | ProgressCard
   | MessageCard
   | PaymentDetailsCard
+  | EventProgramCard
   | ExtraNightCard
   | MOCsCard
   | AccommodationCard;
@@ -72,6 +77,7 @@ export const dashboard = createTRPCRouter({
     const mocRegistrationEnabled = await isFeatureEnabled("moc-registration");
     const extraNightEnabled = await isFeatureEnabled("extra-night");
     const accommodationCardEnabled = await isFeatureEnabled("accommodation-card");
+    const eventProgramCardEnabled = await isFeatureEnabled("event-program-card");
 
     const extraNightSelected = !!registeredUser?.extraNight;
 
@@ -99,6 +105,12 @@ export const dashboard = createTRPCRouter({
       if (extraNightEnabled && !extraNightSelected) {
         cards.push({
           type: "EXTRA_NIGHT",
+        });
+      }
+
+      if (eventProgramCardEnabled && registeredUser.paymentReceived) {
+        cards.push({
+          type: "EVENT_PROGRAM",
         });
       }
 

@@ -5,4 +5,5 @@ export const siteConfig = {
     instagram: "https://www.instagram.com/pdcfanweekend/",
     location: "https://maps.app.goo.gl/kwbMpXEKS8fPPJp78",
   },
+  timeZone: "Europe/Lisbon",
 } as const;

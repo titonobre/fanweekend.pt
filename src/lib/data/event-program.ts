@@ -1,7 +1,10 @@
 import { zonedTimeToUtc } from "date-fns-tz";
+import { createStaleWhileRevalidateCache } from "stale-while-revalidate-cache";
 
+import { siteConfig } from "@/config";
 import { env } from "@/env";
 import getRows from "@/lib/data-sources/spreadsheet";
+import { Storage } from "@/lib/utils/storage";
 
 const sheetId = env.EVENT_PROGRAM_SHEET_ID;
 
@@ -34,7 +37,15 @@ export type EventProgramEntry = {
   keyPeople?: string[];
 };
 
-export default async function fetchEventProgram(): Promise<EventProgramEntry[]> {
+const storage = new Storage();
+
+const swr = createStaleWhileRevalidateCache({
+  storage,
+  minTimeToStale: 1000, // 5 minutes
+  maxTimeToLive: 1000 * 60 * 10, // 10 minutes
+});
+
+export async function fetchEventProgram(): Promise<EventProgramEntry[]> {
   const rows = await getRows<RawEventProgramEntry>(sheetId);
 
   return rows.reduce<EventProgramEntry[]>((acc, row) => {
@@ -56,7 +67,7 @@ export default async function fetchEventProgram(): Promise<EventProgramEntry[]> 
     const description = row.Description?.trim() ?? undefined;
 
     if (id && title && date && time) {
-      const startTime = zonedTimeToUtc(`${date}T${time}:00`, "Europe/Lisbon").toISOString();
+      const startTime = zonedTimeToUtc(`${date}T${time}:00`, siteConfig.timeZone).toISOString();
 
       acc.push({
         id,
@@ -74,4 +85,14 @@ export default async function fetchEventProgram(): Promise<EventProgramEntry[]> 
     }
     return acc;
   }, []);
+}
+
+export async function getEventProgram(): Promise<EventProgramEntry[]> {
+  const result = await swr("EVENT_PROGRAM", async () => {
+    const entries = await fetchEventProgram();
+
+    return entries;
+  });
+
+  return result.value;
 }
