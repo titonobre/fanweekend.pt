@@ -2,10 +2,8 @@
 
 import NextLink from "next/link";
 
-import { SignedIn, SignedOut, SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import { cva, type VariantProps } from "class-variance-authority";
 
-import { Button } from "@/components/ui/button";
 import { cn } from "@/components/utils";
 
 import useScrollState from "@/lib/hooks/useScrollState";
@@ -38,9 +36,6 @@ export type NavbarProps = {
 
 export function SiteHeader({ transparentOnTop }: NavbarProps = { transparentOnTop: false }) {
   const [scrollPosition, scrollDirection] = useScrollState();
-  const user = useUser();
-
-  const signedIn = user.isSignedIn;
 
   const isScrolled = scrollPosition > 30;
   const isScrolledFar = scrollPosition > 164;
@@ -59,22 +54,7 @@ export function SiteHeader({ transparentOnTop }: NavbarProps = { transparentOnTo
     <div className={cn(variants({ variant, visibility }))}>
       <header className="container z-40">
         <div className="flex h-16 items-center justify-between py-6">
-          <div>
-            {!isTransparent && (
-              <>
-                <NextLink href={signedIn ? "/dashboard" : "/"}>Paredes de Coura Fan Weekend</NextLink>
-              </>
-            )}
-          </div>
-
-          <SignedIn>
-            <UserButton showName userProfileMode="navigation" afterSignOutUrl="/" />
-          </SignedIn>
-          <SignedOut>
-            <SignInButton>
-              <Button>Sign In</Button>
-            </SignInButton>
-          </SignedOut>
+          <div>{!isTransparent && <NextLink href={"/"}>Paredes de Coura Fan Weekend</NextLink>}</div>
         </div>
       </header>
     </div>

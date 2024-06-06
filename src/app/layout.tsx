@@ -1,8 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 
-import { ClerkProvider } from "@clerk/nextjs";
-
 import { ThemeProvider } from "@/components/theme-provider";
 
 import { PrivacyConsentProvider } from "@/lib/providers/privacy-consent";
@@ -34,19 +32,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`font-sans ${inter.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <ClerkProvider
-            appearance={{
-              userButton: {
-                elements: {
-                  userButtonOuterIdentifier: "text-slate-950 dark:text-slate-50 text-base",
-                },
-              },
-            }}
-          >
-            <PrivacyConsentProvider>
-              <TRPCReactProvider>{children}</TRPCReactProvider>
-            </PrivacyConsentProvider>
-          </ClerkProvider>
+          <PrivacyConsentProvider>
+            <TRPCReactProvider>{children}</TRPCReactProvider>
+          </PrivacyConsentProvider>
         </ThemeProvider>
       </body>
     </html>

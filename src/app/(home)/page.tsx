@@ -1,8 +1,3 @@
-import { unstable_noStore as noStore } from "next/cache";
-import { redirect } from "next/navigation";
-
-import { auth } from "@clerk/nextjs";
-
 import { Intro } from "@/components/section/intro";
 import { Register } from "@/components/section/register";
 import { Welcome } from "@/components/section/welcome";
@@ -10,14 +5,6 @@ import { What } from "@/components/section/what";
 import { Where } from "@/components/section/where";
 
 export default async function Home() {
-  noStore();
-
-  const authObject = auth();
-
-  if (authObject.userId) {
-    redirect("/dashboard");
-  }
-
   return (
     <>
       <section className="min-h-screen flex-1">

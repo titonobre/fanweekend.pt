@@ -10,12 +10,10 @@ await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
 const config = {
-  reactStrictMode: true,
+  output: "export",
+  basePath: process.env.BASE_PATH || "",
 
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
+  reactStrictMode: true,
 
   webpack: (config) => {
     /* eslint-disable */
