@@ -136,12 +136,6 @@ export const dashboard = createTRPCRouter({
           mocRegistrationEnabled,
         });
       }
-
-      cards.push({
-        type: "MESSAGE",
-        title: "What Next?",
-        content: "We are preparing the next steps. Come back later.",
-      });
     } else {
       cards.push({
         type: "PROGRESS",
