@@ -1,6 +1,6 @@
 import { currentUser } from "@clerk/nextjs/server";
 
-import { isFeatureEnabled } from "@/config";
+import { getConfig, isFeatureEnabled } from "@/config";
 import { type Accommodation, getAccommodations } from "@/lib/data/accommodations";
 import { getUserMOCs } from "@/lib/data/registered-mocs";
 import { getUserRegistrationData } from "@/lib/data/registered-users";
@@ -38,6 +38,11 @@ export type MessageCard = {
   type: "MESSAGE";
   title: string;
   content: string;
+  cta?: {
+    label: string;
+    link: string;
+    external: boolean;
+  };
 };
 
 export type ProgressCard = {
@@ -111,6 +116,20 @@ export const dashboard = createTRPCRouter({
       if (eventProgramCardEnabled && registeredUser.paymentReceived) {
         cards.push({
           type: "EVENT_PROGRAM",
+        });
+
+        const offerLink = await getConfig("offer-link");
+
+        cards.push({
+          type: "MESSAGE",
+          title: "AFOL Day Portugal",
+          content:
+            "All Participants will get a discount at the LEGO Store Porto - Norte Shopping. Valid on Monday, June 10. Registration is required.",
+          cta: {
+            label: "Register Here",
+            link: offerLink,
+            external: true,
+          },
         });
       }
 
