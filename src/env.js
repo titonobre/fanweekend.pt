@@ -54,6 +54,9 @@ export const env = createEnv({
     SMTP_HOST: z.string().min(1),
     SMTP_PASS: z.string().min(1),
     SMTP_USER: z.string().min(1),
+
+    PRISMIC_TOKEN: z.string().min(1),
+    PRISMIC_WEBHOOK_SECRET: z.string().min(1),
   },
 
   /**
@@ -97,6 +100,9 @@ export const env = createEnv({
     SMTP_HOST: process.env.SMTP_HOST,
     SMTP_PASS: process.env.SMTP_PASS,
     SMTP_USER: process.env.SMTP_USER,
+
+    PRISMIC_TOKEN: process.env.PRISMIC_TOKEN,
+    PRISMIC_WEBHOOK_SECRET: process.env.PRISMIC_WEBHOOK_SECRET,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.

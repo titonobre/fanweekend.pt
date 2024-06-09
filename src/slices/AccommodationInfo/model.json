@@ -1,0 +1,16 @@
+{
+  "id": "accommodation_info",
+  "type": "SharedSlice",
+  "name": "AccommodationInfo",
+  "description": "AccommodationInfo",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

@@ -2,10 +2,12 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 
 import { ClerkProvider } from "@clerk/nextjs";
+import { PrismicPreview } from "@prismicio/next";
 
 import { ThemeProvider } from "@/components/theme-provider";
 
 import { PrivacyConsentProvider } from "@/lib/providers/privacy-consent";
+import { repositoryName } from "@/prismicio";
 import { TRPCReactProvider } from "@/trpc/react";
 
 import "@/styles/globals.css";
@@ -45,6 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           >
             <PrivacyConsentProvider>
               <TRPCReactProvider>{children}</TRPCReactProvider>
+              <PrismicPreview repositoryName={repositoryName} />
             </PrivacyConsentProvider>
           </ClerkProvider>
         </ThemeProvider>

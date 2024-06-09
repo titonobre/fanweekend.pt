@@ -4,7 +4,7 @@ import { authMiddleware } from "@clerk/nextjs";
 // Please edit this to allow other routes to be public as needed.
 // See https://clerk.com/docs/references/nextjs/auth-middleware for more information about configuring your middleware
 export default authMiddleware({
-  publicRoutes: ["/", "/api/ical", "/privacy"],
+  publicRoutes: ["/", "/api/ical", "/privacy", "/slice-simulator", "/api/revalidate"],
   // async afterAuth(auth, req) {
   //   if (auth.isPublicRoute) {
   //     //  For public routes, we don't need to do anything

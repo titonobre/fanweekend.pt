@@ -1,0 +1,54 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "title": {
+        "__TYPE__": "FieldContent",
+        "type": "Text",
+        "value": "Title"
+      },
+      "body": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Mensagem bla bla bla!",
+              "spans": [
+                {
+                  "type": "strong",
+                  "start": 17,
+                  "end": 21
+                }
+              ]
+            },
+            "direction": "ltr"
+          },
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Foo",
+              "spans": []
+            },
+            "direction": "ltr"
+          }
+        ]
+      },
+      "cta_link": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "ExternalLink",
+          "url": "https://slicemachine.dev",
+          "target": "_blank"
+        }
+      },
+      "cta_label": {
+        "__TYPE__": "FieldContent",
+        "type": "Text",
+        "value": "Link Label"
+      }
+    },
+    "items": []
+  }
+]

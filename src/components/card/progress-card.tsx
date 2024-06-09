@@ -3,6 +3,7 @@ import { type HTMLAttributes, type ReactNode, type RefAttributes } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { BanknoteIcon, ClipboardCheckIcon, FileSpreadsheetIcon, LayersIcon, ReceiptTextIcon } from "lucide-react";
 
+import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/components/utils";
 
 const iconVariants = cva("relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border-2", {
@@ -116,5 +117,19 @@ export function ProgressCard({ formSubmitted, paymentEnabled, paymentReceived }:
         ))}
       </ol>
     </>
+  );
+}
+
+export function ProgressCardLoading() {
+  return (
+    <div className="w-full items-center space-y-4 sm:flex sm:space-x-8 sm:space-y-0">
+      <div className="flex items-center space-x-2.5">
+        <Skeleton className="h-10 w-10 rounded-full" />
+        <div className="flex flex-col gap-1">
+          <Skeleton className="h-4 w-20 rounded-lg" />
+          <Skeleton className="h-4 w-24 rounded-lg" />
+        </div>
+      </div>
+    </div>
   );
 }

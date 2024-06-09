@@ -1,0 +1,16 @@
+{
+  "id": "my_own_creations",
+  "type": "SharedSlice",
+  "name": "MyOwnCreations",
+  "description": "MyOwnCreations",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}
