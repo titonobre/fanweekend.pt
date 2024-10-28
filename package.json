@@ -16,7 +16,7 @@
     "slicemachine": "start-slicemachine"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.29.9",
+    "@clerk/nextjs": "^5.7.5",
     "@hookform/resolvers": "^3.3.4",
     "@icons-pack/react-simple-icons": "^9.4.0",
     "@mdx-js/loader": "^3.0.1",

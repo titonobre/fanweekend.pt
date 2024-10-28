@@ -68,7 +68,7 @@ export function SiteHeader({ transparentOnTop }: NavbarProps = { transparentOnTo
           </div>
 
           <SignedIn>
-            <UserButton showName userProfileMode="navigation" afterSignOutUrl="/" />
+            <UserButton showName userProfileMode="navigation" userProfileUrl="/user" />
           </SignedIn>
           <SignedOut>
             <SignInButton>

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/dot-notation */
 
-import { currentUser } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs/server";
 import { createStaleWhileRevalidateCache } from "stale-while-revalidate-cache";
 
 import { env } from "@/env";
