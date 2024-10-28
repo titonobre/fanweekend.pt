@@ -4,6 +4,7 @@ import NextLink from "next/link";
 
 import { SignedIn, SignedOut, SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import { cva, type VariantProps } from "class-variance-authority";
+import { LayoutDashboardIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/components/utils";
@@ -68,7 +69,13 @@ export function SiteHeader({ transparentOnTop }: NavbarProps = { transparentOnTo
           </div>
 
           <SignedIn>
-            <UserButton showName userProfileMode="navigation" userProfileUrl="/user" />
+            <UserButton showName userProfileMode="navigation" userProfileUrl="/user">
+              <UserButton.MenuItems>
+                <UserButton.Link label="Dashboard" labelIcon={<LayoutDashboardIcon className="size-4" />} href="/dashboard" />
+                <UserButton.Action label="manageAccount" />
+                <UserButton.Action label="signOut" />
+              </UserButton.MenuItems>
+            </UserButton>
           </SignedIn>
           <SignedOut>
             <SignInButton>
