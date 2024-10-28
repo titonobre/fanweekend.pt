@@ -31,6 +31,13 @@ export default async function Dashboard() {
   return (
     <div className="thin-container mt-10 flex flex-col gap-10">
       <WelcomeCard name={`${user.firstName} ${user.lastName}`} />
+      {page.data.slices.length === 0 && (
+        <Alert>
+          <AlertCircle className="h-4 w-4" />
+          <AlertTitle>Nothing to see here!</AlertTitle>
+          <AlertDescription>Looks like there&apos;s nothing to see here. Please check back later.</AlertDescription>
+        </Alert>
+      )}
       <SliceZone slices={page.data.slices} components={components} />
     </div>
   );
