@@ -12,7 +12,7 @@ import { Where } from "@/components/section/where";
 export default async function Home() {
   noStore();
 
-  const authObject = auth();
+  const authObject = await auth();
 
   if (authObject.userId) {
     redirect("/dashboard");
