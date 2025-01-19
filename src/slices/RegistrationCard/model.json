@@ -1,0 +1,18 @@
+{
+  "id": "registration_card",
+  "type": "SharedSlice",
+  "name": "RegistrationCard",
+  "description": "RegistrationCard",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {}
+    }
+  ]
+}

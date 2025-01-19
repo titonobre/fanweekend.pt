@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type DashboardDocumentDataSlicesSlice =
+  | RegistrationCardSlice
   | MyOwnCreationsSlice
   | EventProgramSlice
   | AccommodationInfoSlice
@@ -122,11 +123,11 @@ type EventProgramSliceVariation = EventProgramSliceDefault;
 export type EventProgramSlice = prismic.SharedSlice<"event_program", EventProgramSliceVariation>;
 
 /**
- * Primary content in *Message → Default → Primary*
+ * Primary content in *MessageCard → Default → Primary*
  */
 export interface MessageCardSliceDefaultPrimary {
   /**
-   * Title field in *Message → Default → Primary*
+   * Title field in *MessageCard → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -136,7 +137,7 @@ export interface MessageCardSliceDefaultPrimary {
   title: prismic.KeyTextField;
 
   /**
-   * Body field in *Message → Default → Primary*
+   * Body field in *MessageCard → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -146,7 +147,7 @@ export interface MessageCardSliceDefaultPrimary {
   body: prismic.RichTextField;
 
   /**
-   * CTA Label field in *Message → Default → Primary*
+   * CTA Label field in *MessageCard → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -156,7 +157,7 @@ export interface MessageCardSliceDefaultPrimary {
   cta_label: prismic.KeyTextField;
 
   /**
-   * CTA Link field in *Message → Default → Primary*
+   * CTA Link field in *MessageCard → Default → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -167,7 +168,7 @@ export interface MessageCardSliceDefaultPrimary {
 }
 
 /**
- * Default variation for Message Slice
+ * Default variation for MessageCard Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -176,12 +177,12 @@ export interface MessageCardSliceDefaultPrimary {
 export type MessageCardSliceDefault = prismic.SharedSliceVariation<"default", Simplify<MessageCardSliceDefaultPrimary>, never>;
 
 /**
- * Slice variation for *Message*
+ * Slice variation for *MessageCard*
  */
 type MessageCardSliceVariation = MessageCardSliceDefault;
 
 /**
- * Message Shared Slice
+ * MessageCard Shared Slice
  *
  * - **API ID**: `message_card`
  * - **Description**: MessageCard
@@ -213,6 +214,29 @@ type MyOwnCreationsSliceVariation = MyOwnCreationsSliceDefault;
 export type MyOwnCreationsSlice = prismic.SharedSlice<"my_own_creations", MyOwnCreationsSliceVariation>;
 
 /**
+ * Default variation for RegistrationCard Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RegistrationCardSliceDefault = prismic.SharedSliceVariation<"default", Record<string, never>, never>;
+
+/**
+ * Slice variation for *RegistrationCard*
+ */
+type RegistrationCardSliceVariation = RegistrationCardSliceDefault;
+
+/**
+ * RegistrationCard Shared Slice
+ *
+ * - **API ID**: `registration_card`
+ * - **Description**: RegistrationCard
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RegistrationCardSlice = prismic.SharedSlice<"registration_card", RegistrationCardSliceVariation>;
+
+/**
  * Default variation for RegistrationState Slice
  *
  * - **API ID**: `default`
@@ -240,6 +264,14 @@ declare module "@prismicio/client" {
     (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
   }
 
+  interface CreateWriteClient {
+    (repositoryNameOrEndpoint: string, options: prismic.WriteClientConfig): prismic.WriteClient<AllDocumentTypes>;
+  }
+
+  interface CreateMigration {
+    (): prismic.Migration<AllDocumentTypes>;
+  }
+
   namespace Content {
     export type {
       DashboardDocument,
@@ -259,6 +291,9 @@ declare module "@prismicio/client" {
       MyOwnCreationsSlice,
       MyOwnCreationsSliceVariation,
       MyOwnCreationsSliceDefault,
+      RegistrationCardSlice,
+      RegistrationCardSliceVariation,
+      RegistrationCardSliceDefault,
       RegistrationStateSlice,
       RegistrationStateSliceVariation,
       RegistrationStateSliceDefault,

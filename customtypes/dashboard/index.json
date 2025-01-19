@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "registration_card": {
+              "type": "SharedSlice"
+            },
             "my_own_creations": {
               "type": "SharedSlice"
             },

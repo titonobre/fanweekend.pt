@@ -7,5 +7,6 @@ export const components = {
   event_program: dynamic(() => import("./EventProgram")),
   message_card: dynamic(() => import("./MessageCard")),
   my_own_creations: dynamic(() => import("./MyOwnCreations")),
+  registration_card: dynamic(() => import("./RegistrationCard")),
   registration_state: dynamic(() => import("./RegistrationState")),
 };

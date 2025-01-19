@@ -19,7 +19,7 @@ export function RegistrationCard({ className, registrationEnabled, ...props }: R
           <CardTitle>Registration</CardTitle>
         </CardHeader>
         <CardContent>
-          <p>The registration form is not enabled!</p>
+          <p>The registration is not enabled!</p>
           <p>If you think this is an error, please get in touch with us.</p>
         </CardContent>
       </Card>
