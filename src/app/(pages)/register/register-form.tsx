@@ -9,6 +9,7 @@ import { DependencyType } from "@/components/ui/auto-form/types";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
+import { adjustDateForTimezone } from "@/lib/utils/dateWithoutTimezone";
 import { type RegistrationSchema, registrationSchema } from "@/schema/registration-form.schema";
 import { api } from "@/trpc/react";
 
@@ -52,8 +53,14 @@ export default function RegistrationForm() {
   // }
 
   const handleSubmit = (data: RegistrationSchema): void => {
-    setDisabled(true);
-    eventRegistrationMutation.mutate(data);
+    const adjustedDateOfBirth = adjustDateForTimezone(data.dateOfBirth, "Europe/Lisbon");
+
+    const adjustedData = {
+      ...data,
+      dateOfBirth: adjustedDateOfBirth,
+    };
+
+    eventRegistrationMutation.mutate(adjustedData);
   };
 
   return (
