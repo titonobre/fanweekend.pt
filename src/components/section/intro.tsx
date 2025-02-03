@@ -1,9 +1,7 @@
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 
 import background from "~/assets/images/background.svg";
 import logo from "~/assets/images/pdcfw.svg";
-
-const logoAsset = logo as StaticImageData;
 
 export function Intro() {
   return (
@@ -12,7 +10,7 @@ export function Intro() {
       style={{ backgroundImage: `url('${background.src}')` }}
     >
       <div className="relative aspect-square w-52 sm:w-64 md:w-72">
-        <Image src={logoAsset} fill priority alt="" />
+        <Image src={logo.src} fill priority alt="" />
       </div>
     </div>
   );

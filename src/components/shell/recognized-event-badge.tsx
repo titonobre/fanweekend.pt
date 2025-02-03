@@ -11,7 +11,7 @@ export function RecognizedEventBadge() {
       rel="noreferrer"
       title="This is a LEGO® Recognized AFOL Networking Event"
     >
-      <Image src={raneBadge as string} fill alt="LEGO® Recognized AFOL Networking Event Badge" />
+      <Image src={raneBadge.src} fill alt="LEGO® Recognized AFOL Networking Event Badge" />
     </NextLink>
   );
 }

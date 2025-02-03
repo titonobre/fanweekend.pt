@@ -1,4 +1,4 @@
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 import NextLink from "next/link";
 
 import { MapIcon } from "lucide-react";
@@ -8,8 +8,6 @@ import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 
 import map from "~/assets/images/iberia-map.svg";
-
-const mapAsset = map as StaticImageData;
 
 export function Where() {
   return (
@@ -50,7 +48,7 @@ export function Where() {
           <div className="relative h-[38rem] w-full">
             <div className="absolute h-full w-full">
               <div className="relative aspect-[193/150] h-full">
-                <Image className="dark:invert" src={mapAsset} fill alt="" />
+                <Image className="dark:invert" src={map.src} fill alt="" />
               </div>
             </div>
           </div>
