@@ -45,12 +45,12 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
           </div>
         </div>
         <div className="flex gap-4">
-          <Button asChild size="icon">
+          <Button asChild size="icon" aria-label="Facebook">
             <NextLink href="https://www.facebook.com/groups/fanweekend.pt/">
               <SiFacebook />
             </NextLink>
           </Button>
-          <Button asChild size="icon">
+          <Button asChild size="icon" aria-label="Instagram">
             <NextLink href="https://www.instagram.com/pdcfanweekend/">
               <SiInstagram />
             </NextLink>

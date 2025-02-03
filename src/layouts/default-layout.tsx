@@ -13,7 +13,7 @@ export const DefaultLayout: React.FC<PropsWithChildren<DefaultLayoutProps>> = ({
     <div className="relative flex min-h-screen flex-col">
       <SiteHeader transparentOnTop={transparentHeader} />
 
-      <div className="flex-1 flex-col">{children}</div>
+      <main className="flex-1 flex-col">{children}</main>
 
       <SiteFooter />
       <PrivacyBanner />
