@@ -6,7 +6,7 @@ subject: You're Awesome!
 
 **Welcome to the Paredes De Coura Fan Weekend!**
 
-Thank you for signing up for this amazing event! We have received your registration and will get back to you soon with the payment details.
+Thank you for signing up for this amazing event! We have received your registration request and will get back to you soon.
 
 Here are some notes regarding your registration to the event.
 
@@ -23,14 +23,16 @@ There is a registration fee of **€160** (EURO) per person. Included with the f
 Registration will be divided into three phases:
 
 1. Registration form submission.
-2. Email confirmation with Payment details.
-3. Validation of Registration.
+2. Confirmation email.
+3. Payment and Validation of Registration.
 
 Only once your payment has been confirmed will your registration be accepted as valid. After payment and validation, no refunds can be issued.
 
 ## Communication
 
-The main form of communication between the organization and the participants will be the Fan Weekend website at [https://www.fanweekend.pt/](https://www.fanweekend.pt/)
+The main form of communication between the organization and the participants will be the Fan Weekend website at [https://fanweekend.pt/](https://fanweekend.pt/)
+
+Special bulletins will be sent to the email address used on registration.
 
 ## Notes
 
@@ -40,8 +42,8 @@ There are no shuttles or transport provided by the organization! You'll have to 
 
 Remember to bring your bikinis, bathing suits or shorts! Hats and sunblock as well.
 
-For all the details regarding our Privacy Policy at [https://www.fanweekend.pt/privacy](https://www.fanweekend.pt/privacy).
+For all the details regarding our Privacy Policy at [https://fanweekend.pt/privacy](https://fanweekend.pt/privacy).
 
 We hope to see you soon.
 
-_The Steering Group, [Paredes de Coura Fan Weekend](https://www.fanweekend.pt/)_.
+_The Steering Group, [Paredes de Coura Fan Weekend](https://fanweekend.pt/)_.
