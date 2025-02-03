@@ -15,6 +15,7 @@ async function Progress() {
   return (
     <ProgressCard
       formSubmitted={!!registeredUser}
+      registrationConfirmed={!!registeredUser?.registrationConfirmed}
       paymentEnabled={!!registeredUser?.paymentEnabled}
       paymentReceived={!!registeredUser?.paymentReceived}
     />

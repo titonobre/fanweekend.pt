@@ -11,6 +11,7 @@ const sheetId = env.REGISTERED_USERS_SHEET_ID;
 
 type RegisteredUsersRaw = {
   ["ID"]: string;
+  ["Registration Confirmed"]: string;
   ["Payment Enabled"]: string;
   ["Payment Received"]: string;
   ["Volunteer"]: string;
@@ -20,6 +21,7 @@ type RegisteredUsersRaw = {
 
 export type UserData = {
   id: string;
+  registrationConfirmed: boolean;
   paymentEnabled: boolean;
   paymentReceived: boolean;
   volunteer: boolean;
@@ -40,6 +42,7 @@ export default async function fetchRegisteredUsers(): Promise<UserData[]> {
 
   return rows.reduce<UserData[]>((acc, row) => {
     const id = row["ID"];
+    const registrationConfirmed = !!row["Registration Confirmed"];
     const paymentEnabled = !!row["Payment Enabled"];
     const paymentReceived = !!row["Payment Received"];
     const volunteer = !!row["Volunteer"];
@@ -49,6 +52,7 @@ export default async function fetchRegisteredUsers(): Promise<UserData[]> {
     if (id) {
       acc.push({
         id,
+        registrationConfirmed,
         paymentEnabled,
         paymentReceived,
         volunteer,
