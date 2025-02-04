@@ -32,9 +32,6 @@ export default async function Home() {
       <section className="flex flex-1 py-10">
         <What />
       </section>
-      <section className="flex flex-1 py-10">
-        <Register />
-      </section>
     </>
   );
 }
