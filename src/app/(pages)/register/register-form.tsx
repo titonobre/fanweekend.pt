@@ -44,14 +44,6 @@ export default function RegistrationForm() {
     }
   };
 
-  // if (registrationTermsQuery.isFetching) {
-  //   return <div>loading...</div>;
-  // }
-
-  // if (!registrationTermsQuery.data) {
-  //   return <div>error!</div>;
-  // }
-
   const handleSubmit = (data: RegistrationSchema): void => {
     const adjustedDateOfBirth = adjustDateForTimezone(data.dateOfBirth, "Europe/Lisbon");
 
@@ -126,8 +118,8 @@ export default function RegistrationForm() {
               <DialogTitle>Registration Submitted</DialogTitle>
               <DialogDescription>
                 <p>
-                  Thank you for signing up for this amazing event! We have received your registration and will get back to you soon with the
-                  payment details.
+                  Thank you for signing up for this amazing event! We have received your registration and will get back to you soon with
+                  more details.
                 </p>
                 <p>
                   Please don’t forget to add <strong>info@fanweekend.pt</strong> to your senders safe list.
