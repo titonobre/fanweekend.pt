@@ -1,0 +1,16 @@
+{
+  "id": "extra_night_card",
+  "type": "SharedSlice",
+  "name": "ExtraNightCard",
+  "description": "ExtraNightCard",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type DashboardDocumentDataSlicesSlice =
+  | ExtraNightCardSlice
   | RegistrationCardSlice
   | MyOwnCreationsSlice
   | EventProgramSlice
@@ -123,6 +124,29 @@ type EventProgramSliceVariation = EventProgramSliceDefault;
 export type EventProgramSlice = prismic.SharedSlice<"event_program", EventProgramSliceVariation>;
 
 /**
+ * Default variation for ExtraNightCard Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ExtraNightCardSliceDefault = prismic.SharedSliceVariation<"default", Record<string, never>, never>;
+
+/**
+ * Slice variation for *ExtraNightCard*
+ */
+type ExtraNightCardSliceVariation = ExtraNightCardSliceDefault;
+
+/**
+ * ExtraNightCard Shared Slice
+ *
+ * - **API ID**: `extra_night_card`
+ * - **Description**: ExtraNightCard
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ExtraNightCardSlice = prismic.SharedSlice<"extra_night_card", ExtraNightCardSliceVariation>;
+
+/**
  * Primary content in *MessageCard → Default → Primary*
  */
 export interface MessageCardSliceDefaultPrimary {
@@ -164,7 +188,7 @@ export interface MessageCardSliceDefaultPrimary {
    * - **API ID Path**: message_card.default.primary.cta_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  cta_link: prismic.LinkField;
+  cta_link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 }
 
 /**
@@ -284,6 +308,9 @@ declare module "@prismicio/client" {
       EventProgramSlice,
       EventProgramSliceVariation,
       EventProgramSliceDefault,
+      ExtraNightCardSlice,
+      ExtraNightCardSliceVariation,
+      ExtraNightCardSliceDefault,
       MessageCardSlice,
       MessageCardSliceDefaultPrimary,
       MessageCardSliceVariation,

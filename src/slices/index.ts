@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 export const components = {
   accommodation_info: dynamic(() => import("./AccommodationInfo")),
   event_program: dynamic(() => import("./EventProgram")),
+  extra_night_card: dynamic(() => import("./ExtraNightCard")),
   message_card: dynamic(() => import("./MessageCard")),
   my_own_creations: dynamic(() => import("./MyOwnCreations")),
   registration_card: dynamic(() => import("./RegistrationCard")),
