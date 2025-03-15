@@ -40,6 +40,15 @@ export default async function ExtraNightPage() {
   const currentUser = await getUserRegistrationData();
   const extraNightEnabled = await isFeatureEnabled("extra-night");
 
+  if (!currentUser) {
+    return (
+      <CustomAlert>
+        <p>It seems you are not registered to the event. Go back to your dashboard.</p>
+        <p>If you think this is an error, please get in touch with us.</p>
+      </CustomAlert>
+    );
+  }
+
   if (!!currentUser?.extraNight) {
     return <CustomAlert>It seems like you have submitted your preference before. Go back to your dashboard.</CustomAlert>;
   }
