@@ -23,9 +23,11 @@ const getSpreadsheet = (function () {
 
       const serviceAccountAuth = new JWT({ email, key, scopes });
 
-      spreadsheet = new GoogleSpreadsheet(spreadsheetId, serviceAccountAuth);
+      const googleSpreadsheet = new GoogleSpreadsheet(spreadsheetId, serviceAccountAuth);
 
-      await spreadsheet.loadInfo();
+      await googleSpreadsheet.loadInfo();
+
+      spreadsheet = googleSpreadsheet;
     }
 
     return spreadsheet;
