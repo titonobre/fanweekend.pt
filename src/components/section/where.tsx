@@ -48,7 +48,7 @@ export function Where() {
           <div className="relative h-[38rem] w-full">
             <div className="absolute h-full w-full">
               <div className="relative aspect-[193/150] h-full">
-                <Image className="dark:invert" src={map.src} fill alt="" />
+                <Image src={map.src} fill alt="" />
               </div>
             </div>
           </div>
