@@ -22,14 +22,6 @@ const swr = createStaleWhileRevalidateCache({
   maxTimeToLive: 10 * MINUTE,
 });
 
-export async function getGoogleClientPrivateKey(): Promise<string | undefined> {
-  const result = await swr("google-client-private-key", async () => {
-    return kv.get<string>("google-client-private-key");
-  });
-
-  return result.value ?? undefined;
-}
-
 export async function getEnabledFeatures(): Promise<Set<string>> {
   const result = await swr("enabled-features", async () => {
     const features = await kv.smembers("enabled-features");

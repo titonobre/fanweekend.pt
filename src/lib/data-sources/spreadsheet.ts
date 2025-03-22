@@ -1,15 +1,13 @@
 import { JWT } from "google-auth-library";
 import { GoogleSpreadsheet } from "google-spreadsheet";
-import { z } from "zod";
 
-import { getGoogleClientPrivateKey } from "@/config";
 import { env } from "@/env";
-
-const privateKeySchema = z.string().nonempty();
 
 const spreadsheetId = env.SPREADSHEET_ID;
 
 const email = env.GOOGLE_CLIENT_EMAIL;
+const key = env.GOOGLE_CLIENT_PRIVATE_KEY;
+
 const scopes = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
 
 const getSpreadsheet = (function () {
@@ -17,10 +15,6 @@ const getSpreadsheet = (function () {
 
   return async function getSpreadsheet(): Promise<GoogleSpreadsheet> {
     if (!spreadsheet) {
-      const googleClientPrivateKey = await getGoogleClientPrivateKey();
-
-      const key = privateKeySchema.parse(googleClientPrivateKey);
-
       const serviceAccountAuth = new JWT({ email, key, scopes });
 
       const googleSpreadsheet = new GoogleSpreadsheet(spreadsheetId, serviceAccountAuth);

@@ -25,9 +25,9 @@ export const env = createEnv({
       .transform((value) =>
         value
           ? value
-              .split(",")
-              .filter(Boolean)
-              .map((value) => value.trim())
+            .split(",")
+            .filter(Boolean)
+            .map((value) => value.trim())
           : [],
       )
       .pipe(z.array(featureSchema)),
@@ -36,6 +36,8 @@ export const env = createEnv({
     REDIS_URL: z.string().url(),
 
     GOOGLE_CLIENT_EMAIL: z.string().email(),
+    GOOGLE_CLIENT_PRIVATE_KEY: z.string().min(1),
+
     SPREADSHEET_ID: z.string().min(1),
 
     ACCOMMODATIONS_SHEET_ID: sheetIdSchema,
@@ -78,8 +80,12 @@ export const env = createEnv({
    */
   runtimeEnv: {
     ENABLED_FEATURES: process.env.ENABLED_FEATURES,
+
     GOOGLE_CLIENT_EMAIL: process.env.GOOGLE_CLIENT_EMAIL,
+    GOOGLE_CLIENT_PRIVATE_KEY: process.env.GOOGLE_CLIENT_PRIVATE_KEY,
+
     NODE_ENV: process.env.NODE_ENV,
+
     REDIS_URL: process.env.REDIS_URL,
 
     SPREADSHEET_ID: process.env.SPREADSHEET_ID,
