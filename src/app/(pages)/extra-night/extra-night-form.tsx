@@ -11,6 +11,7 @@ import { DependencyType } from "@/components/ui/auto-form/types";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
+import { adjustDateForTimezone } from "@/lib/utils/dateWithoutTimezone";
 import { type ExtraNightFormSchema, extraNightFormSchema } from "@/schema/extra-night-form.schema";
 import { api } from "@/trpc/react";
 
@@ -52,7 +53,13 @@ export default function ExtraNightForm({ eventStart, eventEnd }: ExtraNightFormP
 
   const handleSubmit = (data: ExtraNightFormSchema): void => {
     setDisabled(true);
-    setExtraNightMutation.mutate(data);
+
+    const adjustedDate = data.date ? adjustDateForTimezone(data.date, "Europe/Lisbon") : undefined;
+
+    setExtraNightMutation.mutate({
+      ...data,
+      date: adjustedDate,
+    });
   };
 
   const fromDate = subDays(eventStart, 1);
