@@ -105,19 +105,19 @@ function EventProgramCard({
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <CardDescription className="flex flex-wrap items-center gap-2">
-          <div className="flex items-center gap-1">
+          <span className="inline-flex items-center gap-1">
             {isNow && <Badge variant={"success"}>Ongoing</Badge>}
             <ClockIcon className="h-4 w-4" />
             {[startTimeFormatted, durationFormatted].filter(Boolean).join(", ")}
-          </div>
+          </span>
           {!!keyPeople?.length && (
-            <div className="flex items-center gap-1">
+            <span className="inline-flex items-center gap-1">
               {keyPeople.length === 1 ? <User2 className="h-4 w-4" /> : <Users2 className="h-4 w-4" />}
               {keyPeople.join(", ")}
-            </div>
+            </span>
           )}
           {location && (
-            <div className="flex items-center gap-1">
+            <span className="inline-flex items-center gap-1">
               <LocateIcon className="h-4 w-4" />
               {directions ? (
                 <a href={directions} className="text-nowrap underline underline-offset-4" target="_blank" rel="noreferrer">
@@ -126,7 +126,7 @@ function EventProgramCard({
               ) : (
                 location
               )}
-            </div>
+            </span>
           )}
         </CardDescription>
       </CardHeader>
