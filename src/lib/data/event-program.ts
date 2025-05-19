@@ -41,8 +41,8 @@ const storage = new Storage();
 
 const swr = createStaleWhileRevalidateCache({
   storage,
-  minTimeToStale: 1000, // 5 minutes
-  maxTimeToLive: 1000 * 60 * 10, // 10 minutes
+  minTimeToStale: 60000, // 60 seconds
+  maxTimeToLive: 600000, // 10 minutes
 });
 
 export async function fetchEventProgram(): Promise<EventProgramEntry[]> {

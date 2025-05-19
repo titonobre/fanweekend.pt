@@ -135,6 +135,8 @@ function EventProgramCard({
   );
 }
 
+export const revalidate = 60; // revalidate every 60 seconds
+
 export default async function EventProgram() {
   const eventProgramEnabled = await isFeatureEnabled("event-program");
 
