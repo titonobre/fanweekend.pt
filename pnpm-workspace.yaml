@@ -1,9 +1,10 @@
+packages:
+  - .
+
 onlyBuiltDependencies:
   - '@clerk/shared'
   - '@scarf/scarf'
   - msw
+  - puppeteer
   - sharp
   - unrs-resolver
-
-packages:
-  - .
