@@ -1,0 +1,9 @@
+onlyBuiltDependencies:
+  - '@clerk/shared'
+  - '@scarf/scarf'
+  - msw
+  - sharp
+  - unrs-resolver
+
+packages:
+  - .
