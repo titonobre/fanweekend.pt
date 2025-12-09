@@ -13,6 +13,7 @@
     "generate:favicon": "node tools/generate-favicon.js",
     "generate:icons": "node tools/generate-icons.js",
     "generate:icon-svg": "mkdir -p 'src/app/(icons)' && cp 'assets/images/pdcfw.svg' 'src/app/(icons)/icon.svg'",
+    "update:countries": "node tools/update-countries.js",
     "update:lugs-list": "node tools/update-lugs.js",
     "slicemachine": "start-slicemachine"
   },
