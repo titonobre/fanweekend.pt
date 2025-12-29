@@ -6,7 +6,7 @@ Sellers and Bricklink Stores please contact us directly at [info@fanweekend.pt](
 
 ## Terms and Conditions
 
-There is a registration fee of **€160** (EURO) per person. Included with the fee is the following:
+There is a registration fee of **€180** (EURO) per person. Included with the fee is the following:
 
 - Accommodation in boarding houses (B&B's) for three (3) nights.
 - Meals: Breakfast, lunch, afternoon snacks, and dinner.
