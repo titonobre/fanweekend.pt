@@ -29,6 +29,10 @@ export default async function Home() {
       <section className="flex flex-1 overflow-hidden py-10">
         <Where />
       </section>
+      <section className="flex flex-1 flex-col gap-10 py-10">
+        <What />
+        <Register />
+      </section>
     </>
   );
 }
