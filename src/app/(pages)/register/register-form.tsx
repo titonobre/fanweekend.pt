@@ -13,7 +13,11 @@ import { adjustDateForTimezone } from "@/lib/utils/dateWithoutTimezone";
 import { type RegistrationSchema, registrationSchema } from "@/schema/registration-form.schema";
 import { api } from "@/trpc/react";
 
-export default function RegistrationForm() {
+type RegistrationFormProps = {
+  secret?: string;
+};
+
+export default function RegistrationForm({ secret }: RegistrationFormProps) {
   const router = useRouter();
 
   const [disabled, setDisabled] = useState(false);
@@ -50,6 +54,7 @@ export default function RegistrationForm() {
     const adjustedData = {
       ...data,
       dateOfBirth: adjustedDateOfBirth,
+      secret,
     };
 
     eventRegistrationMutation.mutate(adjustedData);

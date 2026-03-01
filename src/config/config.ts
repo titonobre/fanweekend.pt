@@ -10,6 +10,7 @@ type FeatureName = z.infer<typeof featureSchema>; // string
 
 type Config = {
   "offer-link": string;
+  "registration-secret": string;
 };
 
 const MINUTE = 1000 * 60;

@@ -1,6 +1,7 @@
 import { currentUser } from "@clerk/nextjs/server";
+import { z } from "zod";
 
-import { isFeatureEnabled } from "@/config/config";
+import { getConfig, isFeatureEnabled } from "@/config";
 import { getUserRegistrationData, invalidateRegisteredUsers } from "@/lib/data/registered-users";
 import { submitUserRegistration, type UserRegistrationData } from "@/lib/forms/register";
 import { sendRegistrationMail } from "@/lib/utils/sendRegistrationMail";
@@ -11,11 +12,19 @@ type RegistrationResponse = {
   type: "SUCCESS";
 };
 
+const registrationSchemaWithSecret = registrationSchema.extend({
+  secret: z.string().max(50).optional(),
+});
+
 export const eventRegistrationRouter = createTRPCRouter({
-  register: publicProcedure.input(registrationSchema).mutation(async ({ input }): Promise<RegistrationResponse> => {
+  register: publicProcedure.input(registrationSchemaWithSecret).mutation(async ({ input }): Promise<RegistrationResponse> => {
     const user = await currentUser();
 
-    if (!(await isFeatureEnabled("event-registration"))) {
+    const registrationSecret = await getConfig("registration-secret");
+
+    const secretMatch = input.secret === registrationSecret;
+
+    if (!(await isFeatureEnabled("event-registration")) && !secretMatch) {
       throw new Error("The registration is disabled");
     }
 

@@ -8,7 +8,7 @@ import { AlertCircle } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 
-import { isFeatureEnabled } from "@/config";
+import { getConfig, isFeatureEnabled } from "@/config";
 import RegistrationTerms from "@/documents/registration-terms-and-conditions.md";
 import { getUserRegistrationData } from "@/lib/data/registered-users";
 
@@ -32,7 +32,20 @@ const CustomAlert: React.FC<PropsWithChildren> = ({ children }) => {
   );
 };
 
-export default async function RegisterPage() {
+type PageProps = {
+  searchParams: Promise<{
+    secret?: string;
+    [key: string]: string | string[] | undefined;
+  }>;
+};
+
+export default async function RegisterPage({ searchParams }: PageProps) {
+  const { secret } = await searchParams;
+
+  const registrationSecret = await getConfig("registration-secret");
+
+  const secretMatch = secret === registrationSecret;
+
   const registeredUser = await getUserRegistrationData();
   const registrationEnabled = await isFeatureEnabled("event-registration");
 
@@ -44,7 +57,7 @@ export default async function RegisterPage() {
     );
   }
 
-  if (!registrationEnabled) {
+  if (!registrationEnabled && !secretMatch) {
     return (
       <CustomAlert>
         <p>The registration form is not enabled!</p>
@@ -60,7 +73,7 @@ export default async function RegisterPage() {
         <RegistrationTerms />
       </div>
       <div className="flex flex-col gap-2">
-        <RegisterForm />
+        <RegisterForm secret={secret} />
       </div>
     </div>
   );
