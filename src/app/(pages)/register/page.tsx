@@ -33,10 +33,10 @@ const CustomAlert: React.FC<PropsWithChildren> = ({ children }) => {
 };
 
 export default async function RegisterPage() {
-  const currentUser = await getUserRegistrationData();
+  const registeredUser = await getUserRegistrationData();
   const registrationEnabled = await isFeatureEnabled("event-registration");
 
-  if (currentUser) {
+  if (registeredUser) {
     return (
       <CustomAlert>
         It seems like you have registered before. Go back to your dashboard and check the state of your registration.
