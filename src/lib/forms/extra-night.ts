@@ -1,5 +1,6 @@
-import { format } from "date-fns";
+import { formatInTimeZone } from "date-fns-tz";
 
+import { siteConfig } from "@/config";
 import { env } from "@/env";
 
 const formUrl = `https://docs.google.com/forms/d/e/${env.EXTRA_NIGHT_FORM_ID}/formResponse`;
@@ -19,7 +20,7 @@ export type ExtraNightData = {
 export async function submitExtraNight(data: ExtraNightData): Promise<void> {
   const formData = new FormData();
   formData.append(fields.id, data.id);
-  formData.append(fields.date, data.date ? format(data.date, "yyyy-MM-dd") : "none");
+  formData.append(fields.date, data.date ? formatInTimeZone(data.date, siteConfig.timeZone, "yyyy-MM-dd") : "none");
   formData.append(fields.notes, data.notes || "");
 
   const requestOptions = {
